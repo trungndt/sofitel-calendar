@@ -1,0 +1,192 @@
+// @import '../plugins/daterange/daterangepicker.scss';
+@import 'trungndt.scut';
+
+.row {
+	&.space-0 {
+		@include setRowSpace(0);
+	}
+}
+
+$height: 100px;
+$headerBg: #0a2741;
+header {
+	@include prefix(box-shadow, 0 2px 2px rgba(#000, .2));
+	.logo {
+		height: $height;
+		line-height: $height;
+		background-color: #fff;
+		text-align: center;
+	}
+}
+
+.filter-panel {
+	background-color: $headerBg;
+	color: #fff;
+	height: $height + 1px;
+	border: 1px solid #777;
+	.filter-item {
+		padding: 15px 0 0 0;
+		& + .filter-item {
+			border-left: 1px solid #777;
+		}
+	}
+	.label {
+		display: block;
+		text-align: left; 
+		padding: 0 15px;
+		margin-bottom: 10px;
+	}
+
+	.night-count {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+	}
+
+	.date-container {
+		height: $height - 35px;
+		line-height: $height - 35px;
+		padding: 0 15px;
+		position: relative;
+		&:after {
+	    content: '';
+			border-bottom: 2px solid #257eee;
+	    border-right: 2px solid #257eee;
+			width: 10px;
+			height: 10px;
+			top: 40%;
+			right: 20px;
+	    display: block;
+	    margin-top: -4px;
+	    pointer-events: none;
+	    position: absolute;
+	    @include prefix(transform-origin, 66% 66%);
+	    @include prefix(transform, rotate(45deg));
+		}
+	}
+	.date-range {
+		font-size: 20px;
+	}
+
+	.nice-select {
+		float: none;
+		background-color: transparent;
+		border: none;
+		font-size: 20px;
+		height: $height - 35px;
+		line-height: $height - 35px;
+		&:after {
+			border-color: #257eee;
+			width: 10px;
+			height: 10px;
+			top: 40%;
+			right: 15px;
+		}
+		&.open:after {
+			@include prefix(transform, rotate(45deg));
+		}
+		.list {
+			margin: 0;
+			border-radius: 0;
+			width: 100%;
+			background-color: $headerBg;
+		}
+		.option {
+			&:hover,
+			&.focus,
+			&.selected.focus {
+				background-color: darken($headerBg, 5%);
+			}
+		}
+	}
+}
+
+$color-valid: #368fff;
+$color-selected: green;
+$color-soldout: gray;
+
+.date-picker-wrapper.hotel-calendar {
+	width: 100%;
+	top: 100% !important;
+	left: -1px !important;
+	padding: 0;
+	background-color: $headerBg;
+	border: none;
+	.month-wrapper {
+		width: 100% !important;
+		background-color: transparent;
+		border: none;
+		table {
+			width: 100%;
+			th, td {
+				width: 14.2%;
+			}
+			.day {
+				font-size: 16px;
+				margin-bottom: 5px;
+			}
+			.day.real-today {
+				background-color: transparent;
+			}
+			.day.toMonth.invalid {
+				color: #aaa;
+			}
+			.day.toMonth.valid { 
+				color: #fff;
+				background-color: $color-valid;
+			}
+			.day.toMonth.hovering {
+				background-color: $color-selected;
+			}
+			.day.toMonth.checked {
+				background-color: $color-selected !important;
+			}
+		}
+	}
+	.month-name {
+		color: #fff;
+	}
+	.week-name {
+		display: none;
+	}
+
+	.event-date {
+		border-bottom: 2px solid red;
+	}
+	.soldout-date {
+		color: #fff !important;
+		background-color: $color-soldout !important;
+	}
+}
+
+.calendar-legend {
+	background-color: rgba(#fff, .2);
+	padding: 10px 5px;
+	.legend-item {
+		text-align: center;
+		color: #fff;
+	}
+	.item {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+	}
+	.item-available {
+		background-color: $color-valid;
+	}
+	.item-event {
+		background-color: $color-valid;
+		border-bottom: 2px solid red;
+	}
+	.item-selected {
+		background-color: $color-selected;
+	}
+	.item-soldout {
+		background-color: $color-soldout;
+	}
+	label {
+		display: block;
+		font-weight: 100;
+		margin-bottom: 0;
+	}
+}
