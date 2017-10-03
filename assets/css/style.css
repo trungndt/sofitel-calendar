@@ -726,7 +726,8 @@ header {
         width: 14.2%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day {
         font-size: 16px;
-        margin-bottom: 5px; }
+        margin-bottom: 5px;
+        border-bottom: 2px solid transparent; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.real-today {
         background-color: transparent; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.invalid {
@@ -743,7 +744,7 @@ header {
   .date-picker-wrapper.hotel-calendar .week-name {
     display: none; }
   .date-picker-wrapper.hotel-calendar .event-date {
-    border-bottom: 2px solid red; }
+    border-color: red !important; }
   .date-picker-wrapper.hotel-calendar .soldout-date {
     color: #fff !important;
     background-color: gray !important; }

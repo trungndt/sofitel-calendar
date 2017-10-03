@@ -42,10 +42,10 @@ $(function() {
       var valid = soldoutDate.indexOf(_this) < 0;
 
       var _class = '';
-      if (eventDate.indexOf(_this) > 0) {
+      if (eventDate.indexOf(_this) >= 0) {
         _class += ' event-date';
       }
-      if (soldoutDate.indexOf(_this) > 0) {
+      if (soldoutDate.indexOf(_this) >= 0) {
         _class += ' soldout-date';
       }
       // var _tooltip = valid ? '' : 'disabled';

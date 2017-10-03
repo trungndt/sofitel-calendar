@@ -124,6 +124,7 @@ $color-soldout: gray;
 			.day {
 				font-size: 16px;
 				margin-bottom: 5px;
+				border-bottom: 2px solid transparent;
 			}
 			.day.real-today {
 				background-color: transparent;
@@ -151,7 +152,8 @@ $color-soldout: gray;
 	}
 
 	.event-date {
-		border-bottom: 2px solid red;
+		// border-bottom: 2px solid red;
+		border-color: red !important;
 	}
 	.soldout-date {
 		color: #fff !important;
