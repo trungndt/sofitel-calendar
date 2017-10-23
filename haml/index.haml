@@ -1,0 +1,68 @@
+%html
+  %head
+    %title Kingsmen
+    %meta{charset:"utf-8"}
+    %meta{content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name:"viewport"}
+    %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700|Work+Sans:300,400,500,600,700", rel:"stylesheet"}
+    %link{href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/jquery-daterange/daterangepicker.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
+
+  %body
+    %header.container-fluid
+      .row.space-0
+        .col-sm-3
+          .logo
+            %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
+        .col-sm-9
+          .row.space-0.filter-panel
+            .col-sm-4.filter-item
+              .label DATES
+              .night-count 0 night
+              .date-container
+                #dateRange.date-range CHECK-IN - CHECK-OUT
+            .col-sm-2.filter-item
+              .label ROOMS
+              %select.nice-select
+                %option 01
+                %option 02
+                %option 03
+            .col-sm-2.filter-item
+              .label GUESTS
+              %select.nice-select
+                %option 01
+                %option 02
+                %option 03
+            .col-sm-4
+              .controller
+                %button.btn.btn-info.btn-lg Search
+    
+    %section.home-banner
+      .caption
+        %h5 TECH EXPO: 2018
+        %p Book your hotel room at special rates, exclusive to this event.
+      %img.img-responsive{src:"assets/images/bg-1.png"}
+
+      %template#tmpLegend
+        .calendar-legend
+          .row.space-0
+            .col-xs-3.legend-item
+              .item.item-available
+              %label Available
+            .col-xs-3.legend-item
+              .item.item-event
+              %label Event
+            .col-xs-3.legend-item
+              .item.item-selected
+              %label Selected
+            .col-xs-3.legend-item
+              .item.item-soldout
+              %label Sold out
+              
+%script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
+%script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/jquery-daterange/jquery.daterangepicker.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/nice-select/js/jquery.nice-select.min.js", type:"text/javascript"}
+%script{src:"assets/js/script.js", type:"text/javascript"}

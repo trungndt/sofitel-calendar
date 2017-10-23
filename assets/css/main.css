@@ -579,7 +579,7 @@ $content-fonts: (
   -o-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-.absolute-center {
+.absolute-center, header .logo img {
   display: block;
   width: auto;
   height: auto;
@@ -615,3 +615,203 @@ $content-fonts: (
   .d-tbl .d-tbl-cell {
     display: table-cell;
     vertical-align: middle; }
+
+.btn-info {
+  background-color: #0095FF;
+  border: none; }
+  .btn-info:hover, .btn-info:active, .btn-info:hover:active, .btn-info:focus {
+    background-color: #0086e6; }
+
+body {
+  font-family: "Work Sans", sans-serif; }
+
+.row.space-0 {
+  margin-left: -0px;
+  margin-right: -0px; }
+  .row.space-0 > [class*="col"] {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+header {
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); }
+  header .logo {
+    height: 100px;
+    line-height: 100px;
+    background-color: #fff;
+    text-align: center; }
+    header .logo img {
+      height: 50%; }
+
+.filter-panel {
+  background-color: #1c2035;
+  color: #fff;
+  height: 100px; }
+  .filter-panel.row.space-0 {
+    margin-right: -15px; }
+  .filter-panel .filter-item {
+    height: 100px;
+    padding: 20px 0 0 0; }
+    .filter-panel .filter-item + .filter-item {
+      border-left: 1px solid #777; }
+  .filter-panel .label {
+    display: block;
+    text-align: left;
+    padding: 0 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px; }
+  .filter-panel .night-count {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    line-height: 1;
+    color: #aaa; }
+  .filter-panel .date-container {
+    height: 65px;
+    line-height: 65px;
+    padding: 0 20px;
+    position: relative; }
+    .filter-panel .date-container:after {
+      content: '';
+      border-bottom: 2px solid #257eee;
+      border-right: 2px solid #257eee;
+      width: 10px;
+      height: 10px;
+      top: 40%;
+      right: 20px;
+      display: block;
+      margin-top: -4px;
+      pointer-events: none;
+      position: absolute;
+      -webkit-transform-origin: 66% 66%;
+      -moz-transform-origin: 66% 66%;
+      -ms-transform-origin: 66% 66%;
+      -o-transform-origin: 66% 66%;
+      transform-origin: 66% 66%;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+  .filter-panel .date-range {
+    font-size: 12px;
+    cursor: pointer;
+    color: #aaa; }
+  .filter-panel .nice-select {
+    float: none;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    height: 65px;
+    line-height: 65px;
+    font-family: "Cormorant Garamond", serif; }
+    .filter-panel .nice-select:after {
+      border-color: #257eee;
+      width: 10px;
+      height: 10px;
+      top: 40%;
+      right: 15px; }
+    .filter-panel .nice-select.open:after {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .filter-panel .nice-select .list {
+      margin: 0;
+      border-radius: 0;
+      width: 100%;
+      background-color: #1c2035; }
+    .filter-panel .nice-select .option:hover, .filter-panel .nice-select .option.focus, .filter-panel .nice-select .option.selected.focus {
+      background-color: #131624; }
+  .filter-panel .controller {
+    padding: 28px 15px;
+    text-align: center; }
+    .filter-panel .controller .btn {
+      width: 140px; }
+
+.date-picker-wrapper.hotel-calendar {
+  width: 100%;
+  top: 100% !important;
+  left: -1px !important;
+  padding: 0;
+  background-color: #1c2035;
+  border: none; }
+  .date-picker-wrapper.hotel-calendar .month-wrapper {
+    width: 100% !important;
+    background-color: transparent;
+    border: none; }
+    .date-picker-wrapper.hotel-calendar .month-wrapper table {
+      width: 100%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
+        width: 14.2%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day {
+        font-size: 16px;
+        margin-bottom: 5px;
+        border-bottom: 2px solid transparent; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.real-today {
+        background-color: transparent; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.invalid {
+        color: #aaa; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.valid {
+        color: #fff;
+        background-color: #368fff; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering {
+        background-color: green; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.checked {
+        background-color: green !important; }
+  .date-picker-wrapper.hotel-calendar .month-name {
+    color: #fff; }
+  .date-picker-wrapper.hotel-calendar .week-name {
+    display: none; }
+  .date-picker-wrapper.hotel-calendar .event-date {
+    border-color: red !important; }
+  .date-picker-wrapper.hotel-calendar .soldout-date {
+    color: #fff !important;
+    background-color: gray !important; }
+
+.calendar-legend {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 5px; }
+  .calendar-legend .legend-item {
+    text-align: center;
+    color: #fff; }
+  .calendar-legend .item {
+    display: inline-block;
+    width: 20px;
+    height: 20px; }
+  .calendar-legend .item-available {
+    background-color: #368fff; }
+  .calendar-legend .item-event {
+    background-color: #368fff;
+    border-bottom: 2px solid red; }
+  .calendar-legend .item-selected {
+    background-color: green; }
+  .calendar-legend .item-soldout {
+    background-color: gray; }
+  .calendar-legend label {
+    display: block;
+    font-weight: 100;
+    margin-bottom: 0; }
+
+.home-banner {
+  position: relative; }
+  .home-banner .caption {
+    width: 380px;
+    background-color: #1c2035;
+    color: #fff;
+    padding: 20px 42px;
+    position: absolute;
+    top: 52%;
+    left: 0;
+    font-size: 18px; }
+  .home-banner h5 {
+    font-weight: 600;
+    font-size: 16px; }
+  .home-banner img {
+    width: 100%; }

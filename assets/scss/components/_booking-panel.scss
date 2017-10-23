@@ -1,31 +1,15 @@
-// @import '../plugins/daterange/daterangepicker.scss';
-@import 'trungndt.scut';
-
-.row {
-	&.space-0 {
-		@include setRowSpace(0);
-	}
-}
-
-$height: 100px;
-$headerBg: #0a2741;
-header {
-	@include prefix(box-shadow, 0 2px 2px rgba(#000, .2));
-	.logo {
-		height: $height;
-		line-height: $height;
-		background-color: #fff;
-		text-align: center;
-	}
-}
-
+$formSpace: 20px;
 .filter-panel {
-	background-color: $headerBg;
+	background-color: $color-primary;
 	color: #fff;
-	height: $height + 1px;
-	border: 1px solid #777;
+	height: $height;
+	// border: 1px solid #777;
+	&.row.space-0 {
+		margin-right: -15px;
+	}
 	.filter-item {
-		padding: 15px 0 0 0;
+		height: $height;
+		padding: $formSpace 0 0 0;
 		& + .filter-item {
 			border-left: 1px solid #777;
 		}
@@ -33,20 +17,25 @@ header {
 	.label {
 		display: block;
 		text-align: left; 
-		padding: 0 15px;
-		margin-bottom: 10px;
+		padding: 0 $formSpace;
+		font-family: $font-cormorant;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 2px;
 	}
 
 	.night-count {
 		position: absolute;
-		top: 10px;
-		right: 15px;
+		top: 20px;
+		right: 20px;
+		line-height: 1;
+		color: $gray;
 	}
 
 	.date-container {
 		height: $height - 35px;
 		line-height: $height - 35px;
-		padding: 0 15px;
+		padding: 0 $formSpace;
 		position: relative;
 		&:after {
 	    content: '';
@@ -65,17 +54,20 @@ header {
 		}
 	}
 	.date-range {
-		font-size: 20px;
+		font-size: 12px;
 		cursor: pointer;
+		color: $gray;
 	}
 
+	// For Room select
 	.nice-select {
 		float: none;
 		background-color: transparent;
 		border: none;
-		font-size: 20px;
+		font-size: 30px;
 		height: $height - 35px;
 		line-height: $height - 35px;
+		font-family: $font-cormorant;
 		&:after {
 			border-color: #257eee;
 			width: 10px;
@@ -90,22 +82,22 @@ header {
 			margin: 0;
 			border-radius: 0;
 			width: 100%;
-			background-color: $headerBg;
+			background-color: $color-primary;
 		}
 		.option {
 			&:hover,
 			&.focus,
 			&.selected.focus {
-				background-color: darken($headerBg, 5%);
+				background-color: darken($color-primary, 5%);
 			}
 		}
 	}
 
 	.controller {
-		padding: 30px 15px;
+		padding: 28px 15px;
 		text-align: center;
 		.btn {
-			width: 120px;
+			width: 140px;
 		}
 	}
 }
@@ -119,7 +111,7 @@ $color-soldout: gray;
 	top: 100% !important;
 	left: -1px !important;
 	padding: 0;
-	background-color: $headerBg;
+	background-color: $color-primary;
 	border: none;
 	.month-wrapper {
 		width: 100% !important;

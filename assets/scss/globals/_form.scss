@@ -1,0 +1,12 @@
+/// <reference path="../globals/_scut.scss" />
+/// <reference path="../globals/_variables.scss" />
+.btn-info {
+  background-color: $color-info;
+  border: none;
+  &:hover,
+  &:active,
+  &:hover:active,
+  &:focus {
+    background-color: $color-info-darker;
+  }
+}

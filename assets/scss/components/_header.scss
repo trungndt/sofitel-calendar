@@ -1,0 +1,16 @@
+/// <reference path="../globals/_scut.scss" />
+/// <reference path="../globals/_variables.scss" />
+
+header {
+  @include prefix(box-shadow, 0 2px 2px rgba(#000, .2));
+  .logo {
+    height: $height;
+    line-height: $height;
+    background-color: #fff;
+    text-align: center;
+    img {
+      @extend .absolute-center;
+      height: 50%;
+    }
+  }
+}

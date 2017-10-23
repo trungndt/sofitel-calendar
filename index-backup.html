@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-daterange/daterangepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/nice-select/css/nice-select.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+</head>
+
+<body>
+	<header>
+		<div class="row space-0">
+			<div class="col-sm-4">
+				<div class="logo">LOGO HERE</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="row space-0 filter-panel">
+					<div class="col-sm-4 filter-item">
+							<div class="label">DATES</div>
+							<div class="night-count"></div>
+							<div class="date-container">
+								<div type="text" class="date-range" id="dateRange">Select Date</div>
+							</div>
+					</div>
+					<div class="col-sm-2 filter-item">
+						<div class="label">ROOMS</div>
+						<select class="nice-select">
+							<option>01</option>
+							<option>02</option>
+							<option>03</option>
+						</select>
+					</div>
+					<div class="col-sm-2 filter-item">
+						<div class="label">GUESTS</div>
+						<select class="nice-select">
+							<option>01</option>
+							<option>02</option>
+							<option>03</option>
+						</select>
+					</div>
+					<div class="col-sm-4">
+						<div class="controller">
+							<button class="btn btn-primary">Search</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<template id="tmpLegend">
+			<div class="calendar-legend">
+				<div class="row space-0">
+					<div class="col-xs-3 legend-item">
+						<div class="item item-available"></div>
+						<label>Available</label>
+					</div>
+					<div class="col-xs-3 legend-item">
+						<div class="item item-event"></div>
+						<label>Event</label>
+					</div>
+					<div class="col-xs-3 legend-item">
+						<div class="item item-selected"></div>
+						<label>Selected</label>
+					</div>
+					<div class="col-xs-3 legend-item">
+						<div class="item item-soldout"></div>
+						<label>Sold out</label>
+					</div>
+				</div>
+			</div>
+		</template>
+	</header>
+	
+
+	<script type="text/javascript" src="assets/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<!-- <script type="text/javascript" src="assets/plugins/daterange/daterangepicker.js"></script> -->
+	<script type="text/javascript" src="assets/plugins/jquery-daterange/jquery.daterangepicker.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/nice-select/js/jquery.nice-select.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
