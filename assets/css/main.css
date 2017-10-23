@@ -650,6 +650,35 @@ header {
   background-color: #1c2035;
   color: #fff;
   height: 100px; }
+  .filter-panel .drop-panel, .filter-panel .date-container, .filter-panel .nice-select.select-transparent, .filter-panel .guest-display {
+    height: 65px;
+    line-height: 65px;
+    padding: 0 20px; }
+  .filter-panel .lbl-cormo, .filter-panel .nice-select.select-transparent, .filter-panel .guest-display {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px; }
+  .filter-panel .down-arrow:after, .filter-panel .date-container:after, .filter-panel .guest-display:after {
+    content: '';
+    border-bottom: 2px solid #257eee;
+    border-right: 2px solid #257eee;
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    right: 20px;
+    display: block;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    -webkit-transform-origin: 66% 66%;
+    -moz-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    -o-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
   .filter-panel.row.space-0 {
     margin-right: -15px; }
   .filter-panel .filter-item {
@@ -672,63 +701,81 @@ header {
     line-height: 1;
     color: #aaa; }
   .filter-panel .date-container {
-    height: 65px;
-    line-height: 65px;
-    padding: 0 20px;
     position: relative; }
-    .filter-panel .date-container:after {
-      content: '';
-      border-bottom: 2px solid #257eee;
-      border-right: 2px solid #257eee;
-      width: 10px;
-      height: 10px;
-      top: 40%;
-      right: 20px;
-      display: block;
-      margin-top: -4px;
-      pointer-events: none;
-      position: absolute;
-      -webkit-transform-origin: 66% 66%;
-      -moz-transform-origin: 66% 66%;
-      -ms-transform-origin: 66% 66%;
-      -o-transform-origin: 66% 66%;
-      transform-origin: 66% 66%;
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg); }
   .filter-panel .date-range {
     font-size: 12px;
     cursor: pointer;
     color: #aaa; }
-  .filter-panel .nice-select {
+    .filter-panel .date-range span {
+      font-family: "Cormorant Garamond", serif;
+      color: #fff;
+      font-size: 20px; }
+  .filter-panel select.nice-select {
+    display: none; }
+  .filter-panel .nice-select.select-transparent {
     float: none;
     background-color: transparent;
-    border: none;
-    font-size: 30px;
-    height: 65px;
-    line-height: 65px;
-    font-family: "Cormorant Garamond", serif; }
-    .filter-panel .nice-select:after {
+    border: none; }
+    .filter-panel .nice-select.select-transparent:after {
       border-color: #257eee;
       width: 10px;
       height: 10px;
       top: 40%;
       right: 15px; }
-    .filter-panel .nice-select.open:after {
+    .filter-panel .nice-select.select-transparent.open:after {
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       -o-transform: rotate(45deg);
       transform: rotate(45deg); }
-    .filter-panel .nice-select .list {
+    .filter-panel .nice-select.select-transparent .list {
       margin: 0;
       border-radius: 0;
       width: 100%;
-      background-color: #1c2035; }
-    .filter-panel .nice-select .option:hover, .filter-panel .nice-select .option.focus, .filter-panel .nice-select .option.selected.focus {
+      background-color: #1c2035;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1); }
+    .filter-panel .nice-select.select-transparent .option:hover, .filter-panel .nice-select.select-transparent .option.focus, .filter-panel .nice-select.select-transparent .option.selected.focus {
       background-color: #131624; }
+  .filter-panel .guest-display {
+    position: relative;
+    cursor: pointer; }
+  .filter-panel .guest-dropdown-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    display: none; }
+  .filter-panel .guest-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 400px;
+    color: #fff;
+    background-color: #1c2035;
+    padding: 20px;
+    font-size: 12px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    display: none; }
+    .filter-panel .guest-dropdown h5 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 12px; }
+    .filter-panel .guest-dropdown .guest-select-group {
+      margin-bottom: 15px; }
+    .filter-panel .guest-dropdown .guest-select {
+      display: inline-block;
+      width: 30%; }
+  .filter-panel .nice-select.select-white {
+    color: #000;
+    border: none;
+    height: 30px;
+    line-height: 30px; }
   .filter-panel .controller {
     padding: 28px 15px;
     text-align: center; }
@@ -738,10 +785,12 @@ header {
 .date-picker-wrapper.hotel-calendar {
   width: 100%;
   top: 100% !important;
-  left: -1px !important;
+  left: 0px !important;
   padding: 0;
   background-color: #1c2035;
   border: none; }
+  .date-picker-wrapper.hotel-calendar .prev, .date-picker-wrapper.hotel-calendar .next {
+    display: none; }
   .date-picker-wrapper.hotel-calendar .month-wrapper {
     width: 100% !important;
     background-color: transparent;
@@ -750,30 +799,54 @@ header {
       width: 100%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
         width: 14.2%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .month-name {
+        font-size: 12px;
+        font-weight: 500;
+        color: #fff; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .week-name th {
+        font-size: 11px;
+        font-weight: 400;
+        color: #fff;
+        padding-bottom: 10px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day {
-        font-size: 16px;
-        margin-bottom: 5px;
-        border-bottom: 2px solid transparent; }
+        font-size: 14px;
+        margin-bottom: 0;
+        padding: 15px 0 16px;
+        position: relative; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.real-today {
         background-color: transparent; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.invalid {
-        color: #aaa; }
+        color: #555; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.valid {
-        color: #fff;
-        background-color: #368fff; }
+        color: #fff; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected {
+        background-color: #368fff !important;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected {
+        background-color: #368fff !important;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering {
-        background-color: green; }
+        background-color: rgba(54, 143, 255, 0.2); }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.checked {
-        background-color: green !important; }
-  .date-picker-wrapper.hotel-calendar .month-name {
-    color: #fff; }
-  .date-picker-wrapper.hotel-calendar .week-name {
-    display: none; }
-  .date-picker-wrapper.hotel-calendar .event-date {
-    border-color: red !important; }
+        background-color: rgba(54, 143, 255, 0.2); }
+  .date-picker-wrapper.hotel-calendar .event-date:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #e74515;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .date-picker-wrapper.hotel-calendar .soldout-date {
-    color: #fff !important;
-    background-color: gray !important; }
+    color: #555 !important; }
 
 .calendar-legend {
   background-color: rgba(255, 255, 255, 0.2);
@@ -785,15 +858,13 @@ header {
     display: inline-block;
     width: 20px;
     height: 20px; }
-  .calendar-legend .item-available {
-    background-color: #368fff; }
   .calendar-legend .item-event {
     background-color: #368fff;
     border-bottom: 2px solid red; }
   .calendar-legend .item-selected {
     background-color: green; }
   .calendar-legend .item-soldout {
-    background-color: gray; }
+    color: #555; }
   .calendar-legend label {
     display: block;
     font-weight: 100;

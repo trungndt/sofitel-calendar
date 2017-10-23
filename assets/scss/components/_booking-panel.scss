@@ -4,6 +4,37 @@ $formSpace: 20px;
 	color: #fff;
 	height: $height;
 	// border: 1px solid #777;
+
+	// Helper
+	.drop-panel {
+		height: $height - 35px;
+		line-height: $height - 35px;
+		padding: 0 $formSpace;
+	}
+	.lbl-cormo {
+		font: {
+			family: $font-cormorant;
+			size: 30px;
+		}
+	}
+	.down-arrow {
+		&:after {
+	    content: '';
+			border-bottom: 2px solid #257eee;
+	    border-right: 2px solid #257eee;
+			width: 10px;
+			height: 10px;
+			top: 40%;
+			right: 20px;
+	    display: block;
+	    margin-top: -4px;
+	    pointer-events: none;
+	    position: absolute;
+	    @include prefix(transform-origin, 66% 66%);
+	    @include prefix(transform, rotate(45deg));
+		}
+	}
+
 	&.row.space-0 {
 		margin-right: -15px;
 	}
@@ -33,41 +64,31 @@ $formSpace: 20px;
 	}
 
 	.date-container {
-		height: $height - 35px;
-		line-height: $height - 35px;
-		padding: 0 $formSpace;
 		position: relative;
-		&:after {
-	    content: '';
-			border-bottom: 2px solid #257eee;
-	    border-right: 2px solid #257eee;
-			width: 10px;
-			height: 10px;
-			top: 40%;
-			right: 20px;
-	    display: block;
-	    margin-top: -4px;
-	    pointer-events: none;
-	    position: absolute;
-	    @include prefix(transform-origin, 66% 66%);
-	    @include prefix(transform, rotate(45deg));
-		}
+		@extend .drop-panel;
+		@extend .down-arrow;
 	}
 	.date-range {
 		font-size: 12px;
 		cursor: pointer;
 		color: $gray;
+		span {
+			font-family: $font-cormorant;
+			color: #fff;
+			font-size: 20px;
+		}
 	}
 
 	// For Room select
-	.nice-select {
+	select.nice-select {
+		display: none;
+	}
+	.nice-select.select-transparent {
 		float: none;
 		background-color: transparent;
 		border: none;
-		font-size: 30px;
-		height: $height - 35px;
-		line-height: $height - 35px;
-		font-family: $font-cormorant;
+		@extend .drop-panel;
+		@extend .lbl-cormo;
 		&:after {
 			border-color: #257eee;
 			width: 10px;
@@ -83,6 +104,7 @@ $formSpace: 20px;
 			border-radius: 0;
 			width: 100%;
 			background-color: $color-primary;
+			@include prefix(transform, scale(1));
 		}
 		.option {
 			&:hover,
@@ -91,6 +113,56 @@ $formSpace: 20px;
 				background-color: darken($color-primary, 5%);
 			}
 		}
+	}
+
+	// For Guest Select 
+	.guest-panel {
+	}
+	.guest-display {
+		position: relative;
+		@extend .drop-panel;
+		@extend .lbl-cormo;
+		@extend .down-arrow;
+		cursor: pointer;
+	}
+	.guest-dropdown-backdrop {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9;
+		display: none;
+	}
+	.guest-dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+		width: 400px;
+		color: #fff;
+		background-color: $color-primary;
+		padding: 20px;
+		font-size: 12px;
+		box-shadow: 3px 3px 10px rgba(0,0,0,.5);
+		display: none;
+		h5 {
+			font-family: $font-cormorant;
+			font-size: 12px;
+		}
+		.guest-select-group {
+			margin-bottom: 15px;
+		}
+		.guest-select {
+			display: inline-block;
+			width: 30%;
+		}
+	}
+	.nice-select.select-white {
+		color: #000;
+		border: none;
+		height: 30px;
+		line-height: 30px;
 	}
 
 	.controller {
@@ -104,61 +176,104 @@ $formSpace: 20px;
 
 $color-valid: #368fff;
 $color-selected: green;
-$color-soldout: gray;
+$color-invalid: #555;
+$color-event: #e74515;
 
 .date-picker-wrapper.hotel-calendar {
 	width: 100%;
 	top: 100% !important;
-	left: -1px !important;
+	left: 0px !important;
 	padding: 0;
 	background-color: $color-primary;
 	border: none;
+	.prev, .next {
+		display: none;
+	}
 	.month-wrapper {
 		width: 100% !important;
 		background-color: transparent;
 		border: none;
+
 		table {
 			width: 100%;
 			th, td {
 				width: 14.2%;
 			}
+			.month-name {
+				font-size: 12px;
+				font-weight: 500;
+				color: #fff;
+			}
+			.week-name th {
+				font-size: 11px;
+				font-weight: 400;
+				color: #fff;
+				padding-bottom: 10px;
+			}
 			.day {
-				font-size: 16px;
-				margin-bottom: 5px;
-				border-bottom: 2px solid transparent;
+				font-size: 14px;
+				// margin-bottom: 5px;
+				// border-bottom: 2px solid transparent;
+				margin-bottom: 0;
+				padding: 15px 0 16px;
+				position: relative;
 			}
 			.day.real-today {
 				background-color: transparent;
 			}
 			.day.toMonth.invalid {
-				color: #aaa;
+				color: $color-invalid;
 			}
 			.day.toMonth.valid { 
 				color: #fff;
-				background-color: $color-valid;
+				// background-color: $color-valid;
+			}
+			.day.toMonth.first-date-selected {
+				// background-color: rgba($color-valid, .2) !important;
+				background-color: $color-valid !important;
+				border-top-left-radius: 50%;
+				border-bottom-left-radius: 50%;
+				// &:after {
+				// 	content: '';
+				// 	width: 100%;
+				// 	height: 100%;
+				// 	position: absolute;
+				// 	top: 0;
+				// 	left: 0;
+				// 	border-radius: 50%;
+				// 	background-color: $color-valid;
+				// }
+			}
+			.day.toMonth.last-date-selected {
+				background-color: $color-valid !important;
+				border-top-right-radius: 50%;
+				border-bottom-right-radius: 50%;
 			}
 			.day.toMonth.hovering {
-				background-color: $color-selected;
+				background-color: rgba($color-valid, .2);
 			}
 			.day.toMonth.checked {
-				background-color: $color-selected !important;
+				// background-color: $color-selected !important;
+				background-color: rgba($color-valid, .2);
 			}
 		}
 	}
-	.month-name {
-		color: #fff;
-	}
-	.week-name {
-		display: none;
-	}
-
-	.event-date {
+	
+	.event-date:after {
 		// border-bottom: 2px solid red;
-		border-color: red !important;
+		content: '';
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background-color: $color-event;
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		@include prefix(transform, translateX(-50%));
 	}
 	.soldout-date {
-		color: #fff !important;
-		background-color: $color-soldout !important;
+		// color: #fff !important;
+		color: $color-invalid !important;
 	}
 }
 
@@ -174,9 +289,7 @@ $color-soldout: gray;
 		width: 20px;
 		height: 20px;
 	}
-	.item-available {
-		background-color: $color-valid;
-	}
+	
 	.item-event {
 		background-color: $color-valid;
 		border-bottom: 2px solid red;
@@ -185,7 +298,7 @@ $color-soldout: gray;
 		background-color: $color-selected;
 	}
 	.item-soldout {
-		background-color: $color-soldout;
+		color: $color-invalid;
 	}
 	label {
 		display: block;

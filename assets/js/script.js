@@ -21,7 +21,7 @@ $(function() {
       // this.innerHTML = res;
       var startObj = moment(_startDate);
       var endObj = moment(_endDate);
-      this.innerHTML = startObj.format(_DATEFORMAT) + ' - ' + endObj.format(_DATEFORMAT);
+      this.innerHTML = '<span>' + startObj.format(_DATEFORMAT) + ' - ' + endObj.format(_DATEFORMAT) + '</span>';
       // Count day
       var count = endObj.diff(startObj, 'days');
       var nightCount = count + ' night' + (count <= 1 ? '' : 's');
@@ -31,16 +31,16 @@ $(function() {
       var _this = moment(t).format(_DATEFORMAT_2);
       var soldoutDate = [
         '2017/10/10',
-        '2017/10/11',
-        '2017/10/12',
+        '2017/10/27',
+        '2017/10/28',
         
         '2017/10/21',
         '2017/10/22',
       ];
       var eventDate = [
-        '2017/10/19',
-        '2017/10/20',
-        '2017/10/21'
+        '2017/10/28',
+        '2017/10/29',
+        '2017/10/30',
       ];
       var valid = soldoutDate.indexOf(_this) < 0;
 
@@ -71,9 +71,42 @@ $(function() {
   $(document).on('click', '.date-range', function() {
     if (isCalendarOpen) {
       $('#dateRange').data('dateRangePicker').close();
-      
     }
   });
+
+  $(document).on('click', '.guest-display', function() {
+    $('.guest-dropdown-backdrop').toggle();
+    $('.guest-dropdown').slideToggle(100);
+  });
+
+  $(document).on('click', '.guest-dropdown-backdrop', function() {
+    $(this).hide();
+    $('.guest-dropdown').slideToggle(100);
+  });
+
+  $(document).on('change', '[data-select="adults"]', function() {
+    updateGuestCount();
+  });
+
+  $(document).on('change', '[data-select="children"]', function() {
+    updateGuestCount();
+    var $me = $(this);
+    var count = parseInt($me.val());
+    var $container = $('#guestGroupChildren');
+    $container.empty();
+    for (var i = 1; i <= count; i++) {
+      var $guest = $($('#tmpGuestSelect').html().trim());
+      $guest.find('p').html('CHILD ' + i + ' AGE');
+      $guest.find('.nice-select').niceSelect();
+      $container.append($guest);
+    }
+  });
+
+  var updateGuestCount = function() {
+    var count = parseInt($('[data-select="adults"]').val()) + parseInt($('[data-select="children"]').val());
+    if (count < 10) count = '0' + count;
+    $('.guest-display').html(count);
+  }
 
   $('.nice-select').niceSelect();
 });
