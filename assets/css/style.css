@@ -681,7 +681,8 @@ header {
       -o-transform: rotate(45deg);
       transform: rotate(45deg); }
   .filter-panel .date-range {
-    font-size: 20px; }
+    font-size: 20px;
+    cursor: pointer; }
   .filter-panel .nice-select {
     float: none;
     background-color: transparent;
@@ -708,6 +709,11 @@ header {
       background-color: #0a2741; }
     .filter-panel .nice-select .option:hover, .filter-panel .nice-select .option.focus, .filter-panel .nice-select .option.selected.focus {
       background-color: #071a2b; }
+  .filter-panel .controller {
+    padding: 30px 15px;
+    text-align: center; }
+    .filter-panel .controller .btn {
+      width: 120px; }
 
 .date-picker-wrapper.hotel-calendar {
   width: 100%;

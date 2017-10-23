@@ -66,6 +66,7 @@ header {
 	}
 	.date-range {
 		font-size: 20px;
+		cursor: pointer;
 	}
 
 	.nice-select {
@@ -97,6 +98,14 @@ header {
 			&.selected.focus {
 				background-color: darken($headerBg, 5%);
 			}
+		}
+	}
+
+	.controller {
+		padding: 30px 15px;
+		text-align: center;
+		.btn {
+			width: 120px;
 		}
 	}
 }

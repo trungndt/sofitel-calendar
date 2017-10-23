@@ -1,7 +1,7 @@
 $(function() {
   var _DATEFORMAT = 'DD MMM';
   var _DATEFORMAT_2 = 'YYYY/MM/DD';
-
+  var isCalendarOpen = false;
   $('#dateRange').dateRangePicker({
     // autoClose: false,
     format: _DATEFORMAT_2,
@@ -10,6 +10,7 @@ $(function() {
     extraClass: 'hotel-calendar',
     // alwaysOpen: true,
     startDate: moment(new Date()).format(_DATEFORMAT_2),
+    minDays: 2,
     singleMonth: true,
     showShortcuts: false,
     showTopbar: false,
@@ -22,7 +23,8 @@ $(function() {
       var endObj = moment(_endDate);
       this.innerHTML = startObj.format(_DATEFORMAT) + ' - ' + endObj.format(_DATEFORMAT);
       // Count day
-      var nightCount = endObj.diff(startObj, 'days') + ' nights';
+      var count = endObj.diff(startObj, 'days');
+      var nightCount = count + ' night' + (count <= 1 ? '' : 's');
       $('.night-count').html(nightCount);
     },
     beforeShowDay: function(t) {
@@ -31,6 +33,7 @@ $(function() {
         '2017/10/10',
         '2017/10/11',
         '2017/10/12',
+        
         '2017/10/21',
         '2017/10/22',
       ];
@@ -51,11 +54,26 @@ $(function() {
       // var _tooltip = valid ? '' : 'disabled';
       return [valid, _class];
     }
-  }).bind('datepicker-open',function(){
+  })
+  .bind('datepicker-open',function(){
 		var $footer = $('.hotel-calendar .footer');
 		$footer.html($('#tmpLegend').html().trim());
 		// console.log('before open');
-	});
+	})
+  .bind('datepicker-opened',function(){
+    var $footer = $('.hotel-calendar .footer');
+    isCalendarOpen = true;
+  })
+  .bind('datepicker-closed',function(){
+    isCalendarOpen = false;
+  });
+
+  $(document).on('click', '.date-range', function() {
+    if (isCalendarOpen) {
+      $('#dateRange').data('dateRangePicker').close();
+      
+    }
+  });
 
   $('.nice-select').niceSelect();
 });
