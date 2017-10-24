@@ -70,4 +70,29 @@
 			font-size: 12px;
 		}
 	}
+
+	.expandable {
+		.shown-content {
+			margin-bottom: 20px;
+			&:after {
+				content: '...';
+				display: block;
+			}
+			&.inline-content:after {
+				display: inline;
+			}
+		}
+		.extension {
+			display: none;
+		}
+
+		&.expanding {
+			.extension {
+				display: inline;
+			}
+			.shown-content:after {
+				content: none;
+			}
+		}
+	}
 }

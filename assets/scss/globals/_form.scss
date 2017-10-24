@@ -2,6 +2,11 @@
 /// <reference path="../globals/_variables.scss" />
 .icon {
   display: inline-block;
+  &.icon-arrow-down {
+    width: 15px;
+    height: 8px;
+    @include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
+  }
   &.icon-zoomin {
     width: 15px;
     height: 15px;
@@ -31,6 +36,9 @@
 a {
   color: $color-info;
   @include transition();
+  &:focus {
+    text-decoration: none;
+  }
 }
 
 .font-13 {
@@ -68,6 +76,9 @@ h5 {
     @include prefix(transform-origin, 0);
     @include prefix(transform, none);
     @include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
+  }
+  .list {
+    width: 100%;
   }
 }
 

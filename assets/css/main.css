@@ -618,6 +618,10 @@ $content-fonts: (
 
 .icon {
   display: inline-block; }
+  .icon.icon-arrow-down {
+    width: 15px;
+    height: 8px;
+    background: url("../images/icon/chevron-down.png") 0 0/100% 100% no-repeat; }
   .icon.icon-zoomin {
     width: 15px;
     height: 15px;
@@ -643,6 +647,8 @@ a {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
+  a:focus {
+    text-decoration: none; }
 
 .font-13 {
   font-size: 13px; }
@@ -679,6 +685,8 @@ h5 {
     -o-transform: none;
     transform: none;
     background: url("../images/icon/chevron-down.png") 0 0/100% 100% no-repeat; }
+  .nice-select.select-white .list {
+    width: 100%; }
 
 .form-inline label {
   font-weight: normal; }
@@ -1100,3 +1108,16 @@ footer {
     .room-item .price small {
       margin-left: 5px;
       font-size: 12px; }
+  .room-item .expandable .shown-content {
+    margin-bottom: 20px; }
+    .room-item .expandable .shown-content:after {
+      content: '...';
+      display: block; }
+    .room-item .expandable .shown-content.inline-content:after {
+      display: inline; }
+  .room-item .expandable .extension {
+    display: none; }
+  .room-item .expandable.expanding .extension {
+    display: inline; }
+  .room-item .expandable.expanding .shown-content:after {
+    content: none; }

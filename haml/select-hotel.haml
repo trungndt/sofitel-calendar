@@ -105,18 +105,23 @@
                     .row
                       .col-sm-6
                         %h5.text-cormo DESCRIPTION
-                        %div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                        %br/
-                        %a{href:"#"} More details
+                        .expandable
+                          .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                          %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
                       .col-sm-6
                         %h5.text-cormo INCLUDES
-                        %div Breakfast
-                        %div Free Parking
-                        %div Free Internet
-                        %div ...
-                        %br/
-                        %a{href:"#"} More inclusive
-                    
+                        .expandable
+                          .shown-content
+                            %div Breakfast
+                            %div Free Parking
+                            %div Free Internet
+                            .extension
+                              %div Hanger
+                              %div Unlimited mobile data with
+                              %div Handy phone
+                              %div Laundry
+                          %a{href:"#", data-action:"expand", data-expand:"Less inclusive", data-collapse:"More inclusive"} More inclusive
             .block-price
               %h5.text-cormo AVG. NIGHTLY RATE
               .price $300
@@ -124,46 +129,54 @@
               %p.mb-60 Excluding Taxes & Fees
 
               %button.btn.btn-info.btn-block.btn-lg Select Room
-        .room-item
-            .block-main
-              .row
-                .col-sm-4.pb-30
-                  .img-container
-                    .img-wrapper{style:"background-image:url('assets/images/room-02.png')"}
-                    %a{href:"#"}
-                      %i.icon.icon-zoomin
-                  .pt-10.pl-5
-                    %h5.text-cormo MAX. GUESTS
-                    %div
-                      %i.icon.icon-guest
-                      %i.icon.icon-guest
-                .col-sm-8
-                  .block-info
-                    %h4.title Premier Deluxe Room
-                      %span.status-tag Available
-                    .row
-                      .col-sm-6
-                        %h5.text-cormo DESCRIPTION
-                        %div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-                        %br/
-                        %a{href:"#"} More details
-                      .col-sm-6
-                        %h5.text-cormo INCLUDES
-                        %div Breakfast
-                        %div Free Parking
-                        %div Free Internet
-                        %div ...
-                        %br/
-                        %a{href:"#"} More inclusive
-                    
-            .block-price
-              %h5.text-cormo AVG. NIGHTLY RATE
-              .price $385
-                %small SGD
-              %p.mb-60 Excluding Taxes & Fees
-
-              %button.btn.btn-info.btn-block.btn-lg Select Room
               
+          .room-item
+              .block-main
+                .row
+                  .col-sm-4.pb-30
+                    .img-container
+                      .img-wrapper{style:"background-image:url('assets/images/room-02.png')"}
+                      %a{href:"#"}
+                        %i.icon.icon-zoomin
+                    .pt-10.pl-5
+                      %h5.text-cormo MAX. GUESTS
+                      %div
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                  .col-sm-8
+                    .block-info
+                      %h4.title Deluxe King Room
+                        %span.status-tag Available
+                      .row
+                        .col-sm-6
+                          %h5.text-cormo DESCRIPTION
+                          .expandable
+                            .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                              %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                            %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
+                        .col-sm-6
+                          %h5.text-cormo INCLUDES
+                          .expandable
+                            .shown-content
+                              %div Breakfast
+                              %div Free Parking
+                              %div Free Internet
+                              .extension
+                                %div Hanger
+                                %div Unlimited mobile data with
+                                %div Handy phone
+                                %div Laundry
+                            %a{href:"#", data-action:"expand", data-expand:"Less inclusive", data-collapse:"More inclusive"} More inclusive
+              .block-price
+                %h5.text-cormo AVG. NIGHTLY RATE
+                .price $385
+                  %small SGD
+                %p.mb-60 Excluding Taxes & Fees
+
+                %button.btn.btn-info.btn-block.btn-lg Select Room
+        %br/
+        %a{href:"#"} View Room Policies
+          %i.icon.icon-arrow-down.ml-15
     %footer
       %div
         %strong Tech Expo: 2018.&nbsp;
