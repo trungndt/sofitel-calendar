@@ -2,6 +2,7 @@
 /// <reference path="../globals/_variables.scss" />
 .home-banner {
   position: relative;
+  padding: 0;
   .caption {
   	width: 380px;
   	background-color: $color-primary;

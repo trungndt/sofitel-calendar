@@ -622,6 +622,15 @@ $content-fonts: (
   .btn-info:hover, .btn-info:active, .btn-info:hover:active, .btn-info:focus {
     background-color: #0086e6; }
 
+.text-info {
+  color: #0095FF; }
+
+a {
+  color: #0095FF; }
+
+.font-13 {
+  font-size: 13px; }
+
 body {
   font-family: "Work Sans", sans-serif; }
 
@@ -631,6 +640,9 @@ body {
   .row.space-0 > [class*="col"] {
     padding-left: 0px;
     padding-right: 0px; }
+
+section {
+  padding: 30px 0; }
 
 header {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -645,6 +657,26 @@ header {
     text-align: center; }
     header .logo img {
       height: 50%; }
+
+footer {
+  padding: 20px;
+  text-align: center;
+  -webkit-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
+  -moz-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
+  -ms-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
+  -o-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
+  box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5); }
+  footer .dot-divider {
+    margin: 0 10px; }
+    footer .dot-divider:after {
+      content: '';
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #000;
+      display: inline-block;
+      position: relative;
+      top: -2px; }
 
 .filter-panel {
   background-color: #1c2035;
@@ -794,7 +826,9 @@ header {
   .date-picker-wrapper.hotel-calendar .month-wrapper {
     width: 100% !important;
     background-color: transparent;
-    border: none; }
+    border: none;
+    padding-top: 20px;
+    padding-bottom: 20px; }
     .date-picker-wrapper.hotel-calendar .month-wrapper table {
       width: 100%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
@@ -820,17 +854,17 @@ header {
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.valid {
         color: #fff; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected {
-        background-color: #368fff !important;
+        background-color: #1198FD !important;
         border-top-left-radius: 50%;
         border-bottom-left-radius: 50%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected {
-        background-color: #368fff !important;
+        background-color: #1198FD !important;
         border-top-right-radius: 50%;
         border-bottom-right-radius: 50%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering {
-        background-color: rgba(54, 143, 255, 0.2); }
+        background-color: rgba(17, 152, 253, 0.2); }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.checked {
-        background-color: rgba(54, 143, 255, 0.2); }
+        background-color: rgba(17, 152, 253, 0.2); }
   .date-picker-wrapper.hotel-calendar .event-date:after {
     content: '';
     width: 5px;
@@ -838,7 +872,7 @@ header {
     border-radius: 50%;
     background-color: #e74515;
     position: absolute;
-    bottom: -3px;
+    bottom: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -849,29 +883,48 @@ header {
     color: #555 !important; }
 
 .calendar-legend {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 10px 5px; }
   .calendar-legend .legend-item {
     text-align: center;
     color: #fff; }
   .calendar-legend .item {
     display: inline-block;
-    width: 20px;
-    height: 20px; }
-  .calendar-legend .item-event {
-    background-color: #368fff;
-    border-bottom: 2px solid red; }
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 10px; }
+  .calendar-legend .item-event:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #e74515;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
   .calendar-legend .item-selected {
-    background-color: green; }
-  .calendar-legend .item-soldout {
+    background-color: #1198FD;
+    border-radius: 50%;
+    font-weight: bold; }
+  .calendar-legend .item-unavailable {
     color: #555; }
   .calendar-legend label {
     display: block;
     font-weight: 100;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    font-size: 11px; }
 
 .home-banner {
-  position: relative; }
+  position: relative;
+  padding: 0; }
   .home-banner .caption {
     width: 380px;
     background-color: #1c2035;

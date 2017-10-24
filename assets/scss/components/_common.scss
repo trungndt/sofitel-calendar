@@ -9,3 +9,7 @@ body {
     @include setRowSpace(0);
   }
 }
+
+section {
+	padding: 30px 0;
+}

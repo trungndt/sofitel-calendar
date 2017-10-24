@@ -174,7 +174,7 @@ $formSpace: 20px;
 	}
 }
 
-$color-valid: #368fff;
+$color-valid: #1198FD;
 $color-selected: green;
 $color-invalid: #555;
 $color-event: #e74515;
@@ -193,6 +193,8 @@ $color-event: #e74515;
 		width: 100% !important;
 		background-color: transparent;
 		border: none;
+		padding-top: 20px;
+		padding-bottom: 20px;
 
 		table {
 			width: 100%;
@@ -267,7 +269,7 @@ $color-event: #e74515;
 		border-radius: 50%;
 		background-color: $color-event;
 		position: absolute;
-		bottom: -3px;
+		bottom: 0;
 		left: 50%;
 		@include prefix(transform, translateX(-50%));
 	}
@@ -278,31 +280,48 @@ $color-event: #e74515;
 }
 
 .calendar-legend {
-	background-color: rgba(#fff, .2);
+	background-color: rgba(#fff, .05);
 	padding: 10px 5px;
+
 	.legend-item {
 		text-align: center;
 		color: #fff;
 	}
 	.item {
+		$itemSize: 26px;
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: $itemSize;
+		height: $itemSize;
+		line-height: $itemSize;
+		position: relative;
+		font-size: 14px;
+		margin-bottom: 10px;
 	}
 	
-	.item-event {
-		background-color: $color-valid;
-		border-bottom: 2px solid red;
+	.item-event:after {
+		// border-bottom: 2px solid red;
+		content: '';
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background-color: $color-event;
+		position: absolute;
+		bottom: -5px;
+		left: 50%;
+		@include prefix(transform, translateX(-50%));
 	}
 	.item-selected {
-		background-color: $color-selected;
+		background-color: $color-valid;
+		border-radius: 50%;
+		font-weight: bold;
 	}
-	.item-soldout {
+	.item-unavailable {
 		color: $color-invalid;
 	}
 	label {
 		display: block;
 		font-weight: 100;
 		margin-bottom: 0;
+		font-size: 11px;
 	}
 }
