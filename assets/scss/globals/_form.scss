@@ -1,5 +1,18 @@
 /// <reference path="../globals/_scut.scss" />
 /// <reference path="../globals/_variables.scss" />
+.icon {
+  display: inline-block;
+  &.icon-zoomin {
+    width: 15px;
+    height: 15px;
+    @include bgImage('../images/icon/icon-search.png', 0 0, 100% 100%);
+  }
+  &.icon-guest {
+    width: 11px;
+    height: 10px;
+    @include bgImage('../images/icon/icon-guest.png', 0 0, 100% 100%);
+  }
+}
 .btn-info {
   background-color: $color-info;
   border: none;
@@ -17,8 +30,53 @@
 
 a {
   color: $color-info;
+  @include transition();
 }
 
 .font-13 {
   font-size: 13px;
+}
+
+.text-cormo {
+  font-family: $font-cormorant;
+}
+
+h1, h2, h3, h4, h5 {
+  &.text-cormo {
+    font-weight: 600;
+  }
+}
+
+h5 {
+  font-size: 12px;
+}
+
+.nice-select.select-white {
+  color: #000;
+  // border: none;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 40px;
+  float: none;
+  &:after {
+    width: 14px;
+    height: 9px;
+    // top: 40%;
+    right: 8px;
+    border: none;
+    @include prefix(transform-origin, 0);
+    @include prefix(transform, none);
+    @include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
+  }
+}
+
+.form-inline {
+  label {
+    font-weight: normal;
+  }
+  .nice-select.select-white {
+    min-width: 220px;
+    display: inline-block;
+  }
 }

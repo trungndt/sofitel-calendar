@@ -22,7 +22,7 @@ $formSpace: 20px;
 	    content: '';
 			border-bottom: 2px solid #257eee;
 	    border-right: 2px solid #257eee;
-			width: 10px;
+			width: 16px;
 			height: 10px;
 			top: 40%;
 			right: 20px;
@@ -30,8 +30,10 @@ $formSpace: 20px;
 	    margin-top: -4px;
 	    pointer-events: none;
 	    position: absolute;
-	    @include prefix(transform-origin, 66% 66%);
-	    @include prefix(transform, rotate(45deg));
+	    border: none;
+	    @include prefix(transform-origin, 0);
+	    @include prefix(transform, none);
+	    @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
 		}
 	}
 
@@ -91,10 +93,14 @@ $formSpace: 20px;
 		@extend .lbl-cormo;
 		&:after {
 			border-color: #257eee;
-			width: 10px;
+			width: 16px;
 			height: 10px;
 			top: 40%;
 			right: 15px;
+			border: none;
+	    @include prefix(transform-origin, 0);
+	    @include prefix(transform, none);
+	    @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
 		}
 		&.open:after {
 			@include prefix(transform, rotate(45deg));
@@ -158,12 +164,6 @@ $formSpace: 20px;
 			width: 30%;
 		}
 	}
-	.nice-select.select-white {
-		color: #000;
-		border: none;
-		height: 30px;
-		line-height: 30px;
-	}
 
 	.controller {
 		padding: 28px 15px;
@@ -178,6 +178,7 @@ $color-valid: #1198FD;
 $color-selected: green;
 $color-invalid: #555;
 $color-event: #e74515;
+$circleSize: 26px;
 
 .date-picker-wrapper.hotel-calendar {
 	width: 100%;
@@ -201,6 +202,9 @@ $color-event: #e74515;
 			th, td {
 				width: 14.2%;
 			}
+			td {
+				padding: 9px 0;
+			}
 			.month-name {
 				font-size: 12px;
 				font-weight: 500;
@@ -217,8 +221,9 @@ $color-event: #e74515;
 				// margin-bottom: 5px;
 				// border-bottom: 2px solid transparent;
 				margin-bottom: 0;
-				padding: 15px 0 16px;
+				padding: 6px 0 7px;
 				position: relative;
+				@include transition();
 			}
 			.day.real-today {
 				background-color: transparent;
@@ -230,32 +235,42 @@ $color-event: #e74515;
 				color: #fff;
 				// background-color: $color-valid;
 			}
+			.date-circle {
+				position: relative;
+				background-color: rgba($color-valid, .2) !important;
+				&:before {
+					content: '';
+					width: $circleSize;
+					height: $circleSize;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					@include prefix(transform, translate(-50%, -50%));
+					border-radius: $circleSize/2;
+					background-color: $color-valid;
+					z-index: -1;
+				}
+			}
 			.day.toMonth.first-date-selected {
-				// background-color: rgba($color-valid, .2) !important;
-				background-color: $color-valid !important;
-				border-top-left-radius: 50%;
-				border-bottom-left-radius: 50%;
-				// &:after {
-				// 	content: '';
-				// 	width: 100%;
-				// 	height: 100%;
-				// 	position: absolute;
-				// 	top: 0;
-				// 	left: 0;
-				// 	border-radius: 50%;
-				// 	background-color: $color-valid;
-				// }
+				border-top-left-radius: $circleSize/2;
+				border-bottom-left-radius: $circleSize/2;
+				width: calc((100% - $circleSize)/2);
+				@extend .date-circle;
 			}
 			.day.toMonth.last-date-selected {
-				background-color: $color-valid !important;
-				border-top-right-radius: 50%;
-				border-bottom-right-radius: 50%;
+				border-top-right-radius: $circleSize/2;
+				border-bottom-right-radius: $circleSize/2;
+				@extend .date-circle;
 			}
 			.day.toMonth.hovering {
 				background-color: rgba($color-valid, .2);
+				&:hover {
+					border-top-right-radius: $circleSize/2;
+					border-bottom-right-radius: $circleSize/2;
+					@extend .date-circle;
+				}
 			}
 			.day.toMonth.checked {
-				// background-color: $color-selected !important;
 				background-color: rgba($color-valid, .2);
 			}
 		}
@@ -269,7 +284,7 @@ $color-event: #e74515;
 		border-radius: 50%;
 		background-color: $color-event;
 		position: absolute;
-		bottom: 0;
+		bottom: -3px;
 		left: 50%;
 		@include prefix(transform, translateX(-50%));
 	}
@@ -288,11 +303,11 @@ $color-event: #e74515;
 		color: #fff;
 	}
 	.item {
-		$itemSize: 26px;
+		
 		display: inline-block;
-		width: $itemSize;
-		height: $itemSize;
-		line-height: $itemSize;
+		width: $circleSize;
+		height: $circleSize;
+		line-height: $circleSize;
 		position: relative;
 		font-size: 14px;
 		margin-bottom: 10px;

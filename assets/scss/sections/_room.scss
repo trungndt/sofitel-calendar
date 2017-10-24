@@ -1,0 +1,73 @@
+.room-item {
+	border: 1px solid #e0e0e0;
+	border-bottom: 4px solid $color-info;
+	margin-bottom: 40px;
+	position: relative;
+	.block-main {
+		width: 75%;
+		padding: 0 15px;
+	}
+	.padding-0 {
+		padding: 0;
+	}
+	.img-container {
+		margin: 0 -15px;
+		@include ratioWrapper(11, 8);
+		a {
+			display: block;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #777;
+			text-align: center;
+			padding: 12px 8px;
+			&:hover {
+				background-color: #555;
+			}
+		}
+	}
+	.img-wrapper {
+		background: {
+			size: cover;
+			position: center;
+			repeat: no-repeat;
+		}
+	}
+	.icon-guest {
+		margin-right: 5px;
+	}
+	.block-info {
+		padding: 20px 5px 30px;
+	}
+	.title {
+		margin-bottom: 30px;
+	}
+	.status-tag {
+		margin-left: 20px;
+		padding: 5px 12px;
+		color: $color-info;
+		border: 1px solid $color-info;
+		font-size: 12px;
+		border-radius: 4px;
+		position: relative;
+		top: -3px;
+	}
+	.block-price {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 25%;
+		padding: 20px 15px;
+		background-color: rgba($color-info, .1);
+	}
+	.price {
+		font-size: 30px;
+		small {
+			margin-left: 5px;
+			font-size: 12px;
+		}
+	}
+}

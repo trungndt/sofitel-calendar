@@ -20,13 +20,13 @@ gulp.task('haml-one', function () {
 gulp.task('haml', function () {
   return gulp.src('haml/**/*.haml')
     .pipe(haml())
-    .pipe(gulp.dest('./html'));
+    .pipe(gulp.dest('.'));
 });
 
 gulp.task('watch', function () {
     gulp.watch('assets/scss/**/*.scss', ['sass']);
     // Other watchers
-    gulp.watch('haml/**/*.haml', ['haml', 'haml-one']);
+    gulp.watch('haml/**/*.haml', ['haml']);
 });
  
 gulp.task('default', function () {

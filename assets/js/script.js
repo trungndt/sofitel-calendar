@@ -38,9 +38,9 @@ $(function() {
         '2017/10/22',
       ];
       var eventDate = [
-        '2017/10/28',
-        '2017/10/29',
-        '2017/10/30',
+        '2017/10/24',
+        '2017/10/25',
+        '2017/10/26',
       ];
       var valid = soldoutDate.indexOf(_this) < 0;
 
@@ -110,3 +110,16 @@ $(function() {
 
   $('.nice-select').niceSelect();
 });
+
+function initMap() {
+  return;
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}

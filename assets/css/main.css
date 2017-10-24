@@ -616,6 +616,17 @@ $content-fonts: (
     display: table-cell;
     vertical-align: middle; }
 
+.icon {
+  display: inline-block; }
+  .icon.icon-zoomin {
+    width: 15px;
+    height: 15px;
+    background: url("../images/icon/icon-search.png") 0 0/100% 100% no-repeat; }
+  .icon.icon-guest {
+    width: 11px;
+    height: 10px;
+    background: url("../images/icon/icon-guest.png") 0 0/100% 100% no-repeat; }
+
 .btn-info {
   background-color: #0095FF;
   border: none; }
@@ -626,10 +637,55 @@ $content-fonts: (
   color: #0095FF; }
 
 a {
-  color: #0095FF; }
+  color: #0095FF;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
 
 .font-13 {
   font-size: 13px; }
+
+.text-cormo {
+  font-family: "Cormorant Garamond", serif; }
+
+h1.text-cormo, h2.text-cormo, h3.text-cormo, h4.text-cormo, h5.text-cormo {
+  font-weight: 600; }
+
+h5 {
+  font-size: 12px; }
+
+.nice-select.select-white {
+  color: #000;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 40px;
+  float: none; }
+  .nice-select.select-white:after {
+    width: 14px;
+    height: 9px;
+    right: 8px;
+    border: none;
+    -webkit-transform-origin: 0;
+    -moz-transform-origin: 0;
+    -ms-transform-origin: 0;
+    -o-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    background: url("../images/icon/chevron-down.png") 0 0/100% 100% no-repeat; }
+
+.form-inline label {
+  font-weight: normal; }
+
+.form-inline .nice-select.select-white {
+  min-width: 220px;
+  display: inline-block; }
 
 body {
   font-family: "Work Sans", sans-serif; }
@@ -693,7 +749,7 @@ footer {
     content: '';
     border-bottom: 2px solid #257eee;
     border-right: 2px solid #257eee;
-    width: 10px;
+    width: 16px;
     height: 10px;
     top: 40%;
     right: 20px;
@@ -701,16 +757,18 @@ footer {
     margin-top: -4px;
     pointer-events: none;
     position: absolute;
-    -webkit-transform-origin: 66% 66%;
-    -moz-transform-origin: 66% 66%;
-    -ms-transform-origin: 66% 66%;
-    -o-transform-origin: 66% 66%;
-    transform-origin: 66% 66%;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg); }
+    border: none;
+    -webkit-transform-origin: 0;
+    -moz-transform-origin: 0;
+    -ms-transform-origin: 0;
+    -o-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
   .filter-panel.row.space-0 {
     margin-right: -15px; }
   .filter-panel .filter-item {
@@ -750,10 +808,22 @@ footer {
     border: none; }
     .filter-panel .nice-select.select-transparent:after {
       border-color: #257eee;
-      width: 10px;
+      width: 16px;
       height: 10px;
       top: 40%;
-      right: 15px; }
+      right: 15px;
+      border: none;
+      -webkit-transform-origin: 0;
+      -moz-transform-origin: 0;
+      -ms-transform-origin: 0;
+      -o-transform-origin: 0;
+      transform-origin: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+      background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
     .filter-panel .nice-select.select-transparent.open:after {
       -webkit-transform: rotate(45deg);
       -moz-transform: rotate(45deg);
@@ -803,11 +873,6 @@ footer {
     .filter-panel .guest-dropdown .guest-select {
       display: inline-block;
       width: 30%; }
-  .filter-panel .nice-select.select-white {
-    color: #000;
-    border: none;
-    height: 30px;
-    line-height: 30px; }
   .filter-panel .controller {
     padding: 28px 15px;
     text-align: center; }
@@ -833,6 +898,8 @@ footer {
       width: 100%; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
         width: 14.2%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table td {
+        padding: 9px 0; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .month-name {
         font-size: 12px;
         font-weight: 500;
@@ -845,24 +912,49 @@ footer {
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day {
         font-size: 14px;
         margin-bottom: 0;
-        padding: 15px 0 16px;
-        position: relative; }
+        padding: 6px 0 7px;
+        position: relative;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.real-today {
         background-color: transparent; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.invalid {
         color: #555; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.valid {
         color: #fff; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .date-circle, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover {
+        position: relative;
+        background-color: rgba(17, 152, 253, 0.2) !important; }
+        .date-picker-wrapper.hotel-calendar .month-wrapper table .date-circle:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover:before {
+          content: '';
+          width: 26px;
+          height: 26px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          border-radius: 13px;
+          background-color: #1198FD;
+          z-index: -1; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected {
-        background-color: #1198FD !important;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%; }
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+        width: calc((100% - $circleSize)/2); }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected {
-        background-color: #1198FD !important;
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%; }
+        border-top-right-radius: 13px;
+        border-bottom-right-radius: 13px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering {
         background-color: rgba(17, 152, 253, 0.2); }
+        .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover {
+          border-top-right-radius: 13px;
+          border-bottom-right-radius: 13px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.checked {
         background-color: rgba(17, 152, 253, 0.2); }
   .date-picker-wrapper.hotel-calendar .event-date:after {
@@ -872,7 +964,7 @@ footer {
     border-radius: 50%;
     background-color: #e74515;
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -939,3 +1031,72 @@ footer {
     font-size: 16px; }
   .home-banner img {
     width: 100%; }
+
+.room-item {
+  border: 1px solid #e0e0e0;
+  border-bottom: 4px solid #0095FF;
+  margin-bottom: 40px;
+  position: relative; }
+  .room-item .block-main {
+    width: 75%;
+    padding: 0 15px; }
+  .room-item .padding-0 {
+    padding: 0; }
+  .room-item .img-container {
+    margin: 0 -15px;
+    position: relative; }
+    .room-item .img-container:before {
+      content: '';
+      display: block;
+      padding-top: 72.72727%; }
+    .room-item .img-container > *:first-child {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden; }
+    .room-item .img-container a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #777;
+      text-align: center;
+      padding: 12px 8px; }
+      .room-item .img-container a:hover {
+        background-color: #555; }
+  .room-item .img-wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .room-item .icon-guest {
+    margin-right: 5px; }
+  .room-item .block-info {
+    padding: 20px 5px 30px; }
+  .room-item .title {
+    margin-bottom: 30px; }
+  .room-item .status-tag {
+    margin-left: 20px;
+    padding: 5px 12px;
+    color: #0095FF;
+    border: 1px solid #0095FF;
+    font-size: 12px;
+    border-radius: 4px;
+    position: relative;
+    top: -3px; }
+  .room-item .block-price {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    padding: 20px 15px;
+    background-color: rgba(0, 149, 255, 0.1); }
+  .room-item .price {
+    font-size: 30px; }
+    .room-item .price small {
+      margin-left: 5px;
+      font-size: 12px; }
