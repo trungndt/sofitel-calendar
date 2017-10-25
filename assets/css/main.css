@@ -559,6 +559,99 @@ $content-fonts: (
 .pl-100 {
   padding-left: 100px !important; }
 
+.font-10 {
+  font-size: 10px; }
+
+.font-11 {
+  font-size: 11px; }
+
+.font-12 {
+  font-size: 12px; }
+
+.font-13 {
+  font-size: 13px; }
+
+.font-14 {
+  font-size: 14px; }
+
+.font-15 {
+  font-size: 15px; }
+
+.font-16 {
+  font-size: 16px; }
+
+.font-17 {
+  font-size: 17px; }
+
+.font-18 {
+  font-size: 18px; }
+
+.font-19 {
+  font-size: 19px; }
+
+.font-20 {
+  font-size: 20px; }
+
+.font-21 {
+  font-size: 21px; }
+
+.font-22 {
+  font-size: 22px; }
+
+.font-23 {
+  font-size: 23px; }
+
+.font-24 {
+  font-size: 24px; }
+
+.font-25 {
+  font-size: 25px; }
+
+.font-26 {
+  font-size: 26px; }
+
+.font-27 {
+  font-size: 27px; }
+
+.font-28 {
+  font-size: 28px; }
+
+.font-29 {
+  font-size: 29px; }
+
+.font-30 {
+  font-size: 30px; }
+
+.font-31 {
+  font-size: 31px; }
+
+.font-32 {
+  font-size: 32px; }
+
+.font-33 {
+  font-size: 33px; }
+
+.font-34 {
+  font-size: 34px; }
+
+.font-35 {
+  font-size: 35px; }
+
+.font-36 {
+  font-size: 36px; }
+
+.font-37 {
+  font-size: 37px; }
+
+.font-38 {
+  font-size: 38px; }
+
+.font-39 {
+  font-size: 39px; }
+
+.font-40 {
+  font-size: 40px; }
+
 .vertical-center,
 .horizontal-center {
   position: absolute; }
@@ -631,11 +724,40 @@ $content-fonts: (
     height: 10px;
     background: url("../images/icon/icon-guest.png") 0 0/100% 100% no-repeat; }
 
+.btn {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.control-group .btn {
+  min-width: 130px; }
+
+.control-group .btn + .btn {
+  margin-left: 15px; }
+
 .btn-info {
   background-color: #0095FF;
   border: none; }
   .btn-info:hover, .btn-info:active, .btn-info:hover:active, .btn-info:focus {
     background-color: #0086e6; }
+
+.btn-info-bordered {
+  background-color: transparent;
+  border: 1px solid #0095FF;
+  color: #0095FF; }
+  .btn-info-bordered:hover, .btn-info-bordered:active, .btn-info-bordered:hover:active, .btn-info-bordered:focus {
+    background-color: #0095FF;
+    color: #fff; }
+
+.btn-gray {
+  background-color: #777;
+  color: #fff;
+  border: none; }
+  .btn-gray:hover, .btn-gray:active, .btn-gray:hover:active, .btn-gray:focus {
+    background-color: #5e5e5e;
+    color: #fff; }
 
 .text-info {
   color: #0095FF; }
@@ -647,8 +769,9 @@ a {
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
-  a:focus {
-    text-decoration: none; }
+  a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: #0086e6; }
 
 .font-13 {
   font-size: 13px; }
@@ -1067,6 +1190,11 @@ footer {
   border-bottom: 4px solid #0095FF;
   margin-bottom: 40px;
   position: relative; }
+  .room-item.sold-out {
+    border-bottom-color: #777; }
+    .room-item.sold-out .status-tag {
+      color: #777;
+      border: 1px solid #777; }
   .room-item .block-main {
     width: 75%;
     padding: 0 15px; }
@@ -1111,12 +1239,12 @@ footer {
   .room-item .status-tag {
     margin-left: 20px;
     padding: 5px 12px;
-    color: #0095FF;
-    border: 1px solid #0095FF;
     font-size: 12px;
     border-radius: 4px;
     position: relative;
-    top: -3px; }
+    top: -3px;
+    color: #0095FF;
+    border: 1px solid #0095FF; }
   .room-item .block-price {
     position: absolute;
     top: 0;
@@ -1148,3 +1276,31 @@ footer {
   text-align: center;
   color: rgba(28, 32, 53, 0.5);
   padding: 20px 0; }
+
+[data-toggle="collapse"] {
+  padding-right: 30px;
+  position: relative; }
+  [data-toggle="collapse"]:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    background: url("../images/icon/chevron-down.png") 0 0/100% 100% no-repeat; }
+  [data-toggle="collapse"][aria-expanded="true"]:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.policy-collapse {
+  margin-top: 30px;
+  line-height: 30px; }

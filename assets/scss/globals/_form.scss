@@ -18,6 +18,20 @@
     @include bgImage('../images/icon/icon-guest.png', 0 0, 100% 100%);
   }
 }
+
+
+.btn {
+  @include transition();
+}
+.control-group {
+  .btn {
+    min-width: 130px;
+  }
+  .btn + .btn {
+    margin-left: 15px;
+  }
+}
+
 .btn-info {
   background-color: $color-info;
   border: none;
@@ -29,6 +43,32 @@
   }
 }
 
+.btn-info-bordered {
+  background-color: transparent;
+  border: 1px solid $color-info;
+  color: $color-info;
+  &:hover,
+  &:active,
+  &:hover:active,
+  &:focus {
+    background-color: $color-info;
+    color: #fff;
+  }
+}
+
+.btn-gray {
+  background-color: $color-default;
+  color: #fff;
+  border: none;
+  &:hover,
+  &:active,
+  &:hover:active,
+  &:focus {
+    background-color: $color-default-darker;
+    color: #fff;
+  }
+}
+
 .text-info {
   color: $color-info;
 }
@@ -36,8 +76,11 @@
 a {
   color: $color-info;
   @include transition();
-  &:focus {
+  &:hover,
+  &:focus,
+  &:active {
     text-decoration: none;
+    color: $color-info-darker;
   }
 }
 

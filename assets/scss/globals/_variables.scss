@@ -1,10 +1,12 @@
 // Color set
 $gray: #aaa;
+$darkGray: #777;
 $blue: #1c2035;
 $lightBlue: #0095ff;;
 $cyan: #0095FF;
-$color-default: $gray;
-$color-default-lighter: lighten($gray, 10%);
+$color-default: $darkGray;
+$color-default-lighter: lighten($color-default, 10%);
+$color-default-darker: darken($color-default, 10%);
 $color-main: $blue;
 $color-primary: $blue;
 $color-primary-darker: darken($color-primary, 5%);

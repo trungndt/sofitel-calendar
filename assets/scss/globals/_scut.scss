@@ -310,6 +310,13 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 	}
 }
 
+// Font size help
+@for $i from 10 through 40 {
+	.font-#{$i} {
+		font-size: #{$i}px;
+	}
+}
+
 @mixin ratioWrapper($X, $Y) {
 	position: relative;
 	&:before {

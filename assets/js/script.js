@@ -136,6 +136,9 @@ $(function() {
 });
 
 function initMap() {
+  var mapElem = document.getElementById('map');
+  if (mapElem == null)
+    return;
   var centerPoint = {lat: 1.2757783, lng: 103.8457845};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,

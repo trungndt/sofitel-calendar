@@ -3,6 +3,14 @@
 	border-bottom: 4px solid $color-info;
 	margin-bottom: 40px;
 	position: relative;
+	&.sold-out {
+		border-bottom-color: $color-default;
+
+		.status-tag {
+			color: $color-default;
+			border: 1px solid $color-default;
+		}
+	}
 	.block-main {
 		width: 75%;
 		padding: 0 15px;
@@ -44,16 +52,19 @@
 	.title {
 		margin-bottom: 30px;
 	}
+
+	
 	.status-tag {
 		margin-left: 20px;
 		padding: 5px 12px;
-		color: $color-info;
-		border: 1px solid $color-info;
 		font-size: 12px;
 		border-radius: 4px;
 		position: relative;
 		top: -3px;
+		color: $color-info;
+		border: 1px solid $color-info;
 	}
+	
 	.block-price {
 		position: absolute;
 		top: 0;
@@ -101,4 +112,28 @@
 	text-align: center;
 	color: rgba(#1C2035, .5);
 	padding: 20px 0;
+}
+
+[data-toggle="collapse"] {
+	padding-right: 30px;
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		width: 15px;
+		height: 8px;
+		position: absolute;
+		right: 0;
+		top: 5px;
+		@include transition();
+		@include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
+	}
+	&[aria-expanded="true"]:after {
+		@include prefix(transform, rotate(180deg));
+	}
+}
+
+.policy-collapse {
+	margin-top: 30px;
+	line-height: 30px;
 }

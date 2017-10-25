@@ -57,20 +57,10 @@
     
     %section
       .container
-        %h3.mb-30 The Kingsmen Hotel
-        .row
-          .col-sm-7
-            %p.text-info.font-13 2 Kingsmen Road, Singapore 099891
-            %p.font-13 
-              %strong Phone: 
-               +65 6733 8388
-            %br/
-            %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, disco...
-            
-            %a{href:"#"} Read more...
-          .col-sm-5
-            .google-map-container
-              #map
+        %h3 Enhance your stay at The Kingsmen Hotel
+        %p Get the most of our stay by upgrading your room at a special rate.
+        %p
+          %strong Your selection was: Deluxe King Room at an average nightly rate of 300 SGD / night.
     %hr/
     %section.pt-0
       .container
@@ -176,50 +166,10 @@
                 %p.mb-60 Excluding Taxes & Fees
 
                 %button.btn.btn-info.btn-block.btn-lg Select Room
-          .room-item.sold-out
-              .block-main
-                .row
-                  .col-sm-4.pb-30
-                    .img-container
-                      .img-wrapper{style:"background-image:url('assets/images/room-01.png')"}
-                      %a{href:"#"}
-                        %i.icon.icon-zoomin
-                    .pt-10.pl-5
-                      %h5.text-cormo MAX. GUESTS
-                      %div
-                        %i.icon.icon-guest
-                        %i.icon.icon-guest
-                  .col-sm-8
-                    .block-info
-                      %h4.title Deluxe King Room
-                        %span.status-tag Sold Out
-                      .row
-                        .col-sm-6
-                          %h5.text-cormo DESCRIPTION
-                          .expandable
-                            .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                            %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
-                        .col-sm-6
-                          %h5.text-cormo INCLUDES
-                          .expandable
-                            .shown-content
-                              %div Breakfast
-                              %div Free Parking
-                              %div Free Internet
-                              .extension
-                                %div Hanger
-                                %div Unlimited mobile data with
-                                %div Handy phone
-                                %div Laundry
-                            %a{href:"#", data-action:"expand", data-expand:"See less", data-collapse:"More inclusive"} More inclusive
-              .block-price
-                %h5.text-cormo AVG. NIGHTLY RATE
-                .price $385
-                  %small SGD
-                %p.mb-60 Excluding Taxes & Fees
+        .control-group
+          %button.btn.btn-gray.btn-lg Back
+          %button.btn.btn-info-bordered.btn-lg Skip
 
-                %button.btn.btn-gray.btn-block.btn-lg{disabled:"disabled"} Sold Out
         %br/
         %a{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
         .collapse.policy-collapse#collapsePolicy
@@ -249,4 +199,4 @@
 %script{src:"assets/plugins/jquery-daterange/jquery.daterangepicker.min.js", type:"text/javascript"}
 %script{src:"assets/plugins/nice-select/js/jquery.nice-select.min.js", type:"text/javascript"}
 %script{src:"assets/js/script.js", type:"text/javascript"}
--# %script{async, defer, src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXXYRn0TSBjPl0n-EJEkgnNsOJvXOObg&callback=initMap"}
+%script{async, defer, src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXXYRn0TSBjPl0n-EJEkgnNsOJvXOObg&callback=initMap"}
