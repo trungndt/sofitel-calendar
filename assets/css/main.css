@@ -668,7 +668,12 @@ h5 {
   line-height: 30px;
   padding-left: 10px;
   padding-right: 40px;
-  float: none; }
+  float: none;
+  -webkit-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
+  -moz-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
+  -ms-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
+  -o-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
+  box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset; }
   .nice-select.select-white:after {
     width: 14px;
     height: 9px;
@@ -707,6 +712,9 @@ body {
 
 section {
   padding: 30px 0; }
+
+.bg-lightgray {
+  background-color: #fafafa; }
 
 .google-map-container {
   position: relative; }
@@ -1135,3 +1143,8 @@ footer {
     display: inline; }
   .room-item .expandable.expanding .shown-content:after {
     content: none; }
+
+.msg-empty {
+  text-align: center;
+  color: rgba(28, 32, 53, 0.5);
+  padding: 20px 0; }

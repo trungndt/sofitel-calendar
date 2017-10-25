@@ -67,6 +67,7 @@ h5 {
   padding-left: 10px;
   padding-right: 40px;
   float: none;
+  @include prefix(box-shadow, 0 2px 5px rgba(#e0e0e0, .5) inset);
   &:after {
     width: 14px;
     height: 9px;
