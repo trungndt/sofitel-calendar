@@ -1,0 +1,221 @@
+%html
+  %head
+    %title Kingsmen
+    %meta{charset:"utf-8"}
+    %meta{content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name:"viewport"}
+    %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700|Work+Sans:300,400,500,600,700", rel:"stylesheet"}
+    %link{href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/jquery-daterange/daterangepicker.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
+
+  %body
+    %header.container-fluid
+      .row.space-0
+        .col-sm-3
+          .logo
+            %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
+        .col-sm-9
+          .row.space-0.filter-panel
+            .col-sm-8.col-sm-offset-2
+              .btn-group.step-group
+                %a.btn{href:"#"} Select Room
+                %a.btn.active{href:"#"} Personal Info
+                %a.btn{href:"#"} Travel Info
+                %a.btn{href:"#"} Confirm Details
+            .col-sm-2
+              .btn-group
+                %a.btn Start over
+    %section.bg-lightgray
+      .container
+        %h3.mb-30 Personal Information
+        %br/
+        .row
+          .col-sm-7
+            .panel-group#accordionPersonalInfo{aria-multiselectable:"true"}
+              .panel.panel-info
+                .panel-heading#headingOne
+                  %h4.panel-title
+                    %a{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseOne", aria-expanded:"true"}
+                      Guest 1 (Primary Guest)
+                .panel-collapse.collapse.in#collapseOne
+                  .panel-body
+                    .form-horizontal.form-left
+                      .form-group
+                        %label.control-label.col-sm-3 Salutation
+                        .col-sm-5
+                          %select.nice-select.select-white
+                            %option Select one
+                      .form-group
+                        %label.control-label.col-sm-3 First Name
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Last Name
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+
+                      .form-group
+                        %label.control-label.col-sm-3 Phone Number
+                        .col-sm-4
+                          %input.form-control{type:"text", name:"", placeholder:"Country Code"}
+                        .col-sm-5
+                          %input.form-control{type:"text", name:""}
+
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Email Address
+                        .col-sm-9
+                          %input.form-control{type:"email", name:""}
+                      
+                      .form-group
+                        %label.control-label.col-sm-3 Position / Title
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Organisation
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      
+                      .form-group
+                        %label.control-label.col-sm-3 Address
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 City
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 Region
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      .form-group
+                        %label.control-label.col-sm-3 ZIP/Postcode
+                        .col-sm-3
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 Select Country
+                        .col-sm-9
+                          %select.nice-select.select-white
+                            %option{disabled:"disabled",selected:"selected"} Select Country
+                            %option America
+                            %option England
+                            %option Singapore
+                            %option Vietnam
+              
+              .panel.panel-info
+                .panel-heading#headingTwo
+                  %h4.panel-title
+                    %a{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseTwo", aria-expanded:"true"}
+                      Guest 2
+                .panel-collapse.collapse.in#collapseTwo
+                  .panel-body
+                    .form-horizontal.form-left
+                      .form-group
+                        .col-sm-9.col-sm-offset-3
+                          %input.nice-check.nice-check-sm#ckbCopyPrimary{type:"checkbox", name:""}
+                          %label{for:"ckbCopyPrimary"}.font-13 Use Primary Guest's address and phone
+                      .form-group
+                        %label.control-label.col-sm-3 Salutation
+                        .col-sm-5
+                          %select.nice-select.select-white
+                            %option Select one
+                      .form-group
+                        %label.control-label.col-sm-3 First Name
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Last Name
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+
+                      .form-group
+                        %label.control-label.col-sm-3 Phone Number
+                        .col-sm-4
+                          %input.form-control{type:"text", name:"", placeholder:"Country Code"}
+                        .col-sm-5
+                          %input.form-control{type:"text", name:""}
+
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Email Address
+                        .col-sm-9
+                          %input.form-control{type:"email", name:""}
+                      
+                      .form-group
+                        %label.control-label.col-sm-3 Position / Title
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      .form-group.mb-40
+                        %label.control-label.col-sm-3 Organisation
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      
+                      .form-group
+                        %label.control-label.col-sm-3 Address
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 City
+                        .col-sm-9
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 Region
+                        .col-sm-9
+                          %input.form-control.placeholder-right{type:"text", name:"", placeholder:"optional"}
+                      .form-group
+                        %label.control-label.col-sm-3 ZIP/Postcode
+                        .col-sm-3
+                          %input.form-control{type:"text", name:""}
+                      .form-group
+                        %label.control-label.col-sm-3 Select Country
+                        .col-sm-9
+                          %select.nice-select.select-white
+                            %option{disabled:"disabled",selected:"selected"} Select Country
+                            %option America
+                            %option England
+                            %option Singapore
+                            %option Vietnam
+                     
+            .panel.panel-default.panel-rect
+              .panel-body
+                %input.nice-check.nice-check-sm#ckbSubscribe{type:"checkbox", name:""}
+                %label{for:"ckbSubscribe"} Yes! Send me high-value offers and special promotions from The Kingsmen Hotel Singapore.
+
+            .panel.panel-default.panel-rect
+              .panel-body
+                %p Are you a Le Club AccorHotels member?
+                .nice-check-inline
+                  .nice-check-item
+                    %input.nice-check.nice-check-sm.rounded#rdMemberYes{type:"radio", name:"club-member"}
+                    %label{for:"rdMemberYes"} Yes
+                  .nice-check-item
+                    %input.nice-check.nice-check-sm.rounded#rdMemberNo{type:"radio", name:"club-member"}
+                    %label{for:"rdMemberNo"} No
+                %input.nice-check.nice-check-sm#ckbSignUpClub{type:"checkbox", name:""}
+                %label{for:"ckbSignUpClub"} I want to sign up for the Le Club AccorHotels
+
+            .panel.panel-default.panel-rect
+              .panel-body
+                %h4.mb-30 Additional Remarks
+
+                %h5 Message to the hotel
+                %textarea.form-control{rows:4, placeholder:"Fill in any special request"}
+          .col-sm-4
+        
+    %footer
+      %div
+        %strong Tech Expo: 2018.&nbsp;
+        %a{href:"#"} Get Tickets for Event
+      %div
+        Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
+        %a{href:"#"} Privacy Policy
+        %span.dot-divider
+        %a{href:"#"} Terms & Conditions.
+
+
+%script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
+%script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/jquery-daterange/jquery.daterangepicker.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/nice-select/js/jquery.nice-select.min.js", type:"text/javascript"}
+%script{src:"assets/js/script.js", type:"text/javascript"}
+-# %script{async, defer, src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXXYRn0TSBjPl0n-EJEkgnNsOJvXOObg&callback=initMap"}

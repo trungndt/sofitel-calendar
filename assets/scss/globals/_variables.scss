@@ -2,7 +2,7 @@
 $gray: #aaa;
 $darkGray: #777;
 $blue: #1c2035;
-$lightBlue: #0095ff;;
+$lightBlue: #0095ff;
 $cyan: #0095FF;
 $color-default: $darkGray;
 $color-default-lighter: lighten($color-default, 10%);
@@ -15,6 +15,7 @@ $color-info: $cyan;
 $color-info-darker: darken($color-info, 5%);
 
 $height: 100px;
+$formRadius: 5px;
 //Font
 $font-size: 14px;
 $font-cormorant: 'Cormorant Garamond', serif;
@@ -70,6 +71,3 @@ $content-fonts: (
   $xsDesktop: 12px,
   $largeScreen: 16px
 );
-
-$nav-height-mobile: 60px;
-$path: 'assets/images/';

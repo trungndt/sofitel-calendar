@@ -9,6 +9,8 @@ $(function() {
   var isCalendarOpen = false;
 
   var initDatePicker = function() {
+    if (!$('#dateRange').length)
+      return;
     $('#dateRange').dateRangePicker({
       // autoClose: false,
       format: _DATEFORMAT_2,

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*============================================================================
   #General Variables
 ==============================================================================*/
@@ -709,6 +710,92 @@ $content-fonts: (
     display: table-cell;
     vertical-align: middle; }
 
+/* Base for label styling */
+.nice-check:checked, .nice-check:not(:checked) {
+  position: absolute;
+  left: -9999px; }
+  .nice-check:checked + label, .nice-check:not(:checked) + label {
+    position: relative;
+    padding-left: 50px;
+    cursor: pointer;
+    font-weight: 100;
+    height: 30px;
+    line-height: 30px; }
+    .nice-check:checked + label:before, .nice-check:not(:checked) + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #0095FF;
+      background: #fff; }
+    .nice-check:checked + label:after, .nice-check:not(:checked) + label:after {
+      content: '✔';
+      position: absolute;
+      top: 0;
+      left: 9px;
+      line-height: 30px;
+      font-size: 14px;
+      color: #0095FF;
+      transition: all .1s; }
+
+.nice-check:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); }
+
+.nice-check:checked + label:after {
+  opacity: 1;
+  transform: scale(1); }
+
+.nice-check:focus {
+  outline: none !important; }
+
+.nice-check:disabled:not(:checked) + label:before,
+.nice-check:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd; }
+
+.nice-check:disabled:checked + label:after {
+  color: #999; }
+
+.nice-check:disabled + label {
+  color: #aaa; }
+
+.nice-check.rounded:checked + label:before,
+.nice-check.rounded:not(:checked) + label:before {
+  border-radius: 50%; }
+
+.nice-check.rounded:checked + label:after,
+.nice-check.rounded:not(:checked) + label:after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background-color: #0095FF;
+  border-radius: 50%;
+  top: 2px; }
+
+.nice-check.nice-check-sm:not(:checked) + label,
+.nice-check.nice-check-sm:checked + label {
+  height: 30px;
+  line-height: 15px;
+  padding-left: 28px;
+  position: relative;
+  top: 7px; }
+  .nice-check.nice-check-sm:not(:checked) + label:before,
+  .nice-check.nice-check-sm:checked + label:before {
+    width: 15px;
+    height: 15px; }
+  .nice-check.nice-check-sm:not(:checked) + label:after,
+  .nice-check.nice-check-sm:checked + label:after {
+    line-height: 15px;
+    left: 2px; }
+
+.nice-check.nice-check-sm:checked + label:after {
+  opacity: 1;
+  transform: scale(0.8); }
+
 .icon {
   display: inline-block; }
   .icon.icon-arrow-down {
@@ -792,11 +879,12 @@ h5 {
   padding-left: 10px;
   padding-right: 40px;
   float: none;
-  -webkit-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
-  -moz-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
-  -ms-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
-  -o-box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset;
-  box-shadow: 0 2px 5px rgba(224, 224, 224, 0.5) inset; }
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -moz-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -ms-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -o-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset; }
   .nice-select.select-white:after {
     width: 14px;
     height: 9px;
@@ -813,6 +901,8 @@ h5 {
     -o-transform: none;
     transform: none;
     background: url("../images/icon/chevron-down.png") 0 0/100% 100% no-repeat; }
+  .nice-select.select-white .option.selected {
+    font-weight: 500; }
   .nice-select.select-white .list {
     width: 100%; }
 
@@ -822,6 +912,34 @@ h5 {
 .form-inline .nice-select.select-white {
   min-width: 220px;
   display: inline-block; }
+
+.form-horizontal.form-left {
+  padding-right: 40px; }
+  .form-horizontal.form-left .control-label {
+    font-weight: 400;
+    text-align: left; }
+  .form-horizontal.form-left .placeholder-right::-webkit-input-placeholder {
+    text-align: right; }
+  .form-horizontal.form-left .placeholder-right:-moz-placeholder {
+    text-align: right; }
+  .form-horizontal.form-left .placeholder-right::-moz-placeholder {
+    /* Mozilla Firefox 19+ but I'm not sure about working */
+    text-align: right; }
+  .form-horizontal.form-left .placeholder-right:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    text-align: right; }
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -moz-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -ms-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  -o-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
+  box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset; }
+
+input.form-control {
+  height: 30px; }
 
 body {
   font-family: "Work Sans", sans-serif; }
@@ -838,6 +956,8 @@ section {
 
 .bg-lightgray {
   background-color: #fafafa; }
+  .bg-lightgray + hr {
+    margin-top: 0; }
 
 .google-map-container {
   position: relative; }
@@ -853,12 +973,50 @@ section {
     left: 0;
     overflow: hidden; }
 
+.panel-group .panel-info {
+  border-radius: 0;
+  border: none;
+  margin-bottom: 30px; }
+  .panel-group .panel-info > .panel-heading {
+    color: #000;
+    border: 0;
+    border-bottom: 4px solid #0095FF;
+    padding: 0;
+    border-radius: 0; }
+  .panel-group .panel-info .panel-title {
+    font-size: 18px; }
+  .panel-group .panel-info .panel-title > a {
+    display: block;
+    padding: 15px 15px 15px 56px; }
+    .panel-group .panel-info .panel-title > a[data-toggle="collapse"]:after {
+      right: auto;
+      left: 20px;
+      background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
+  .panel-group .panel-info .panel-body {
+    padding: 40px 20px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 0; }
+
+.panel-default.panel-rect {
+  border-color: #e0e0e0;
+  border-radius: 0; }
+  .panel-default.panel-rect .panel-body {
+    padding: 20px; }
+
+.nice-check-inline .nice-check-item {
+  display: inline-block; }
+
+.nice-check-inline .nice-check-item + .nice-check-item {
+  margin-left: 50px; }
+
 header {
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); }
+  -webkit-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
+  -moz-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
+  -ms-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
+  -o-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
+  box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
+  position: relative;
+  z-index: 1; }
   header .logo {
     height: 100px;
     line-height: 100px;
@@ -866,6 +1024,26 @@ header {
     text-align: center; }
     header .logo img {
       height: 50%; }
+  header .btn-group {
+    margin-top: 30px; }
+    header .btn-group .btn {
+      color: #fff; }
+
+.btn-group.step-group .btn {
+  border: 1px solid #444;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 7px 15px;
+  background-color: #333649; }
+  .btn-group.step-group .btn.active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    background-color: #0095FF; }
+  .btn-group.step-group .btn.active ~ .btn {
+    background-color: transparent; }
 
 footer {
   padding: 20px;
@@ -1287,7 +1465,7 @@ footer {
     height: 8px;
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 40%;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
