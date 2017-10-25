@@ -284,7 +284,7 @@ $circleSize: 26px;
 		border-radius: 50%;
 		background-color: $color-event;
 		position: absolute;
-		bottom: -3px;
+		bottom: -10px;
 		left: 50%;
 		@include prefix(transform, translateX(-50%));
 	}
