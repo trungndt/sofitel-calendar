@@ -1,0 +1,65 @@
+// Accordion
+.panel-group .panel-info {
+	border-radius: 0;
+	border: none;
+	margin-bottom: 30px;
+	& > .panel-heading {
+		color: #000;
+		border: 0;
+		border-bottom: 4px solid $color-info;
+		padding: 0;
+		border-radius: 0;
+	}
+	.panel-title {
+		font-size: 18px;
+	}
+	.panel-title > a {
+		display: block;
+		padding: 15px 15px 15px 56px;
+		&[data-toggle="collapse"] {
+			&:after {
+				right: auto;
+				left: 20px;
+				@include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
+			}
+		}
+	}
+
+	.panel-body {
+		padding: 40px 20px 20px;
+		border: 1px solid #e0e0e0;
+		border-top: 0;
+	}
+}
+
+.panel-default.panel-rect {
+	border-color: #e0e0e0;
+	border-radius: 0;
+	.panel-body {
+		padding: 20px;
+	}
+}
+
+.nice-check-inline {
+	.nice-check-item {
+		display: inline-block;
+	}
+	.nice-check-item + .nice-check-item {
+		margin-left: 50px;
+	}
+}
+
+.panel-rsv-brief {
+	@include prefix(box-shadow, 1px 2px 4px rgba(#555, .5));
+	padding: 20px;
+	h5 {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	.img-container {
+		margin: 0 -20px 20px;
+	}
+	.img-responsive {
+		width: 100%;
+	}
+}

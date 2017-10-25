@@ -31,7 +31,7 @@
         %h3.mb-30 Personal Information
         %br/
         .row
-          .col-sm-7
+          .col-sm-8
             .panel-group#accordionPersonalInfo{aria-multiselectable:"true"}
               .panel.panel-info
                 .panel-heading#headingOne
@@ -199,7 +199,33 @@
 
                 %h5 Message to the hotel
                 %textarea.form-control{rows:4, placeholder:"Fill in any special request"}
-          .col-sm-4
+            .control-group
+              %button.btn.btn-gray.btn-lg Back
+              %button.btn.btn-info.btn-lg Next
+          .col-sm-4.pl-40
+            .panel-rsv-brief
+              %h5.text-cormo YOUR RESERVATION
+              .img-container
+                %img.img-responsive{src:"assets/images/room-01.png"}
+              .row.mb-15
+                .col-sm-6 Selected room:
+                .col-sm-6 Deluxe King Room
+              .row
+                .col-sm-6 Check-in:
+                .col-sm-6 23 June 2017
+              .row
+                .col-sm-6 Check-out:
+                .col-sm-6 25 June 2017
+              .row.row.mb-15
+                .col-sm-6 Total nights:
+                .col-sm-6 03
+              .row
+                .col-sm-6 No. of Rooms:
+                .col-sm-6 01
+              .row.row.mb-25
+                .col-sm-6 No. of Guests:
+                .col-sm-6 02 adults, 1 child
+              %button.btn.btn-info-bordered.btn-lg.btn-block Edit Reservation
         
     %footer
       %div
