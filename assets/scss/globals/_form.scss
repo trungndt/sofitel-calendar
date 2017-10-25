@@ -146,21 +146,34 @@ h5 {
     font-weight: 400;
     text-align: left;
   }
-  
+  .input-mix {
+    position: relative;
+  }
   .placeholder-right {
-    &::-webkit-input-placeholder { 
-      text-align: right;
+    .form-control {
+      padding-right: 70px;
     }
-    &:-moz-placeholder { 
-      text-align: right;
-    }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
-      text-align: right;
-    }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      text-align: right;
+    span {
+      font-size: 10px;
+      @extend .vertical-center;
+      right: 15px;
+      color: $color-default;
     }
   }
+  // .placeholder-right {
+  //   &::-webkit-input-placeholder { 
+  //     text-align: right;
+  //   }
+  //   &:-moz-placeholder { 
+  //     text-align: right;
+  //   }
+  //   &::-moz-placeholder {
+  //     text-align: right;
+  //   }
+  //   &:-ms-input-placeholder {
+  //     text-align: right;
+  //   }
+  // }
 }
 .form-control {
   border-radius: $formRadius;
