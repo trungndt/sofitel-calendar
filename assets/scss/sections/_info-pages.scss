@@ -1,8 +1,9 @@
+$panelSpace: 20px;
 // Accordion
 .panel-group .panel-info {
 	border-radius: 0;
 	border: none;
-	margin-bottom: 30px;
+	margin-bottom: $panelSpace;
 	& > .panel-heading {
 		color: #000;
 		border: 0;
@@ -35,6 +36,7 @@
 .panel-default.panel-rect {
 	border-color: #e0e0e0;
 	border-radius: 0;
+	margin-bottom: $panelSpace;
 	.panel-body {
 		padding: 20px;
 	}

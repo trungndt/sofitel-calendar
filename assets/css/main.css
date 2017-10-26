@@ -846,6 +846,9 @@ $content-fonts: (
     background-color: #5e5e5e;
     color: #fff; }
 
+.text-default {
+  color: #777; }
+
 .text-info {
   color: #0095FF; }
 
@@ -939,6 +942,10 @@ h5 {
 input.form-control {
   height: 30px; }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 body {
   font-family: "Work Sans", sans-serif; }
 
@@ -956,6 +963,13 @@ section {
   background-color: #fafafa; }
   .bg-lightgray + hr {
     margin-top: 0; }
+
+.row.space-20 {
+  margin-left: -10px;
+  margin-right: -10px; }
+  .row.space-20 > [class*="col"] {
+    padding-left: 10px;
+    padding-right: 10px; }
 
 .google-map-container {
   position: relative; }
@@ -1448,7 +1462,7 @@ footer {
 .panel-group .panel-info {
   border-radius: 0;
   border: none;
-  margin-bottom: 30px; }
+  margin-bottom: 20px; }
   .panel-group .panel-info > .panel-heading {
     color: #000;
     border: 0;
@@ -1471,7 +1485,8 @@ footer {
 
 .panel-default.panel-rect {
   border-color: #e0e0e0;
-  border-radius: 0; }
+  border-radius: 0;
+  margin-bottom: 20px; }
   .panel-default.panel-rect .panel-body {
     padding: 20px; }
 

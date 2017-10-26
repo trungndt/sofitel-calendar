@@ -1,6 +1,9 @@
 /// <reference path="../globals/_scut.scss" />
 /// <reference path="../globals/_variables.scss" />
-
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 body {
 	font-family: $font-worksans;
 }
@@ -19,6 +22,10 @@ section {
 	& + hr {
 		margin-top: 0;
 	}
+}
+
+.row.space-20 {
+	@include setRowSpace(20);
 }
 
 .google-map-container {
