@@ -72,9 +72,11 @@
 .text-default {
   color: $color-default;
 }
-
 .text-info {
   color: $color-info;
+}
+.text-bold {
+  font-weight: bold;
 }
 
 a {
@@ -104,6 +106,12 @@ h1, h2, h3, h4, h5 {
 
 h5 {
   font-size: 12px;
+}
+
+table {
+  font-size: inherit;
+  font-weight: normal;
+  line-height: 1.4;
 }
 
 .nice-select.select-white {
@@ -146,6 +154,9 @@ h5 {
 
 .form-horizontal.form-left {
   padding-right: 40px;
+  .form-group {
+    margin-bottom: 10px;
+  }
   .control-label {
     font-weight: 400;
     text-align: left;

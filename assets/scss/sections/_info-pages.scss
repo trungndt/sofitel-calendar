@@ -16,8 +16,12 @@ $panelSpace: 20px;
 	}
 	.panel-title > a {
 		display: block;
-		padding: 15px 15px 15px 56px;
+		padding: 15px;
+		&:hover {
+			color: #000;
+		}
 		&[data-toggle="collapse"] {
+			padding-left: 56px;
 			&:after {
 				right: auto;
 				left: 20px;
@@ -30,6 +34,10 @@ $panelSpace: 20px;
 		padding: 40px 20px 20px;
 		border: 1px solid #e0e0e0;
 		border-top: 0;
+	}
+
+	.right-divider {
+		border-right: 1px solid #e0e0e0;
 	}
 }
 
@@ -53,7 +61,9 @@ $panelSpace: 20px;
 
 .panel-rsv-brief {
 	@include prefix(box-shadow, 1px 2px 4px rgba(#555, .5));
+	background-color: #fff;
 	padding: 20px;
+	margin-bottom: $panelSpace;
 	h5 {
 		margin-top: 0;
 		margin-bottom: 20px;
@@ -63,5 +73,60 @@ $panelSpace: 20px;
 	}
 	.img-responsive {
 		width: 100%;
+	}
+	hr {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+.tbl-info {
+	width: 100%;
+	td:first-child {
+		padding-right: 50px;
+	}
+	.split td {
+		padding-bottom: 20px;
+	}
+}
+
+.center-slash {
+	display: inline-block;
+  width: auto;
+  line-height: 30px;
+}
+
+.icon-cvv {
+	position: relative;
+	top: 5px;
+}
+
+// Page 06: Confirm Details
+.tbl-price {
+	width: 100%;
+	margin-bottom: 15px;
+	td, th {
+		width: 50%;
+		&:last-child {
+			text-align: right;
+		}
+	}
+	&.tbl-sub {
+		font-size: 12px;
+	}
+}
+
+.panel.panel-gray {
+	border: none;
+	border-radius: 0;
+	background-color: #f0f0f0;
+}
+
+.tbl-addr {
+	line-height: 2;
+	th, td {
+		&:first-child {
+			padding-right: 30px;
+		}
 	}
 }

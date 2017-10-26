@@ -1,0 +1,385 @@
+%html
+  %head
+    %title Kingsmen
+    %meta{charset:"utf-8"}
+    %meta{content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name:"viewport"}
+    %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700|Work+Sans:300,400,500,600,700", rel:"stylesheet"}
+    %link{href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/jquery-daterange/daterangepicker.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
+
+  %body
+    %header.container-fluid
+      .row.space-0
+        .col-sm-3
+          .logo
+            %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
+        .col-sm-9
+          .row.space-0.filter-panel
+            .col-sm-8.col-sm-offset-2
+              .btn-group.step-group
+                %a.btn{href:"#"} Select Room
+                %a.btn{href:"#"} Personal Info
+                %a.btn{href:"#"} Travel Info
+                %a.btn.active{href:"#"} Confirm Details
+            .col-sm-2
+              .btn-group
+                %a.btn Start over
+    %section.bg-lightgray
+      .container
+        %h3.mb-30 Confirm Details
+        %br/
+        .panel-rsv-brief
+          %h5.text-cormo YOUR RESERVATION
+          .row
+            .col-sm-4
+              %img.img-responsive{src:"assets/images/room-01.png"}
+            .col-sm-7.col-sm-offset-1
+              %table.tbl-info.mb-30
+                %tr.split
+                  %td Selected room:
+                  %td Deluxe King Room
+                %tr
+                  %td Check-in:
+                  %td 23 June 2017
+                %tr
+                  %td Check-out:
+                  %td 25 June 2017
+                %tr.split
+                  %td Total nights:
+                  %td 03
+                %tr
+                  %td No. of Rooms:
+                  %td 01
+                %tr
+                  %td No. of Guests:
+                  %td 02 adults, 1 child
+              %h4.font-14 Your Additional Remarks
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+        .panel-group#accordionPersonalInfo
+          .panel.panel-info
+            .panel-heading#headingOne
+              %h4.panel-title
+                %a Guest 1 (Primary Guest)
+            .panel-collapse.collapse.in#collapseOne
+              .panel-body
+                .row
+                  .col-sm-6.right-divider
+                    %h4.font-14.mt-0 Personal Information
+                    %table.tbl-info
+                      %tr
+                        %td Salutation
+                        %td Mr
+                      %tr
+                        %td Name
+                        %td Trung Nguyen
+                      %tr
+                        %td Phone Number
+                        %td 1234 5678
+                      %tr.split
+                        %td Email Address
+                        %td email@domain.com
+                      %tr
+                        %td Position / Title
+                        %td Project Manager
+                      %tr.split
+                        %td Organisation
+                        %td Robert Parker
+                      %tr
+                        %td Address
+                        %td 11 Tajong Pagar
+                      %tr
+                        %td City
+                        %td Singapore
+                      %tr
+                        %td Region
+                        %td \-
+                      %tr
+                        %td ZIP/Postcode
+                        %td 120111
+                      %tr
+                        %td Country
+                        %td Singapore
+                    
+                  .col-sm-6
+                    %h4.font-14.mt-0 Travel Information
+                    %table.tbl-info
+                      %tr
+                        %td Passport No.
+                        %td S42312X
+                      %tr
+                        %td Passport Expiry
+                        %td 20 Oct 2028
+                      %tr
+                        %td Nationality
+                        %td Singaporean
+                      %tr.split
+                        %td Date of Birth
+                        %td 11 Dec 1985
+                      %tr
+                        %td Arrival Date
+                        %td 08 June 2017
+                      %tr
+                        %td Arrival Time
+                        %td 10 00 AM
+                      %tr.split
+                        %td Arrival Flight
+                        %td JK 001
+                       %tr
+                        %td Departure Date
+                        %td \-
+                      %tr
+                        %td Departure Time
+                        %td \-
+                      %tr
+                        %td Departure Flight
+                        %td \-
+                        
+          .panel.panel-info
+            .panel-heading#headingTwo
+              %h4.panel-title
+                %a Guest 2
+            .panel-collapse.collapse.in#collapseTwo
+              .panel-body
+                .row
+                  .col-sm-6.right-divider
+                    %h4.font-14.mt-0 Personal Information
+                    %table.tbl-info
+                      %tr
+                        %td Salutation
+                        %td Mr
+                      %tr
+                        %td Name
+                        %td Trung Nguyen
+                      %tr
+                        %td Phone Number
+                        %td 1234 5678
+                      %tr.split
+                        %td Email Address
+                        %td email@domain.com
+                      %tr
+                        %td Position / Title
+                        %td Project Manager
+                      %tr.split
+                        %td Organisation
+                        %td Robert Parker
+                      %tr
+                        %td Address
+                        %td 11 Tajong Pagar
+                      %tr
+                        %td City
+                        %td Singapore
+                      %tr
+                        %td Region
+                        %td \-
+                      %tr
+                        %td ZIP/Postcode
+                        %td 120111
+                      %tr
+                        %td Country
+                        %td Singapore
+                    
+                  .col-sm-6
+                    %h4.font-14.mt-0 Travel Information
+                    %table.tbl-info
+                      %tr
+                        %td Passport No.
+                        %td S42312X
+                      %tr
+                        %td Passport Expiry
+                        %td 20 Oct 2028
+                      %tr
+                        %td Nationality
+                        %td Singaporean
+                      %tr.split
+                        %td Date of Birth
+                        %td 11 Dec 1985
+                      %tr
+                        %td Arrival Date
+                        %td 08 June 2017
+                      %tr
+                        %td Arrival Time
+                        %td 10 00 AM
+                      %tr.split
+                        %td Arrival Flight
+                        %td JK 001
+                       %tr
+                        %td Departure Date
+                        %td \-
+                      %tr
+                        %td Departure Time
+                        %td \-
+                      %tr
+                        %td Departure Flight
+                        %td \-
+        
+        .row
+          .col-sm-7
+            .mb-40
+              %h4 Payment Information
+              %p We require your credit card information to quarantee your reservation. Your card will not be charged. Please provide a valid form of payment upon check-in.
+              .form-horizontal.form-left
+                .form-group
+                  %label.control-label.col-sm-4 Payment Method
+                  %label.control-label.col-sm-8 Credit Card
+                .form-group
+                  %label.control-label.col-sm-4 Card Number
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-6
+                        %input.form-control{type:"text", name:"", placeholder:"0000 0000 0000 0000"}
+                      .col-xs-3
+                        %img.img-responsive.icon-visa{src:"assets/images/icon/icon-visa.png"}
+                .form-group
+                  %label.control-label.col-sm-4 Expiration Date
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-2
+                        %input.form-control{type:"text", name:"", placeholder:"DD"}
+                      .col-xs-1.center-slash \/
+                      .col-xs-2
+                        %input.form-control{type:"text", name:"", placeholder:"YYYY"}
+                .form-group
+                  %label.control-label.col-sm-4 CVV / Security Code
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-2
+                        %input.form-control{type:"text", name:"", placeholder:"DD"}
+                      .col-xs-2
+                        %img.img-responsive.icon-cvv{src:"assets/images/icon/icon-cvv.png"}
+            .mb-40
+              %h4 Billing Address
+              .form-horizontal.form-left
+                .form-group
+                  %label.control-label.col-sm-4 Name
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Address
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 City
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Region
+                  .col-sm-8
+                    .input-mix.placeholder-right
+                      %input.form-control{type:"text", name:""}
+                      %span optional
+                .form-group
+                  %label.control-label.col-sm-4 Postcode
+                  .col-sm-4
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Select Country
+                  .col-sm-8
+                    %select.nice-select.select-white
+                      %option{disabled:"disabled",selected:"selected"} Select Country
+                      %option America
+                      %option England
+                      %option Singapore
+                      %option Vietnam
+            .control-group
+              %button.btn.btn-gray.btn-lg Back
+              %button.btn.btn-info.btn-lg Submit
+          .col-sm-4.col-sm-offset-1
+            .panel-rsv-brief
+              %h4 Price Summary
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %td Subtotal
+                    %td $600.00 SGD
+                  %tr.split
+                    %td Taxes & Fees
+                    %td $102.00 SGD
+              .collapse.in#collapsePrice{aria-expanded:"true", aria-labelledby:"#headingPrice"}
+                %table.tbl-price.tbl-sub
+                  %tbody
+                    %tr
+                      %td Service Charge
+                      %td ($60.00 SGD)
+                    %tr
+                      %td Goods & Service tax
+                      %td ($42.00 SGD)
+              %a.no-arrow#headingPrice{href:"#collapsePrice", data-toggle:"collapse", aria-expanded:"true", data-expandtext:"Hide taxes & fees breakdown", data-collapsetext:"Show taxes & fees breakdown"}
+                Hide taxes & fees breakdown
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th Total
+                    %th $702.00 SGD
+                  %tr
+                    %td
+                    %td.text-12 To be paid at hotel
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th 2 nights
+                    %td $315.00 SGD
+                  %tr
+                    %td
+                    %td.text-12 avg. / night
+              .collapse#collapseNights{aria-expanded:"false", aria-labelledby:"#headingNights"}
+                %table.tbl-price.tbl-sub
+                  %tbody
+                    %tr
+                      %td 10 June 2017
+                      %td $301.00 SGD
+                    %tr
+                      %td 11 June 2017
+                      %td $401.00 SGD
+              %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
+                Show nightly breakdown
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th Payment Method
+                    %td Credit Card
+                  %tr
+                    %td VISA
+                    %td xxxx xxxx xxxx 1234
+        
+            .panel.panel-gray
+              .panel-body
+                %h4 The Kingsmen Hotel Singapore
+                .font-13
+                  %p.text-info 2 Kingsmen Road, Singapore 09891
+                  %table.tbl-addr
+                    %tbody
+                      %tr
+                        %th Email:
+                        %td 
+                          %a{href:"mailto:reservation@kingsmenhotel.com"} reservation@kingsmenhotel.com
+                      %tr
+                        %th Phone:
+                        %td +65 6733 8388
+                      %tr
+                        %th Fax:
+                        %td +65 6733 8388
+          
+    %footer
+      %div
+        %strong Tech Expo: 2018.&nbsp;
+        %a{href:"#"} Get Tickets for Event
+      %div
+        Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
+        %a{href:"#"} Privacy Policy
+        %span.dot-divider
+        %a{href:"#"} Terms & Conditions.
+
+
+%script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
+%script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/jquery-daterange/jquery.daterangepicker.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/nice-select/js/jquery.nice-select.min.js", type:"text/javascript"}
+%script{src:"assets/js/script.js", type:"text/javascript"}
+-# %script{async, defer, src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXXYRn0TSBjPl0n-EJEkgnNsOJvXOObg&callback=initMap"}

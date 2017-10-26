@@ -132,9 +132,23 @@ $(function() {
         $(e).html($(e).attr('data-collapse'));
       }
     });
-    
   });
 
+  // BOOTSTRAP COLLAPSE
+  $(document).on('hide.bs.collapse', '.collapse', function (e) {
+    var $lbl = $($(this).attr('aria-labelledby'));
+    var collapseText = $lbl.attr('data-collapsetext');
+    if (collapseText != undefined)
+      $lbl.html(collapseText);
+  });
+
+  // BOOTSTRAP COLLAPSE
+  $(document).on('show.bs.collapse', '.collapse', function () {
+    var $lbl = $($(this).attr('aria-labelledby'));
+    var expandText = $lbl.attr('data-expandtext');
+    if (expandText != undefined)
+      $lbl.html(expandText);
+  });
 });
 
 function initMap() {
