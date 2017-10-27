@@ -1,0 +1,184 @@
+%html
+  %head
+    %title Kingsmen
+    %meta{charset:"utf-8"}
+    %meta{content:"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name:"viewport"}
+    %link{href:"https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700|Work+Sans:300,400,500,600,700", rel:"stylesheet"}
+    %link{href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/jquery-daterange/daterangepicker.min.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
+    %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
+
+  %body
+    %header.container-fluid
+      .row.space-0
+        .col-sm-3
+          .logo
+            %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
+        .col-sm-9
+          .row.space-0.filter-panel.blank
+            .col-sm-2.col-sm-offset-8
+              .btn-group
+                %a.btn Start over
+    %section.bg-lightgray
+      .container
+        %h3.mb-30 Reservation Request Received
+        %p.font-13 A copy of your reservation details has been sent to &nbsp;
+          %strong email@domain.com.
+        %p.font-13 For further enquiries or changes to your booking, please contact The Kingsmen Hotel Singapore.
+        %br/
+        .panel.panel-default
+          .panel-body
+            .font-18 Confirmation Details
+            %br/
+            %table.tbl-info
+              %tr
+                %th Confirmation no.:
+                %th 125321535
+              %tr
+                %td Date Confirmed:
+                %td 23 June 2017
+        .row
+          .col-sm-8
+            .panel.panel-default
+              .panel-body
+                %h4.mb-30 Your Reservation Details
+                .mb-30
+                  %img.img-responsive{src:"assets/images/room-03.png"}
+                %table.tbl-info.mb-30
+                  %tr.split
+                    %td Selected room:
+                    %td Deluxe King Room
+                  %tr
+                    %td Check-in:
+                    %td 23 June 2017
+                  %tr
+                    %td Check-out:
+                    %td 25 June 2017
+                  %tr.split
+                    %td Total nights:
+                    %td 03
+                  %tr
+                    %td No. of Rooms:
+                    %td 01
+                  %tr
+                    %td No. of Guests:
+                    %td 02 adults, 1 child
+                %h5.text-cormo YOUR ADDITIONAL REMARKS:
+                %p Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis.
+                %hr/
+                %h5.text-cormo THIS ROOM INCLUDES:
+                %p Room inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. The Kingsmen Hotel Singapore’s 440 guest rooms, which include 46 suites with private balconies, are an elegant reflection of Singapore’s unique cultures. Contemporary comforts meet with classic style in a soothing palette of neutral tones, graced with accents of gold and orange.
+
+            .panel.panel-default
+              .panel-body
+                %h5.text-cormo YOUR STAY HERE INCLUDES:
+                %p Block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. The Kingsmen Hotel Singapore’s 440 guest rooms, which include 46 suites with private balconies, are an elegant reflection of Singapore’s unique cultures. Contemporary comforts meet with classic style in a soothing palette of neutral tones, graced with accents of gold and orange.
+            %br/
+            .policy-collapse
+              %h4.font-14 Room Policy:
+              %ul
+                %li A full prepayment is required to secure this booking
+                %li 100% will be charged upon cancellation or no-shows
+              %p.mb-30 A valid credit card is required and total room charge (including service charge and tax) will be charged upon booking.
+              %h4.font-14 Tax and Fees:
+              %ul
+                %li Service charge: 10%
+                %li Goods & Service tax: 7%
+          .col-sm-4
+            .panel-rsv-brief
+              %h4 Price Summary
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %td Subtotal
+                    %td $600.00 SGD
+                  %tr.split
+                    %td Taxes & Fees
+                    %td $102.00 SGD
+              .collapse.in#collapsePrice{aria-expanded:"true", aria-labelledby:"#headingPrice"}
+                %table.tbl-price.tbl-sub
+                  %tbody
+                    %tr
+                      %td Service Charge
+                      %td ($60.00 SGD)
+                    %tr
+                      %td Goods & Service tax
+                      %td ($42.00 SGD)
+              %a.no-arrow#headingPrice{href:"#collapsePrice", data-toggle:"collapse", aria-expanded:"true", data-expandtext:"Hide taxes & fees breakdown", data-collapsetext:"Show taxes & fees breakdown"}
+                Hide taxes & fees breakdown
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th Total
+                    %th $702.00 SGD
+                  %tr
+                    %td
+                    %td.text-12 To be paid at hotel
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th 2 nights
+                    %td $315.00 SGD
+                  %tr
+                    %td
+                    %td.text-12 avg. / night
+              .collapse#collapseNights{aria-expanded:"false", aria-labelledby:"#headingNights"}
+                %table.tbl-price.tbl-sub
+                  %tbody
+                    %tr
+                      %td 10 June 2017
+                      %td $301.00 SGD
+                    %tr
+                      %td 11 June 2017
+                      %td $401.00 SGD
+              %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
+                Show nightly breakdown
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th Payment Method
+                    %td Credit Card
+                  %tr
+                    %td VISA
+                    %td xxxx xxxx xxxx 1234
+        
+            .panel.panel-gray
+              .panel-body
+                %h4 The Kingsmen Hotel Singapore
+                .font-13
+                  %p.text-info 2 Kingsmen Road, Singapore 09891
+                  %table.tbl-addr
+                    %tbody
+                      %tr
+                        %th Email:
+                        %td 
+                          %a{href:"mailto:reservation@kingsmenhotel.com"} reservation@kingsmenhotel.com
+                      %tr
+                        %th Phone:
+                        %td +65 6733 8388
+                      %tr
+                        %th Fax:
+                        %td +65 6733 8388
+          
+    %footer
+      %div
+        %strong Tech Expo: 2018.&nbsp;
+        %a{href:"#"} Get Tickets for Event
+      %div
+        Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
+        %a{href:"#"} Privacy Policy
+        %span.dot-divider
+        %a{href:"#"} Terms & Conditions.
+
+
+%script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
+%script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/jquery-daterange/jquery.daterangepicker.min.js", type:"text/javascript"}
+%script{src:"assets/plugins/nice-select/js/jquery.nice-select.min.js", type:"text/javascript"}
+%script{src:"assets/js/script.js", type:"text/javascript"}
+-# %script{async, defer, src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyDDXXYRn0TSBjPl0n-EJEkgnNsOJvXOObg&callback=initMap"}

@@ -3,7 +3,13 @@ $formSpace: 20px;
 	background-color: $color-primary;
 	color: #fff;
 	height: $height;
-	// border: 1px solid #777;
+	&.blank {
+		background-color: #fff;
+		color: #000;
+		.btn {
+			color: #000;
+		}
+	}
 
 	// Helper
 	.drop-panel {

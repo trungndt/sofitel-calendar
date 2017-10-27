@@ -1156,6 +1156,11 @@ footer {
   background-color: #1c2035;
   color: #fff;
   height: 100px; }
+  .filter-panel.blank {
+    background-color: #fff;
+    color: #000; }
+    .filter-panel.blank .btn {
+      color: #000; }
   .filter-panel .drop-panel, .filter-panel .date-container, .filter-panel .nice-select.select-transparent, .filter-panel .guest-display {
     height: 65px;
     line-height: 65px;
