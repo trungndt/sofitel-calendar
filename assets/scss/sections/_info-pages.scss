@@ -1,16 +1,8 @@
 $panelSpace: 20px;
 // Accordion
 .panel-group .panel-info {
-	border-radius: 0;
-	border: none;
 	margin-bottom: $panelSpace;
-	& > .panel-heading {
-		color: #000;
-		border: 0;
-		border-bottom: 4px solid $color-info;
-		padding: 0;
-		border-radius: 0;
-	}
+	
 	.panel-title {
 		font-size: 18px;
 	}
@@ -35,12 +27,30 @@ $panelSpace: 20px;
 		border: 1px solid #e0e0e0;
 		border-top: 0;
 	}
-
-	.right-divider {
-		border-right: 1px solid #e0e0e0;
-	}
 }
 
+.right-divider {
+	border-right: 1px solid #e0e0e0;
+}
+
+.panel {
+	border-radius: 0;
+	.panel-body {
+		padding: 20px;
+	}
+}
+.panel-info {
+	
+	border: none;
+	& > .panel-heading {
+		color: #000;
+		background-color: #E6F1FF;
+		border: 0;
+		border-bottom: 4px solid $color-info;
+		padding: 0;
+		border-radius: 0;
+	}
+}
 .panel-default.panel-rect {
 	border-color: #e0e0e0;
 	border-radius: 0;
@@ -81,7 +91,7 @@ $panelSpace: 20px;
 }
 
 .tbl-info {
-	width: 100%;
+	// width: 100%;
 	td:first-child {
 		padding-right: 50px;
 	}

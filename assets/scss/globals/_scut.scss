@@ -310,6 +310,12 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 	}
 }
 
+@for $i from $minSpace through $maxSpace {
+	.p-#{$i*5} {
+		padding: $i * 5px !important;
+	}
+}
+
 // Font size help
 @for $i from 10 through 40 {
 	.font-#{$i} {

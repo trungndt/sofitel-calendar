@@ -33,6 +33,10 @@ section {
 	}
 }
 
+.img-responsive {
+	width: 100%;
+}
+
 .google-map-container {
 	@include ratioWrapper(3,2);
 }
