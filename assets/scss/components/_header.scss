@@ -10,6 +10,7 @@ header {
     line-height: $height;
     background-color: #fff;
     text-align: center;
+    display: block;
     img {
       @extend .absolute-center;
       height: 50%;

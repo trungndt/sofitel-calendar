@@ -13,12 +13,12 @@
     %header.container-fluid
       .row.space-0
         .col-sm-3
-          .logo
+          %a.logo{href:"/"}
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
         .col-sm-9
           .row.space-0.filter-panel
             .col-sm-4.filter-item
-              .label DATES
+              .label SELECT DATES
               .night-count 0 night
               .date-container
                 #dateRange.date-range CHECK-IN - CHECK-OUT
@@ -53,7 +53,7 @@
 
             .col-sm-4
               .controller
-                %button.btn.btn-info.btn-lg Search
+                %a.btn.btn-info.btn-lg{href:"select-hotel.html"} Search
     
     %section.bg-lightgray
       .container
@@ -130,7 +130,7 @@
                 %small SGD
               %p.mb-60 Excluding Taxes & Fees
 
-              %button.btn.btn-info.btn-block.btn-lg Select Room
+              %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room
               
           .room-item
               .block-main
@@ -175,7 +175,7 @@
                   %small SGD
                 %p.mb-60 Excluding Taxes & Fees
 
-                %button.btn.btn-info.btn-block.btn-lg Select Room
+                %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room
           .room-item.sold-out
               .block-main
                 .row

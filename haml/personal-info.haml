@@ -19,7 +19,7 @@
           .row.space-0.filter-panel
             .col-sm-8.col-sm-offset-2
               .btn-group.step-group
-                %a.btn{href:"#"} Select Room
+                %a.btn{href:"select-hotel.html"} Select Room
                 %a.btn.active{href:"#"} Personal Info
                 %a.btn{href:"#"} Travel Info
                 %a.btn{href:"#"} Confirm Details
@@ -212,8 +212,8 @@
                 %h5 Message to the hotel
                 %textarea.form-control{rows:4, placeholder:"Fill in any special request"}
             .control-group
-              %button.btn.btn-gray.btn-lg Back
-              %button.btn.btn-info.btn-lg Next
+              %a.btn.btn-gray.btn-lg{href:"select-hotel.html"} Back
+              %a.btn.btn-info.btn-lg{href:"travel-info.html"} Next
           .col-sm-4.pl-40
             .panel-rsv-brief
               %h5.text-cormo YOUR RESERVATION
