@@ -67,15 +67,15 @@
               .panel-body
                 .row
                   .col-sm-6.right-divider
-                    %h4.font-14.mt-0 Personal Information
+                    %h4.font-14.mt-0.mb-20 Personal Information
                     %table.tbl-info
-                      %tr
+                      %tr.split-sm
                         %td Salutation
                         %td Mr
-                      %tr
+                      %tr.split-sm
                         %td Name
                         %td Trung Nguyen
-                      %tr
+                      %tr.split-sm
                         %td Phone Number
                         %td 1234 5678
                       %tr.split
@@ -104,7 +104,7 @@
                         %td Singapore
                     
                   .col-sm-6
-                    %h4.font-14.mt-0 Travel Information
+                    %h4.font-14.mt-0.mb-20 Travel Information
                     %table.tbl-info
                       %tr
                         %td Passport No.
@@ -145,15 +145,15 @@
               .panel-body
                 .row
                   .col-sm-6.right-divider
-                    %h4.font-14.mt-0 Personal Information
+                    %h4.font-14.mt-0.mb-20 Personal Information
                     %table.tbl-info
-                      %tr
+                      %tr.split-sm
                         %td Salutation
                         %td Mr
-                      %tr
+                      %tr.split-sm
                         %td Name
                         %td Trung Nguyen
-                      %tr
+                      %tr.split-sm
                         %td Phone Number
                         %td 1234 5678
                       %tr.split
@@ -182,7 +182,7 @@
                         %td Singapore
                     
                   .col-sm-6
-                    %h4.font-14.mt-0 Travel Information
+                    %h4.font-14.mt-0.mb-20 Travel Information
                     %table.tbl-info
                       %tr
                         %td Passport No.
@@ -225,13 +225,19 @@
                   %label.control-label.col-sm-4 Payment Method
                   %label.control-label.col-sm-8 Credit Card
                 .form-group
+                  %label.control-label.col-sm-4 Name on Card
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-6
+                        %input.form-control{type:"text", name:"", placeholder:""}
+                .form-group
                   %label.control-label.col-sm-4 Card Number
                   .col-sm-8
                     .row.space-10
                       .col-xs-6
                         %input.form-control{type:"text", name:"", placeholder:"0000 0000 0000 0000"}
                       .col-xs-3
-                        %img.img-responsive.icon-visa{src:"assets/images/icon/icon-visa.png"}
+                        %img.icon-visa{src:"assets/images/icon/icon-visa.png"}
                 .form-group
                   %label.control-label.col-sm-4 Expiration Date
                   .col-sm-8
@@ -248,7 +254,7 @@
                       .col-xs-2
                         %input.form-control{type:"text", name:"", placeholder:"DD"}
                       .col-xs-2
-                        %img.img-responsive.icon-cvv{src:"assets/images/icon/icon-cvv.png"}
+                        %img.icon-cvv{src:"assets/images/icon/icon-cvv.png"}
             .mb-40
               %h4 Billing Address
               .form-horizontal.form-left
@@ -337,17 +343,8 @@
                       %td $401.00 SGD
               %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
                 Show nightly breakdown
-              %hr/
-              %table.tbl-price
-                %tbody
-                  %tr
-                    %th Payment Method
-                    %td Credit Card
-                  %tr
-                    %td VISA
-                    %td xxxx xxxx xxxx 1234
-        
-            .panel.panel-gray
+              
+            .panel.panel-transparent
               .panel-body
                 %h4 The Kingsmen Hotel Singapore
                 .font-13

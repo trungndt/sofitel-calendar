@@ -781,7 +781,7 @@ $content-fonts: (
     position: relative;
     padding-left: 50px;
     cursor: pointer;
-    font-weight: 100;
+    font-weight: 400;
     height: 30px;
     line-height: 30px; }
     .nice-check:checked + label:before, .nice-check:not(:checked) + label:before {
@@ -1012,10 +1012,13 @@ table {
     font-size: 10px;
     right: 15px;
     color: #777; }
+  .form-horizontal.form-left .form-control {
+    padding: 6px 7px; }
 
 .form-control {
   border-radius: 5px;
   border: 1px solid #e0e0e0;
+  color: #333;
   -webkit-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
   -moz-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
   -ms-box-shadow: 0 2px 3px rgba(224, 224, 224, 0.5) inset;
@@ -1310,7 +1313,9 @@ footer {
       margin-bottom: 15px; }
     .filter-panel .guest-dropdown .guest-select {
       display: inline-block;
-      width: 30%; }
+      width: 25%; }
+    .filter-panel .guest-dropdown .guest-select + .guest-select {
+      margin-left: 20px; }
   .filter-panel .controller {
     padding: 28px 15px;
     text-align: center; }
@@ -1583,7 +1588,7 @@ footer {
         left: 20px;
         background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
   .panel-group .panel-info .panel-body {
-    padding: 40px 20px 20px;
+    padding: 30px 20px;
     border: 1px solid #e0e0e0;
     border-top: 0; }
 
@@ -1641,6 +1646,9 @@ footer {
 .tbl-info td:first-child {
   padding-right: 50px; }
 
+.tbl-info .split-sm td {
+  padding-bottom: 3px; }
+
 .tbl-info .split td {
   padding-bottom: 20px; }
 
@@ -1649,9 +1657,9 @@ footer {
   width: auto;
   line-height: 30px; }
 
+.icon-visa,
 .icon-cvv {
-  position: relative;
-  top: 5px; }
+  height: 30px; }
 
 .tbl-price {
   width: 100%;
@@ -1663,10 +1671,10 @@ footer {
   .tbl-price.tbl-sub {
     font-size: 12px; }
 
-.panel.panel-gray {
+.panel.panel-transparent {
   border: none;
   border-radius: 0;
-  background-color: #f0f0f0; }
+  background-color: transparent; }
 
 .tbl-addr {
   line-height: 2; }

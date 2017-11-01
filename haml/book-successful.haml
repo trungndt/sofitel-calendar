@@ -16,16 +16,10 @@
           .logo
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
         .col-sm-9
-          .row.space-0.filter-panel
-            .col-sm-8.col-sm-offset-2
-              .btn-group.step-group
-                %a.btn{href:"#"} Select Room
-                %a.btn{href:"#"} Personal Info
-                %a.btn{href:"#"} Travel Info
-                %a.btn.active{href:"#"} Confirm Details
-            .col-sm-2
+          .row.space-0.filter-panel.blank
+            .col-sm-2.col-sm-offset-8
               .btn-group
-                %a.btn Start over
+                %a.btn{href:"/"} New Reservation
     %section.bg-lightgray
       .container
         %h3.mb-30 Reservation Request Received
@@ -35,14 +29,14 @@
         %br/
         .panel.panel-info
           .panel-heading.p-20
-            .font-18 Loyalty Club Sign Up
+            .font-18.mb-15 Loyalty Club Sign Up
             %p You indicated interest in signing up as a Le Club AccorHotels member. Please sign up and key in your new membership number below:
             .row
               .col-sm-4.right-divider
-                %h5.text-bold 1. Step One
+                %h5.fw-600 1. Step One
                 %button.btn.btn-info.btn-lg Click Here to Sign up
               .col-sm-8
-                %h5.text-bold 2. Step Two
+                %h5.fw-600 2. Step Two
                 .form-inline
                   %label.mr-50 Key in your Membership No.
                   %input.form-control.mr-20{type:"text", name:""}
@@ -146,16 +140,7 @@
                       %td $401.00 SGD
               %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
                 Show nightly breakdown
-              %hr/
-              %table.tbl-price
-                %tbody
-                  %tr
-                    %th Payment Method
-                    %td Credit Card
-                  %tr
-                    %td VISA
-                    %td xxxx xxxx xxxx 1234
-        
+              
             .panel.panel-gray
               .panel-body
                 %h4 The Kingsmen Hotel Singapore

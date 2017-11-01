@@ -172,7 +172,10 @@ $formSpace: 20px;
 		}
 		.guest-select {
 			display: inline-block;
-			width: 30%;
+			width: 25%;
+		}
+		.guest-select + .guest-select {
+			margin-left: 20px;
 		}
 	}
 

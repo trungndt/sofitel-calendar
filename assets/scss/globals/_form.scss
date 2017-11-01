@@ -187,6 +187,9 @@ table {
       color: $color-default;
     }
   }
+  .form-control {
+    padding: 6px 7px;
+  }
   // .placeholder-right {
   //   &::-webkit-input-placeholder { 
   //     text-align: right;
@@ -205,6 +208,7 @@ table {
 .form-control {
   border-radius: $formRadius;
   border: 1px solid #e0e0e0;
+  color: #333;
   @include prefix(box-shadow, 0 2px 3px rgba(#e0e0e0, .5) inset);
 }
 

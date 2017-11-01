@@ -23,7 +23,7 @@ $panelSpace: 20px;
 	}
 
 	.panel-body {
-		padding: 40px 20px 20px;
+		padding: 30px 20px;
 		border: 1px solid #e0e0e0;
 		border-top: 0;
 	}
@@ -95,6 +95,9 @@ $panelSpace: 20px;
 	td:first-child {
 		padding-right: 50px;
 	}
+	.split-sm td {
+		padding-bottom: 3px;
+	}
 	.split td {
 		padding-bottom: 20px;
 	}
@@ -106,10 +109,14 @@ $panelSpace: 20px;
   line-height: 30px;
 }
 
+.icon-visa,
 .icon-cvv {
-	position: relative;
-	top: 5px;
+	height: 30px;
 }
+// .icon-cvv {
+// 	position: relative;
+// 	top: 5px;
+// }
 
 // Page 06: Confirm Details
 .tbl-price {
@@ -126,10 +133,10 @@ $panelSpace: 20px;
 	}
 }
 
-.panel.panel-gray {
+.panel.panel-transparent {
 	border: none;
 	border-radius: 0;
-	background-color: #f0f0f0;
+	background-color: transparent;
 }
 
 .tbl-addr {
