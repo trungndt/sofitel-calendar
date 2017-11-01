@@ -20,7 +20,7 @@ $(function() {
       // alwaysOpen: true,
       startDate: moment(new Date()).format(_DATEFORMAT_2),
       minDays: 2,
-      singleMonth: true,
+      // singleMonth: true,
       showShortcuts: false,
       showTopbar: false,
       getValue: function() {
@@ -30,7 +30,12 @@ $(function() {
         // this.innerHTML = res;
         var startObj = moment(_startDate);
         var endObj = moment(_endDate);
-        this.innerHTML = '<span>' + startObj.format(_DATEFORMAT) + ' - ' + endObj.format(_DATEFORMAT) + '</span>';
+        this.innerHTML = '<div class="selected-dates"><span>' + startObj.format('DD') + '</span> ' 
+        + startObj.format('MMM')
+        + ' - '
+        + '<span>' + endObj.format('DD') + '</span> '
+        + endObj.format('MMM')
+        + '</div>';
         // Count day
         var count = endObj.diff(startObj, 'days');
         var nightCount = count + ' night' + (count <= 1 ? '' : 's');
@@ -38,6 +43,7 @@ $(function() {
       },
       beforeShowDay: function(t) {
         var _this = moment(t).format(_DATEFORMAT_2);
+        console.log(_this);
         var soldoutDate = [
           '2017/10/10',
           '2017/10/27',
@@ -47,9 +53,9 @@ $(function() {
           '2017/10/22',
         ];
         var eventDate = [
-          '2017/10/24',
-          '2017/10/25',
-          '2017/10/26',
+          '2017/11/05',
+          '2017/11/06',
+          '2017/11/07',
         ];
         var valid = soldoutDate.indexOf(_this) < 0;
 
@@ -60,7 +66,13 @@ $(function() {
         if (soldoutDate.indexOf(_this) >= 0) {
           _class += ' soldout-date';
         }
-        // var _tooltip = valid ? '' : 'disabled';
+        // Detect end of month or start of month
+        if (moment(t).startOf('month').format(_DATEFORMAT_2) == _this) {
+          _class += 'start-of-month';
+        }
+        if (moment(t).endOf('month').format(_DATEFORMAT_2) == _this) {
+          _class += 'end-of-month';
+        }
         return [valid, _class];
       }
     })

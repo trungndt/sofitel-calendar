@@ -881,6 +881,12 @@ $content-fonts: (
   -o-transition: all 0.2s;
   transition: all 0.2s; }
 
+.btn-group-lg > .btn, .btn-lg {
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 25px;
+  padding-right: 25px; }
+
 .control-group .btn {
   min-width: 130px; }
 
@@ -915,6 +921,9 @@ $content-fonts: (
 .text-info {
   color: #0095FF; }
 
+.fw-600 {
+  font-weight: 600; }
+
 .text-bold {
   font-weight: 700; }
 
@@ -936,7 +945,8 @@ a {
   font-family: "Cormorant Garamond", serif; }
 
 h1.text-cormo, h2.text-cormo, h3.text-cormo, h4.text-cormo, h5.text-cormo {
-  font-weight: 600; }
+  font-weight: 600;
+  letter-spacing: 1.5px; }
 
 h5 {
   font-size: 12px; }
@@ -1135,6 +1145,8 @@ header {
 footer {
   padding: 20px;
   text-align: center;
+  font-size: 12px;
+  color: #555;
   -webkit-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   -moz-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   -ms-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
@@ -1219,10 +1231,13 @@ footer {
     font-size: 12px;
     cursor: pointer;
     color: #aaa; }
-    .filter-panel .date-range span {
+  .filter-panel .selected-dates {
+    color: #fff;
+    text-transform: uppercase; }
+    .filter-panel .selected-dates span {
       font-family: "Cormorant Garamond", serif;
       color: #fff;
-      font-size: 20px; }
+      font-size: 30px; }
   .filter-panel select.nice-select {
     display: none; }
   .filter-panel .nice-select.select-transparent {
@@ -1303,39 +1318,38 @@ footer {
       width: 140px; }
 
 .date-picker-wrapper.hotel-calendar {
-  width: 100%;
+  font-family: "Work Sans", sans-serif;
   top: 100% !important;
   left: 0px !important;
   padding: 0;
   background-color: #1c2035;
   border: none; }
   .date-picker-wrapper.hotel-calendar .prev, .date-picker-wrapper.hotel-calendar .next {
-    display: none; }
+    color: #fff; }
   .date-picker-wrapper.hotel-calendar .month-wrapper {
-    width: 100% !important;
     background-color: transparent;
     border: none;
     padding-top: 20px;
     padding-bottom: 20px; }
     .date-picker-wrapper.hotel-calendar .month-wrapper table {
-      width: 100%; }
+      width: 320px !important; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
         width: 14.2%; }
-      .date-picker-wrapper.hotel-calendar .month-wrapper table td {
-        padding: 9px 0; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .month-name {
         font-size: 12px;
         font-weight: 500;
-        color: #fff; }
+        color: #fff;
+        letter-spacing: 0.5px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .week-name th {
         font-size: 11px;
         font-weight: 400;
         color: #fff;
-        padding-bottom: 10px; }
+        padding-top: 10px;
+        padding-bottom: 10px;
+        letter-spacing: 0.5px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day {
         font-size: 14px;
-        margin-bottom: 0;
-        padding: 6px 0 7px;
+        padding: 15px 0 16px;
         position: relative;
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
@@ -1353,8 +1367,8 @@ footer {
         background-color: rgba(17, 152, 253, 0.2) !important; }
         .date-picker-wrapper.hotel-calendar .month-wrapper table .date-circle:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected:before, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover:before {
           content: '';
-          width: 26px;
-          height: 26px;
+          width: 100%;
+          height: 100%;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -1363,21 +1377,17 @@ footer {
           -ms-transform: translate(-50%, -50%);
           -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-          border-radius: 13px;
-          background-color: #1198FD;
+          border-radius: 50%;
+          border: 2px solid #1198FD;
           z-index: -1; }
-      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected {
-        border-top-left-radius: 13px;
-        border-bottom-left-radius: 13px;
-        width: calc((100% - $circleSize)/2); }
-      .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected {
-        border-top-right-radius: 13px;
-        border-bottom-right-radius: 13px; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .round-left, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.start-of-month.hovering, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.start-of-month.checked, .date-picker-wrapper.hotel-calendar .month-wrapper table tr > td:first-child .day.toMonth {
+        border-top-left-radius: 26px;
+        border-bottom-left-radius: 26px; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .round-right, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.last-date-selected, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.end-of-month.hovering, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.end-of-month.checked, .date-picker-wrapper.hotel-calendar .month-wrapper table tr > td:last-child .day.toMonth {
+        border-top-right-radius: 26px;
+        border-bottom-right-radius: 26px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering {
         background-color: rgba(17, 152, 253, 0.2); }
-        .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.hovering:hover {
-          border-top-right-radius: 13px;
-          border-bottom-right-radius: 13px; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.checked {
         background-color: rgba(17, 152, 253, 0.2); }
   .date-picker-wrapper.hotel-calendar .event-date:after {
@@ -1387,7 +1397,7 @@ footer {
     border-radius: 50%;
     background-color: #e74515;
     position: absolute;
-    bottom: -10px;
+    bottom: 6px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -1397,17 +1407,22 @@ footer {
   .date-picker-wrapper.hotel-calendar .soldout-date {
     color: #555 !important; }
 
+.date-picker-wrapper .footer {
+  background-color: rgba(255, 255, 255, 0.05); }
+
 .calendar-legend {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 10px 5px; }
+  padding: 10px 5px;
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto; }
   .calendar-legend .legend-item {
     text-align: center;
     color: #fff; }
   .calendar-legend .item {
     display: inline-block;
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
+    width: 39px;
+    height: 39px;
+    line-height: 39px;
     position: relative;
     font-size: 14px;
     margin-bottom: 10px; }
@@ -1418,7 +1433,7 @@ footer {
     border-radius: 50%;
     background-color: #e74515;
     position: absolute;
-    bottom: -5px;
+    bottom: 0px;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -1426,16 +1441,17 @@ footer {
     -o-transform: translateX(-50%);
     transform: translateX(-50%); }
   .calendar-legend .item-selected {
-    background-color: #1198FD;
+    border: 2px solid #1198FD;
     border-radius: 50%;
     font-weight: bold; }
   .calendar-legend .item-unavailable {
     color: #555; }
   .calendar-legend label {
     display: block;
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: 0;
-    font-size: 11px; }
+    font-size: 11px;
+    letter-spacing: 0.5px; }
 
 .home-banner {
   position: relative;

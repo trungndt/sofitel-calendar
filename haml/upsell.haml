@@ -60,7 +60,7 @@
         %h3 Enhance your stay at The Kingsmen Hotel
         %p Get the most of our stay by upgrading your room at a special rate.
         %p
-          %strong Your selection was: Deluxe King Room at an average nightly rate of 300 SGD / night.
+          %span.fw-600 Your selection was: Deluxe King Room at an average nightly rate of 300 SGD / night.
     %hr/
     %section.pt-0
       .container
@@ -192,6 +192,18 @@
         %span.dot-divider
         %a{href:"#"} Terms & Conditions.
 
+    %template#tmpLegend
+      .calendar-legend
+        .row.space-0
+          .col-xs-4.legend-item
+            .item.item-event 31
+            %label Event
+          .col-xs-4.legend-item
+            .item.item-unavailable 31
+            %label Unavailable
+          .col-xs-4.legend-item
+            .item.item-selected 31
+            %label Selected
 
 %script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
 %script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}

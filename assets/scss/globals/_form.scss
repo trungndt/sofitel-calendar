@@ -23,6 +23,14 @@
 .btn {
   @include transition();
 }
+
+.btn-group-lg>.btn, .btn-lg {
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .control-group {
   .btn {
     min-width: 130px;
@@ -75,6 +83,9 @@
 .text-info {
   color: $color-info;
 }
+.fw-600 {
+  font-weight: 600;
+}
 .text-bold {
   font-weight: 700;
 }
@@ -101,6 +112,7 @@ a {
 h1, h2, h3, h4, h5 {
   &.text-cormo {
     font-weight: 600;
+    letter-spacing: 1.5px;
   }
 }
 
