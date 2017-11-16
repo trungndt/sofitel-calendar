@@ -5,21 +5,44 @@ header {
   @include prefix(box-shadow, 0 2px 5px rgba(#555, .5));
   position: relative;
   z-index: 1;
-  .logo {
-    height: $height;
-    line-height: $height;
-    background-color: #fff;
-    text-align: center;
-    display: block;
-    img {
-      @extend .absolute-center;
-      height: 50%;
+  .logo-wrapper {
+    @media (max-width:768px){
+      width: 100%;
+    }
+    .logo {
+      height: $height;
+      line-height: $height;
+      background-color: #fff;
+      text-align: center;
+      display: block;
+        @media (max-width:768px){
+        width: 50%;
+      }
+      img {
+        @extend .absolute-center;
+        height: 50%;
+
+      }
     }
   }
+  
+ 
   .btn-group {
     margin-top: 30px;
+    @media (max-width: 768px){
+      margin-top: 0px;
+      width: 100%;
+    }
     .btn {
       color: #fff;
+      &.black-color {
+        color: #000;
+        font-size: 20px;
+        line-height: 80px;
+        display: block;
+        text-align: right;
+        width: 100%;
+      }
     }
   }
 }

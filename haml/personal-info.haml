@@ -12,10 +12,13 @@
   %body
     %header.container-fluid
       .row.space-0
-        .col-sm-3
-          .logo
+        .col-sm-3.logo-wrapper
+          .logo.col-sm-12.col-xs-6
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-        .col-sm-9
+          .start-over.col-xs-6.not-desk
+            .btn-group
+                %a.btn.black-color Start over
+        .col-sm-9.not-mb 
           .row.space-0.filter-panel
             .col-sm-8.col-sm-offset-2
               .btn-group.step-group
@@ -31,7 +34,37 @@
         %h3.mb-30 Personal Information
         %br/
         .row
-          .col-sm-8
+          .col-sm-4.pl-40.col-xs-12.float-right.has-toggle
+            .panel-rsv-brief.panel-group#reservation-customer
+              .panel.panel-info
+                #headingThree
+                  %h5.text-cormo.not-mb YOUR RESERVATION
+                  %a.text-cormo.not-desk{data-toggle:"collapse", data-parent:"#reservation-customer", href:"#collapseThree", aria-expanded:"true"}
+                        YOUR RESERVATION
+                  .reservation-wrapper.collapse.in#collapseThree
+                    .img-container
+                      %img.img-responsive{src:"assets/images/room-01.png"}
+                    .information-right  
+                      .row.mb-15
+                        .col-sm-6.col-xs-6 Selected room:
+                        .col-sm-6.col-xs-6 Deluxe King Room
+                      .row
+                        .col-sm-6.col-xs-6 Check-in:
+                        .col-sm-6.col-xs-6 23 June 2017
+                      .row
+                        .col-sm-6.col-xs-6 Check-out:
+                        .col-sm-6.col-xs-6 25 June 2017
+                      .row.row.mb-15
+                        .col-sm-6.col-xs-6 Total nights:
+                        .col-sm-6.col-xs-6 03
+                      .row
+                        .col-sm-6.col-xs-6 No. of Rooms:
+                        .col-sm-6.col-xs-6 01
+                      .row.row.mb-25
+                        .col-sm-6.col-xs-6 No. of Guests:
+                        .col-sm-6.col-xs-6 02 adults, 1 child
+                      %button.btn.btn-info-bordered.btn-lg.btn-block Edit Reservation
+          .col-sm-8.col-xs-12.float-left
             .panel-group#accordionPersonalInfo{aria-multiselectable:"true"}
               .panel.panel-info
                 .panel-heading#headingOne
@@ -42,8 +75,8 @@
                   .panel-body
                     .form-horizontal.form-left
                       .form-group
-                        %label.control-label.col-sm-3 Salutation
-                        .col-sm-4
+                        %label.control-label.col-sm-3.col-xs-12 Salutation
+                        .col-sm-4.col-xs-6
                           %select.nice-select.select-white
                             %option Select one
                       .form-group
@@ -58,7 +91,7 @@
                       .form-group
                         %label.control-label.col-sm-3 Phone Number
                         .col-sm-4
-                          %input.form-control{type:"text", name:"", placeholder:"Country Code"}
+                          %input.form-control.has-mar-bot{type:"text", name:"", placeholder:"Country Code"}
                         .col-sm-5
                           %input.form-control{type:"text", name:""}
 
@@ -137,7 +170,7 @@
                       .form-group
                         %label.control-label.col-sm-3 Phone Number
                         .col-sm-4
-                          %input.form-control{type:"text", name:"", placeholder:"Country Code"}
+                          %input.form-control.has-mar-bot{type:"text", name:"", placeholder:"Country Code"}
                         .col-sm-5
                           %input.form-control{type:"text", name:""}
 
@@ -214,30 +247,7 @@
             .control-group
               %a.btn.btn-gray.btn-lg{href:"select-hotel.html"} Back
               %a.btn.btn-info.btn-lg{href:"travel-info.html"} Next
-          .col-sm-4.pl-40
-            .panel-rsv-brief
-              %h5.text-cormo YOUR RESERVATION
-              .img-container
-                %img.img-responsive{src:"assets/images/room-01.png"}
-              .row.mb-15
-                .col-sm-6 Selected room:
-                .col-sm-6 Deluxe King Room
-              .row
-                .col-sm-6 Check-in:
-                .col-sm-6 23 June 2017
-              .row
-                .col-sm-6 Check-out:
-                .col-sm-6 25 June 2017
-              .row.row.mb-15
-                .col-sm-6 Total nights:
-                .col-sm-6 03
-              .row
-                .col-sm-6 No. of Rooms:
-                .col-sm-6 01
-              .row.row.mb-25
-                .col-sm-6 No. of Guests:
-                .col-sm-6 02 adults, 1 child
-              %button.btn.btn-info-bordered.btn-lg.btn-block Edit Reservation
+        
         
     %footer
       %div

@@ -12,17 +12,20 @@
   %body
     %header.container-fluid
       .row.space-0
-        .col-sm-3
-          .logo
+        .col-sm-3.logo-wrapper
+          .logo.col-sm-12.col-xs-6
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-        .col-sm-9
+          .start-over.col-xs-6.not-desk
+            .btn-group
+                %a.btn.black-color Start over
+        .col-sm-9.not-mb 
           .row.space-0.filter-panel
             .col-sm-8.col-sm-offset-2
               .btn-group.step-group
-                %a.btn{href:"#"} Select Room
-                %a.btn{href:"#"} Personal Info
-                %a.btn{href:"travel-info.html"} Travel Info
-                %a.btn.active{href:"#"} Confirm Details
+                %a.btn{href:"select-hotel.html"} Select Room
+                %a.btn.active{href:"#"} Personal Info
+                %a.btn{href:"#"} Travel Info
+                %a.btn{href:"#"} Confirm Details
             .col-sm-2
               .btn-group
                 %a.btn Start over
@@ -30,40 +33,42 @@
       .container
         %h3.mb-30 Confirm Details
         %br/
-        .panel-rsv-brief
+        .panel-rsv-brief.not-float
           %h5.text-cormo YOUR RESERVATION
-          .row
-            .col-sm-4
-              %img.img-responsive{src:"assets/images/room-01.png"}
-            .col-sm-7.col-sm-offset-1
-              %table.tbl-info.mb-30
-                %tr.split
-                  %td Selected room:
-                  %td Deluxe King Room
-                %tr
-                  %td Check-in:
-                  %td 23 June 2017
-                %tr
-                  %td Check-out:
-                  %td 25 June 2017
-                %tr.split
-                  %td Total nights:
-                  %td 03
-                %tr
-                  %td No. of Rooms:
-                  %td 01
-                %tr
-                  %td No. of Guests:
-                  %td 02 adults, 1 child
-              %h4.font-14 Your Additional Remarks
-              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          .information-center
+            .row
+              .col-sm-4
+                %img.img-responsive{src:"assets/images/room-01.png"}
+              .col-sm-7.col-sm-offset-1
+                %table.tbl-info.mb-30
+                  %tr.split
+                    %td Selected room:
+                    %td Deluxe King Room
+                  %tr
+                    %td Check-in:
+                    %td 23 June 2017
+                  %tr
+                    %td Check-out:
+                    %td 25 June 2017
+                  %tr.split
+                    %td Total nights:
+                    %td 03
+                  %tr
+                    %td No. of Rooms:
+                    %td 01
+                  %tr
+                    %td No. of Guests:
+                    %td 02 adults, 1 child
+                %h4.font-14 Your Additional Remarks
+                %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-        .panel-group#accordionPersonalInfo
+        .panel-group#accordionPersonalInfo.has-toggle
           .panel.panel-info
             .panel-heading#headingOne
               %h4.panel-title
-                %a Guest 1 (Primary Guest)
-            .panel-collapse.collapse.in#collapseOne
+                %a.not-mb Guest 1 (Primary Guest)
+                %a{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseThree", aria-expanded:"true"} Guest 1 (Primary Guest)
+            .panel-collapse.collapse.in#collapseThree
               .panel-body
                 .row
                   .col-sm-6.right-divider
@@ -140,7 +145,9 @@
           .panel.panel-info
             .panel-heading#headingTwo
               %h4.panel-title
-                %a Guest 2
+                %a.not-mb Guest 2
+                %a{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseTwo", aria-expanded:"true"}
+                      Guest 2
             .panel-collapse.collapse.in#collapseTwo
               .panel-body
                 .row
@@ -216,84 +223,8 @@
                         %td \-
         
         .row
-          .col-sm-7
-            .mb-40
-              %h4 Payment Information
-              %p We require your credit card information to quarantee your reservation. Your card will not be charged. Please provide a valid form of payment upon check-in.
-              .form-horizontal.form-left
-                .form-group
-                  %label.control-label.col-sm-4 Payment Method
-                  %label.control-label.col-sm-8 Credit Card
-                .form-group
-                  %label.control-label.col-sm-4 Name on Card
-                  .col-sm-8
-                    .row.space-10
-                      .col-xs-6
-                        %input.form-control{type:"text", name:"", placeholder:""}
-                .form-group
-                  %label.control-label.col-sm-4 Card Number
-                  .col-sm-8
-                    .row.space-10
-                      .col-xs-6
-                        %input.form-control{type:"text", name:"", placeholder:"0000 0000 0000 0000"}
-                      .col-xs-3
-                        %img.icon-visa{src:"assets/images/icon/icon-visa.png"}
-                .form-group
-                  %label.control-label.col-sm-4 Expiration Date
-                  .col-sm-8
-                    .row.space-10
-                      .col-xs-2
-                        %input.form-control{type:"text", name:"", placeholder:"DD"}
-                      .col-xs-1.center-slash \/
-                      .col-xs-2
-                        %input.form-control{type:"text", name:"", placeholder:"YYYY"}
-                .form-group
-                  %label.control-label.col-sm-4 CVV / Security Code
-                  .col-sm-8
-                    .row.space-10
-                      .col-xs-2
-                        %input.form-control{type:"text", name:"", placeholder:"DD"}
-                      .col-xs-2
-                        %img.icon-cvv{src:"assets/images/icon/icon-cvv.png"}
-            .mb-40
-              %h4 Billing Address
-              .form-horizontal.form-left
-                .form-group
-                  %label.control-label.col-sm-4 Name
-                  .col-sm-8
-                    %input.form-control{type:"text", name:""}
-                .form-group
-                  %label.control-label.col-sm-4 Address
-                  .col-sm-8
-                    %input.form-control{type:"text", name:""}
-                .form-group
-                  %label.control-label.col-sm-4 City
-                  .col-sm-8
-                    %input.form-control{type:"text", name:""}
-                .form-group
-                  %label.control-label.col-sm-4 Region
-                  .col-sm-8
-                    .input-mix.placeholder-right
-                      %input.form-control{type:"text", name:""}
-                      %span optional
-                .form-group
-                  %label.control-label.col-sm-4 Postcode
-                  .col-sm-4
-                    %input.form-control{type:"text", name:""}
-                .form-group
-                  %label.control-label.col-sm-4 Select Country
-                  .col-sm-8
-                    %select.nice-select.select-white
-                      %option{disabled:"disabled",selected:"selected"} Select Country
-                      %option America
-                      %option England
-                      %option Singapore
-                      %option Vietnam
-            .control-group
-              %a.btn.btn-gray.btn-lg{href:"travel-info.html"} Back
-              %a.btn.btn-info.btn-lg{href:"book-successful.html"} Submit
-          .col-sm-4.col-sm-offset-1
-            .panel-rsv-brief
+          .col-sm-4.col-xs-12.float-right
+            .panel-rsv-brief.p20 
               %h4 Price Summary
               %table.tbl-price
                 %tbody
@@ -361,6 +292,83 @@
                       %tr
                         %th Fax:
                         %td +65 6733 8388
+          .col-sm-7.float-left
+            .mb-40
+              %h4 Payment Information
+              %p We require your credit card information to quarantee your reservation. Your card will not be charged. Please provide a valid form of payment upon check-in.
+              .form-horizontal.form-left
+                .form-group
+                  %label.control-label.col-sm-4 Payment Method
+                  %label.control-label.col-sm-8 Credit Card
+                .form-group
+                  %label.control-label.col-sm-4 Name on Card
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-12 
+                        %input.form-control{type:"text", name:"", placeholder:""}
+                .form-group
+                  %label.control-label.col-sm-4 Card Number
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-7
+                        %input.form-control{type:"text", name:"", placeholder:"0000 0000 0000 0000"}
+                      .col-xs-3
+                        %img.icon-visa{src:"assets/images/icon/icon-visa.png"}
+                .form-group
+                  %label.control-label.col-sm-4 Expiration Date
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-2
+                        %input.form-control{type:"text", name:"", placeholder:"DD"}
+                      .col-xs-1.center-slash \/
+                      .col-xs-2
+                        %input.form-control{type:"text", name:"", placeholder:"YYYY"}
+                .form-group
+                  %label.control-label.col-sm-4 CVV / Security Code
+                  .col-sm-8
+                    .row.space-10
+                      .col-xs-3
+                        %input.form-control{type:"text", name:"", placeholder:" "}
+                      .col-xs-2
+                        %img.icon-cvv{src:"assets/images/icon/icon-cvv.png"}
+            .mb-40
+              %h4 Billing Address
+              .form-horizontal.form-left
+                .form-group
+                  %label.control-label.col-sm-4 Name
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Address
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 City
+                  .col-sm-8
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Region
+                  .col-sm-8
+                    .input-mix.placeholder-right
+                      %input.form-control{type:"text", name:""}
+                      %span optional
+                .form-group
+                  %label.control-label.col-sm-4.col-xs-12 Postcode
+                  .col-sm-4.col-xs-4
+                    %input.form-control{type:"text", name:""}
+                .form-group
+                  %label.control-label.col-sm-4 Select Country
+                  .col-sm-8
+                    %select.nice-select.select-white
+                      %option{disabled:"disabled",selected:"selected"} Select Country
+                      %option America
+                      %option England
+                      %option Singapore
+                      %option Vietnam
+            .control-group
+              %a.btn.btn-gray.btn-lg{href:"travel-info.html"} Back
+              %a.btn.btn-info.btn-lg{href:"book-successful.html"} Submit
+         
           
     %footer
       %div

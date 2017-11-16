@@ -107,6 +107,7 @@ a {
 
 .text-cormo {
   font-family: $font-cormorant;
+  padding: 20px ;
 }
 
 h1, h2, h3, h4, h5 {
@@ -166,6 +167,9 @@ table {
 
 .form-horizontal.form-left {
   padding-right: 40px;
+  @media (max-width: 768px){
+    padding-right: 0px;
+  }
   .form-group {
     margin-bottom: 10px;
   }

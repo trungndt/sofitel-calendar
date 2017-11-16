@@ -736,7 +736,7 @@ $content-fonts: (
   -o-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-.absolute-center, header .logo img {
+.absolute-center, header .logo-wrapper .logo img {
   display: block;
   width: auto;
   height: auto;
@@ -942,7 +942,8 @@ a {
   font-size: 13px; }
 
 .text-cormo {
-  font-family: "Cormorant Garamond", serif; }
+  font-family: "Cormorant Garamond", serif;
+  padding: 20px; }
 
 h1.text-cormo, h2.text-cormo, h3.text-cormo, h4.text-cormo, h5.text-cormo {
   font-weight: 600;
@@ -999,6 +1000,9 @@ table {
 
 .form-horizontal.form-left {
   padding-right: 40px; }
+  @media (max-width: 768px) {
+    .form-horizontal.form-left {
+      padding-right: 0px; } }
   .form-horizontal.form-left .form-group {
     margin-bottom: 10px; }
   .form-horizontal.form-left .control-label {
@@ -1117,18 +1121,35 @@ header {
   box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
   position: relative;
   z-index: 1; }
-  header .logo {
+  @media (max-width: 768px) {
+    header .logo-wrapper {
+      width: 100%; } }
+  header .logo-wrapper .logo {
     height: 100px;
     line-height: 100px;
     background-color: #fff;
     text-align: center;
     display: block; }
-    header .logo img {
+    @media (max-width: 768px) {
+      header .logo-wrapper .logo {
+        width: 50%; } }
+    header .logo-wrapper .logo img {
       height: 50%; }
   header .btn-group {
     margin-top: 30px; }
+    @media (max-width: 768px) {
+      header .btn-group {
+        margin-top: 0px;
+        width: 100%; } }
     header .btn-group .btn {
       color: #fff; }
+      header .btn-group .btn.black-color {
+        color: #000;
+        font-size: 20px;
+        line-height: 80px;
+        display: block;
+        text-align: right;
+        width: 100%; }
 
 .btn-group.step-group .btn {
   border: 1px solid #444;
@@ -1593,6 +1614,57 @@ footer {
     border: 1px solid #e0e0e0;
     border-top: 0; }
 
+@media (min-width: 769px) {
+  .not-desk {
+    display: none; } }
+
+.float-right {
+  float: right; }
+  @media (max-width: 768px) {
+    .float-right {
+      padding-left: 15px !important; } }
+
+.p20 {
+  padding: 20px; }
+
+.pr0 {
+  padding-right: 0px !important; }
+
+@media (max-width: 768px) {
+  .has-toggle a {
+    padding-left: 56px; }
+    .has-toggle a.not-desk {
+      font-size: 18px;
+      line-height: 1.1;
+      color: #000 !important;
+      font-weight: 600;
+      display: block;
+      letter-spacing: 1.5px; }
+    .has-toggle a:after {
+      left: 20px;
+      top: 22px;
+      background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; } }
+
+.information-right {
+  padding: 20px; }
+
+.not-float .information-center {
+  padding: 0 20px 20px; }
+
+.float-left {
+  float: left; }
+
+@media (max-width: 768px) {
+  .not-mb {
+    display: none !important; } }
+
+.font-ws {
+  font-family: "$font-worksans"; }
+
+@media (max-width: 768px) {
+  .has-mar-bot {
+    margin-bottom: 10px; } }
+
 .right-divider {
   border-right: 1px solid #e0e0e0; }
 
@@ -1631,13 +1703,10 @@ footer {
   -o-box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.5);
   box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.5);
   background-color: #fff;
-  padding: 20px;
   margin-bottom: 20px; }
   .panel-rsv-brief h5 {
     margin-top: 0;
-    margin-bottom: 20px; }
-  .panel-rsv-brief .img-container {
-    margin: 0 -20px 20px; }
+    margin-bottom: 0px; }
   .panel-rsv-brief .img-responsive {
     width: 100%; }
   .panel-rsv-brief hr {

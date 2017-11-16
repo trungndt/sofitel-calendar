@@ -28,7 +28,72 @@ $panelSpace: 20px;
 		border-top: 0;
 	}
 }
+.not-desk {
+	@media(min-width: 769px){
+		display: none;
+	}
+}
+.float-right {
+	float: right;
+	@media (max-width: 768px){
+		padding-left: 15px !important; 
 
+		
+
+	}
+}
+.p20 {
+	padding:20px;
+}
+.pr0 {
+	padding-right: 0px !important;
+}
+.has-toggle {
+	@media (max-width: 768px){
+		a{
+			padding-left: 56px;
+			&.not-desk {
+				font-size: 18px;
+				line-height: 1.1;
+				color: #000 !important;
+				font-weight: 600;
+				display: block;
+				letter-spacing: 1.5px;
+
+			}
+			&:after {
+				left: 20px;
+				top: 22px;
+				@include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
+			}
+		}
+
+	}
+}
+.information-right  {
+	padding: 20px;
+}
+.not-float {
+	.information-center {
+		padding:0 20px 20px;
+	}
+}
+.float-left {
+	float: left;
+}
+.not-mb {
+	@media (max-width: 768px){
+		display: none !important;
+	}
+}
+.font-ws {
+	font-family: "$font-worksans";
+}
+.has-mar-bot {
+	@media (max-width: 768px){
+		margin-bottom: 10px;
+	}
+}
 .right-divider {
 	border-right: 1px solid #e0e0e0;
 }
@@ -72,15 +137,12 @@ $panelSpace: 20px;
 .panel-rsv-brief {
 	@include prefix(box-shadow, 1px 2px 4px rgba(#555, .5));
 	background-color: #fff;
-	padding: 20px;
 	margin-bottom: $panelSpace;
 	h5 {
 		margin-top: 0;
-		margin-bottom: 20px;
+		margin-bottom: 0px;
 	}
-	.img-container {
-		margin: 0 -20px 20px;
-	}
+	
 	.img-responsive {
 		width: 100%;
 	}
