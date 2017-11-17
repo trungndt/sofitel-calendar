@@ -8,6 +8,10 @@ footer {
   color: #555;
   // border-top: 1px solid #979797;
   @include prefix(box-shadow, 0 -1px 5px rgba(#555, .5));
+  @media (max-width: 768px){
+    background-color: #fafafa;
+    @include prefix(box-shadow, 0 -1px 5px transparent);
+  }
   .dot-divider {
     margin: 0 10px;
     &:after {

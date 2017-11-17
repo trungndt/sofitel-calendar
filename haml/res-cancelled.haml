@@ -22,28 +22,18 @@
                 %a.btn{href:"/"} New Reservation
     %section.bg-lightgray
       .container
-        %h3.mb-30 Reservation Request Received
+        %h3.mb-30 Reservation Confirmed
         %p.font-13 A copy of your reservation details has been sent to &nbsp;
           %strong email@domain.com.
-        %p.font-13 For further enquiries or changes to your booking, please contact The Kingsmen Hotel Singapore.
-        %br/
-        .panel.panel-info
-          .panel-heading.p-20
-            .font-18.mb-15 Loyalty Club Sign Up
-            %p You indicated interest in signing up as a Le Club AccorHotels member. Please sign up and key in your new membership number below:
-            .row
-              .col-sm-4.right-divider.col-xs-12.has-mar-bot
-                %h5.fw-600 1. Step One
-                %button.btn.btn-info.btn-lg Click Here to Sign up
-              .col-sm-8
-                %h5.fw-600 2. Step Two
-                .form-inline
-                  %label.mr-50 Key in your Membership No.
-                  %input.form-control.mr-20.has-mar-bot{type:"text", name:""}
-                  %button.btn.btn-info.btn-lg Submit
-        
+        %p.font-13 If you have entered your credit card details during the booking, you will not be charged.
+        .cancel-date
+          %table.tbl-info
+            %tr
+              %th Date Cancelled:
+              %th 24 June 2017
+            
         .row
-          .col-sm-8.col-xs-12
+          .col-sm-8
             .panel.panel-default
               .panel-body
                 %h4.mb-30 Your Reservation Details
@@ -72,7 +62,11 @@
                 %p Donec facilisis tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a tortor. Pellentesque non dignissim neque. Ut porta viverra est, ut dignissim elit elementum ut. Nunc vel rhoncus nibh, ut tincidunt turpis.
                 %hr/
                 %h5.text-cormo THIS ROOM INCLUDES:
-                %p Room inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. The Kingsmen Hotel Singapore’s 440 guest rooms, which include 46 suites with private balconies, are an elegant reflection of Singapore’s unique cultures. Contemporary comforts meet with classic style in a soothing palette of neutral tones, graced with accents of gold and orange.
+                %ul.no-list-style 
+                  %li Breakfast Included
+                  %li Free Parking
+                  %li Free Internet
+                  %li Unlimited mobile data with Handy phone
 
             .panel.panel-default
               .panel-body
@@ -89,7 +83,7 @@
               %ul
                 %li Service charge: 10%
                 %li Goods & Service tax: 7%
-          .col-sm-4.col-xs-12
+          .col-sm-4
             .panel-rsv-brief.p20
               %h4 Price Summary
               %table.tbl-price
@@ -140,7 +134,16 @@
                       %td $401.00 SGD
               %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
                 Show nightly breakdown
-              
+              %hr/
+              %table.tbl-price
+                %tbody
+                  %tr
+                    %th Payment Method
+                    %td Credit Card
+                  %tr
+                    %td VISA
+                    %td xxxx xxxx xxxx 1234
+        
             .panel.panel-gray
               .panel-body
                 %h4 The Kingsmen Hotel Singapore

@@ -1177,6 +1177,14 @@ footer {
   -ms-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   -o-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5); }
+  @media (max-width: 768px) {
+    footer {
+      background-color: #fafafa;
+      -webkit-box-shadow: 0 -1px 5px transparent;
+      -moz-box-shadow: 0 -1px 5px transparent;
+      -ms-box-shadow: 0 -1px 5px transparent;
+      -o-box-shadow: 0 -1px 5px transparent;
+      box-shadow: 0 -1px 5px transparent; } }
   footer .dot-divider {
     margin: 0 10px; }
     footer .dot-divider:after {
@@ -1511,6 +1519,9 @@ footer {
   .room-item .block-main {
     width: 75%;
     padding: 0 15px; }
+    @media (max-width: 767px) {
+      .room-item .block-main {
+        width: 100%; } }
   .room-item .padding-0 {
     padding: 0; }
   .room-item .img-container {
@@ -1566,6 +1577,10 @@ footer {
     width: 25%;
     padding: 20px 15px;
     background-color: rgba(0, 149, 255, 0.1); }
+    @media (max-width: 767px) {
+      .room-item .block-price {
+        position: static;
+        width: 100%; } }
   .room-item .price {
     font-size: 30px; }
     .room-item .price small {
@@ -1618,11 +1633,18 @@ footer {
   .not-desk {
     display: none; } }
 
+@media (min-width: 768px) {
+  .not-desk-body {
+    display: none; } }
+
 .float-right {
   float: right; }
   @media (max-width: 768px) {
     .float-right {
       padding-left: 15px !important; } }
+
+.room-list .block-main .block {
+  padding-bottom: 0px !important; }
 
 .p20 {
   padding: 20px; }
@@ -1630,20 +1652,36 @@ footer {
 .pr0 {
   padding-right: 0px !important; }
 
-@media (max-width: 768px) {
-  .has-toggle a {
-    padding-left: 56px; }
-    .has-toggle a.not-desk {
-      font-size: 18px;
-      line-height: 1.1;
-      color: #000 !important;
-      font-weight: 600;
-      display: block;
-      letter-spacing: 1.5px; }
-    .has-toggle a:after {
-      left: 20px;
-      top: 22px;
-      background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; } }
+@media (max-width: 767px) {
+  .has-toggle a.not-desk-body {
+    padding-left: 56px;
+    font-size: 18px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #000 !important;
+    font-weight: 600;
+    display: block;
+    letter-spacing: 1.5px; }
+    .has-toggle a.not-desk-body.more-info {
+      display: inline-block;
+      padding-left: 0px;
+      font-size: 14px;
+      color: #0095FF !important; }
+  .has-toggle a:after {
+    left: 20px;
+    top: 22px;
+    background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
+  .has-toggle a.no_prefix:after {
+    background: none; } }
+
+@media (max-width: 767px) {
+  .bg-white {
+    background-color: #fff;
+    display: block; } }
+
+@media (max-width: 767px) {
+  .has-border {
+    border: 1px solid #e0d8d8; } }
 
 .information-right {
   padding: 20px; }
@@ -1656,6 +1694,10 @@ footer {
 
 @media (max-width: 768px) {
   .not-mb {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .not-mb-body {
     display: none !important; } }
 
 .font-ws {
@@ -1712,6 +1754,12 @@ footer {
   .panel-rsv-brief hr {
     margin-top: 10px;
     margin-bottom: 10px; }
+  @media (max-width: 768px) {
+    .panel-rsv-brief .tbl-info {
+      margin-top: 20px; } }
+
+.hide-nha {
+  display: none !important; }
 
 .tbl-info td:first-child {
   padding-right: 50px; }
@@ -1750,3 +1798,21 @@ footer {
   line-height: 2; }
   .tbl-addr th:first-child, .tbl-addr td:first-child {
     padding-right: 30px; }
+  .tbl-addr th a, .tbl-addr td a {
+    word-break: break-all; }
+
+.cancel-date {
+  padding: 20px 0; }
+  .cancel-date table tbody th {
+    padding-right: 40px; }
+
+.no-list-style {
+  padding-left: 0px; }
+  .no-list-style li {
+    list-style-type: none; }
+
+.hotel-info-wrap, .includesblock {
+  padding: 0; }
+  @media (max-width: 767px) {
+    .hotel-info-wrap, .includesblock {
+      padding: 20px; } }

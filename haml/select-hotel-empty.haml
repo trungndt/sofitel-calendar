@@ -10,7 +10,7 @@
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
   %body
-    %header.container-fluid
+    %header.container-fluid.hide-nha
       .row.space-0
         .col-sm-3
           .logo
@@ -55,28 +55,33 @@
               .controller
                 %button.btn.btn-info.btn-lg Search
     
-    %section.bg-lightgray
-      .container
-        %h3.mb-30 The Kingsmen Hotel
-        .row
+    %section.bg-lightgray.has-toggle
+      .container#hotelName
+        %h3.mb-30.not-mb-body The Kingsmen Hotel
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
+        .row#collapseThree.collapse.in
           .col-sm-7
-            %p.text-info.font-13 2 Kingsmen Road, Singapore 099891
-            %p.font-13 
-              %strong Phone: 
-               +65 6733 8388
-            %br/
-            %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, disco...
-            
-            %a{href:"#"} Read more...
-          .col-sm-5
+            .hotel-info-wrap.has-border
+              %p.text-info.font-13 2 Kingsmen Road, Singapore 099891
+              %p.font-13 
+                %strong Phone: 
+                 +65 6733 8388
+              %br/
+              %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, disco...
+              
+              %a{href:"#"} Read more...
+          .col-sm-5.not-mb-body
             .google-map-container
               #map
     %hr/
-    %section.pt-0
-      .container
-        %h5.text-cormo YOUR STAY HERE INCLUDES:
-        %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
-        %a{href:"#"} Read more...
+    %section.pt-0.has-toggle
+      .container#hotelIncludes
+        %h5.not-mb-body YOUR STAY HERE INCLUDES:
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
+        #collapsetwo.collapse.in
+          .includesblock.has-border
+            %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
+            %a{href:"#"} Read more...
         %hr/
         .form-inline.mb-30
           .form-group
@@ -88,7 +93,7 @@
         .room-list
           %p.msg-empty There are no rooms available. Try changing your search dates, selected room, or number of guests.
         %br/
-        %a{href:"#"} View Room Policies
+        %a.not-mb-body{href:"#"} View Room Policies
           %i.icon.icon-arrow-down.ml-15
     %footer
       %div

@@ -10,7 +10,7 @@
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
   %body
-    %header.container-fluid
+    %header.container-fluid.hide-nha
       .row.space-0
         .col-sm-3
           %a.logo{href:"/"}
@@ -55,28 +55,33 @@
               .controller
                 %a.btn.btn-info.btn-lg{href:"select-hotel.html"} Search
     
-    %section.bg-lightgray
-      .container
+    %section.bg-lightgray.has-toggle
+      .container#hotelName
         %h3.mb-30 The Kingsmen Hotel
-        .row
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
+        .row#collapseThree.collapse.in
           .col-sm-7
-            %p.text-info.font-13 2 Kingsmen Road, Singapore 099891
-            %p.font-13 
-              %strong Phone: 
-               +65 6733 8388
-            %br/
-            %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, disco...
-            
-            %a{href:"#"} Read more...
-          .col-sm-5
+            .hotel-info-wrap.has-border
+              %p.text-info.font-13 2 Kingsmen Road, Singapore 099891
+              %p.font-13 
+                %strong Phone: 
+                 +65 6733 8388
+              %br/
+              %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, disco...
+              
+              %a{href:"#"} Read more...
+          .col-sm-5.not-mb-body
             .google-map-container
               #map
     %hr/
-    %section.pt-0
-      .container
-        %h5.text-cormo YOUR STAY HERE INCLUDES:
-        %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
-        %a{href:"#"} Read more...
+    %section.pt-0.has-toggle
+      .container#hotelIncludes
+        %h5.not-mb-body YOUR STAY HERE INCLUDES:
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
+        #collapsetwo.collapse.in
+          .includesblock.has-border
+            %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
+            %a{href:"#"} Read more...
         %hr/
         .form-inline.mb-30
           .form-group
@@ -89,22 +94,26 @@
           .room-item
             .block-main
               .row
-                .col-sm-4.pb-30
+                .col-sm-4.pb-30.col-xs-12.block
                   .img-container
                     .img-wrapper{style:"background-image:url('assets/images/room-01.png')"}
                     %a{href:"#"}
                       %i.icon.icon-zoomin
-                  .pt-10.pl-5
+                  .pt-10.pl-5.not-mb-body
                     %h5.text-cormo MAX. GUESTS
                     %div
                       %i.icon.icon-guest
                       %i.icon.icon-guest
                       %i.icon.icon-guest
-                .col-sm-8
-                  .block-info
+               
+
+                .col-sm-8.col-xs-12
+                  .block-info.RoomInfo1
                     %h4.title Deluxe King Room
                       %span.status-tag Available
-                    .row
+                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo1", href:"#collapseroom1", aria-expanded:"true"} More about this room
+
+                    .row#collapseroom1.collapse.in
                       .col-sm-6
                         %h5.text-cormo DESCRIPTION
                         .expandable
@@ -131,95 +140,105 @@
               %p.mb-60 Excluding Taxes & Fees
 
               %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room
-              
           .room-item
-              .block-main
-                .row
-                  .col-sm-4.pb-30
-                    .img-container
-                      .img-wrapper{style:"background-image:url('assets/images/room-02.png')"}
-                      %a{href:"#"}
-                        %i.icon.icon-zoomin
-                    .pt-10.pl-5
-                      %h5.text-cormo MAX. GUESTS
-                      %div
-                        %i.icon.icon-guest
-                        %i.icon.icon-guest
-                  .col-sm-8
-                    .block-info
-                      %h4.title Deluxe King Room
-                        %span.status-tag Available
-                      .row
-                        .col-sm-6
-                          %h5.text-cormo DESCRIPTION
-                          .expandable
-                            .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                            %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
-                        .col-sm-6
-                          %h5.text-cormo INCLUDES
-                          .expandable
-                            .shown-content
-                              %div Breakfast
-                              %div Free Parking
-                              %div Free Internet
-                              .extension
-                                %div Hanger
-                                %div Unlimited mobile data with
-                                %div Handy phone
-                                %div Laundry
-                            %a{href:"#", data-action:"expand", data-expand:"See less", data-collapse:"More inclusive"} More inclusive
-              .block-price
-                %h5.text-cormo AVG. NIGHTLY RATE
-                .price $385
-                  %small SGD
-                %p.mb-60 Excluding Taxes & Fees
+            .block-main
+              .row
+                .col-sm-4.pb-30.col-xs-12.block
+                  .img-container
+                    .img-wrapper{style:"background-image:url('assets/images/room-02.png')"}
+                    %a{href:"#"}
+                      %i.icon.icon-zoomin
+                  .pt-10.pl-5.not-mb-body
+                    %h5.text-cormo MAX. GUESTS
+                    %div
+                      %i.icon.icon-guest
+                      %i.icon.icon-guest
+                      %i.icon.icon-guest
+               
 
-                %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room
+                .col-sm-8.col-xs-12
+                  .block-info.RoomInfo2
+                    %h4.title Deluxe King Room
+                      %span.status-tag Available
+                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo2", href:"#collapseroom2", aria-expanded:"true"} More about this room
+
+                    .row#collapseroom2.collapse.in
+                      .col-sm-6
+                        %h5.text-cormo DESCRIPTION
+                        .expandable
+                          .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                          %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
+                      .col-sm-6
+                        %h5.text-cormo INCLUDES
+                        .expandable
+                          .shown-content
+                            %div Breakfast
+                            %div Free Parking
+                            %div Free Internet
+                            .extension
+                              %div Hanger
+                              %div Unlimited mobile data with
+                              %div Handy phone
+                              %div Laundry
+                          %a{href:"#", data-action:"expand", data-expand:"See less", data-collapse:"More inclusive"} More inclusive
+            .block-price
+              %h5.text-cormo AVG. NIGHTLY RATE
+              .price $300
+                %small SGD
+              %p.mb-60 Excluding Taxes & Fees
+
+              %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room  
           .room-item.sold-out
-              .block-main
-                .row
-                  .col-sm-4.pb-30
-                    .img-container
-                      .img-wrapper{style:"background-image:url('assets/images/room-01.png')"}
-                      %a{href:"#"}
-                        %i.icon.icon-zoomin
-                    .pt-10.pl-5
-                      %h5.text-cormo MAX. GUESTS
-                      %div
-                        %i.icon.icon-guest
-                        %i.icon.icon-guest
-                  .col-sm-8
-                    .block-info
-                      %h4.title Deluxe King Room
-                        %span.status-tag Sold Out
-                      .row
-                        .col-sm-6
-                          %h5.text-cormo DESCRIPTION
-                          .expandable
-                            .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                            %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
-                        .col-sm-6
-                          %h5.text-cormo INCLUDES
-                          .expandable
-                            .shown-content
-                              %div Breakfast
-                              %div Free Parking
-                              %div Free Internet
-                              .extension
-                                %div Hanger
-                                %div Unlimited mobile data with
-                                %div Handy phone
-                                %div Laundry
-                            %a{href:"#", data-action:"expand", data-expand:"See less", data-collapse:"More inclusive"} More inclusive
-              .block-price
-                %h5.text-cormo AVG. NIGHTLY RATE
-                .price $385
-                  %small SGD
-                %p.mb-60 Excluding Taxes & Fees
+            .block-main
+              .row
+                .col-sm-4.pb-30.col-xs-12.block
+                  .img-container
+                    .img-wrapper{style:"background-image:url('assets/images/room-01.png')"}
+                    %a{href:"#"}
+                      %i.icon.icon-zoomin
+                  .pt-10.pl-5.not-mb-body
+                    %h5.text-cormo MAX. GUESTS
+                    %div
+                      %i.icon.icon-guest
+                      %i.icon.icon-guest
+                      %i.icon.icon-guest
+               
 
-                %button.btn.btn-gray.btn-block.btn-lg{disabled:"disabled"} Sold Out
+                .col-sm-8.col-xs-12
+                  .block-info.RoomInfo3
+                    %h4.title Deluxe King Room
+                      %span.status-tag Available
+                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo3", href:"#collapseroom3", aria-expanded:"true"} More about this room
+
+                    .row#collapseroom3.collapse.in
+                      .col-sm-6
+                        %h5.text-cormo DESCRIPTION
+                        .expandable
+                          .shown-content.inline-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            %span.extension &nbsp;aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                          %a{href:"#", data-action:"expand", data-expand:"Less details", data-collapse:"More details"} More details
+                      .col-sm-6
+                        %h5.text-cormo INCLUDES
+                        .expandable
+                          .shown-content
+                            %div Breakfast
+                            %div Free Parking
+                            %div Free Internet
+                            .extension
+                              %div Hanger
+                              %div Unlimited mobile data with
+                              %div Handy phone
+                              %div Laundry
+                          %a{href:"#", data-action:"expand", data-expand:"See less", data-collapse:"More inclusive"} More inclusive
+            .block-price
+              %h5.text-cormo AVG. NIGHTLY RATE
+              .price $300
+                %small SGD
+              %p.mb-60 Excluding Taxes & Fees
+
+              %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room  
+         
         %br/
         %a{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
         .collapse.policy-collapse#collapsePolicy
@@ -238,7 +257,7 @@
         %a{href:"#"} Get Tickets for Event
       %div
         Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
-        %a{href:"#"} Privacy Policy
+        %a.not-mb-body{href:"#"} Privacy Policy
         %span.dot-divider
         %a{href:"#"} Terms & Conditions.
 

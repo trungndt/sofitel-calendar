@@ -33,32 +33,52 @@ $panelSpace: 20px;
 		display: none;
 	}
 }
+.not-desk-body {
+	@media(min-width: 768px){
+		display: none;
+		
+	}
+}
+
 .float-right {
 	float: right;
 	@media (max-width: 768px){
 		padding-left: 15px !important; 
-
-		
-
+	}
+}
+.room-list {
+	.block-main {
+		.block {
+			padding-bottom: 0px !important; 
+		}
 	}
 }
 .p20 {
 	padding:20px;
 }
+
 .pr0 {
 	padding-right: 0px !important;
 }
 .has-toggle {
-	@media (max-width: 768px){
+	@media (max-width: 767px){
 		a{
-			padding-left: 56px;
-			&.not-desk {
+			
+			&.not-desk-body {
+				padding-left: 56px;
 				font-size: 18px;
 				line-height: 1.1;
+				text-transform: uppercase;
 				color: #000 !important;
 				font-weight: 600;
 				display: block;
 				letter-spacing: 1.5px;
+				&.more-info {
+					display: inline-block;
+					padding-left:0px;
+					font-size: 14px;
+					color: #0095FF !important;
+				}
 
 			}
 			&:after {
@@ -66,8 +86,24 @@ $panelSpace: 20px;
 				top: 22px;
 				@include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
 			}
+			&.no_prefix{
+				&:after{
+					background: none;
+				}
+			}
 		}
 
+	}
+}
+.bg-white{
+	@media (max-width: 767px){
+			background-color: #fff;
+			display: block;
+	}
+}
+.has-border {
+	@media (max-width:767px){
+		border : 1px solid #e0d8d8;
 	}
 }
 .information-right  {
@@ -78,12 +114,19 @@ $panelSpace: 20px;
 		padding:0 20px 20px;
 	}
 }
+
 .float-left {
 	float: left;
 }
 .not-mb {
 	@media (max-width: 768px){
 		display: none !important;
+	}
+}
+.not-mb-body {
+	@media (max-width: 767px){
+		display: none !important;
+
 	}
 }
 .font-ws {
@@ -150,8 +193,15 @@ $panelSpace: 20px;
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
+	.tbl-info{
+		@media (max-width:768px){
+			margin-top : 20px;
+		}
+	}
 }
-
+.hide-nha {
+	display: none !important;
+}
 .tbl-info {
 	// width: 100%;
 	td:first-child {
@@ -207,5 +257,31 @@ $panelSpace: 20px;
 		&:first-child {
 			padding-right: 30px;
 		}
+		a {
+			word-break:break-all;
+		}
 	}
+}
+.cancel-date {
+	padding: 20px 0;
+	table {
+		tbody {
+			th {
+				padding-right: 40px;
+			}
+		}
+	}
+}
+.no-list-style {
+	padding-left: 0px;
+	li {
+		list-style-type: none;
+	}
+}
+.hotel-info-wrap,.includesblock  {
+	padding: 0;
+	@media (max-width: 767px){
+		padding: 20px;
+	}
+	
 }
