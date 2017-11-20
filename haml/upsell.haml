@@ -10,7 +10,7 @@
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
   %body
-    %header.container-fluid
+    %header.container-fluid.hide-nha
       .row.space-0
         .col-sm-3
           .logo
@@ -55,18 +55,25 @@
               .controller
                 %button.btn.btn-info.btn-lg Search
     
-    %section.bg-lightgray
-      .container
-        %h3 Enhance your stay at The Kingsmen Hotel
-        %p Get the most of our stay by upgrading your room at a special rate.
-        %p
-          %span.fw-600 Your selection was: Deluxe King Room at an average nightly rate of 300 SGD / night.
+    %section.bg-lightgray.has-toggle
+      .container#Enhancehotel
+        %h3.not-mb-body Enhance your stay at The Kingsmen Hotel
+        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#Enhancehotel", href:"#collapseThree", aria-expanded:"true"} Enhance your stay at The Kingsmen Hotel
+        .row#collapseThree.collapse.in
+          .col-sm-7
+            .hotel-info-wrap.has-border
+              %p Get the most of our stay by upgrading your room at a special rate.
+              %p
+               %span.fw-600 Your selection was: Deluxe King Room at an average nightly rate of 300 SGD / night.
     %hr/
-    %section.pt-0
-      .container
-        %h5.text-cormo YOUR STAY HERE INCLUDES:
-        %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
-        %a{href:"#"} Read more...
+    %section.pt-0.has-toggle
+      .container#hotelIncludes
+        %h5.text-cormo.not-mb-body YOUR STAY HERE INCLUDES:
+        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
+        #collapsetwo.collapse.in
+          .includesblock.has-border
+            %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
+            %a{href:"#"} Read more...
         %hr/
         .form-inline.mb-30
           .form-group
@@ -79,22 +86,28 @@
           .room-item
             .block-main
               .row
-                .col-sm-4.pb-30
+                .col-sm-4.pb-30.col-xs-12.block
                   .img-container
                     .img-wrapper{style:"background-image:url('assets/images/room-01.png')"}
                     %a{href:"#"}
                       %i.icon.icon-zoomin
-                  .pt-10.pl-5
+                  .pt-10.pl-5.not-mb-body
                     %h5.text-cormo MAX. GUESTS
                     %div
                       %i.icon.icon-guest
                       %i.icon.icon-guest
                       %i.icon.icon-guest
-                .col-sm-8
-                  .block-info
+                .col-sm-8.col-xs-12
+                  .block-info.Upsellroom1
                     %h4.title Deluxe King Room
                       %span.status-tag Available
-                    .row
+                    .pt-10.pl-5.pb-20.not-desk-body
+                      %div
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                    %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".Upsellroom1", href:"#collapseroom1", aria-expanded:"true"} More about this room
+                    .row#collapseroom1.collapse.in
                       .col-sm-6
                         %h5.text-cormo DESCRIPTION
                         .expandable
@@ -125,21 +138,26 @@
           .room-item
               .block-main
                 .row
-                  .col-sm-4.pb-30
+                  .col-sm-4.pb-30.col-xs-12.block
                     .img-container
                       .img-wrapper{style:"background-image:url('assets/images/room-02.png')"}
                       %a{href:"#"}
                         %i.icon.icon-zoomin
-                    .pt-10.pl-5
+                    .pt-10.pl-5.not-mb-body
                       %h5.text-cormo MAX. GUESTS
                       %div
                         %i.icon.icon-guest
                         %i.icon.icon-guest
-                  .col-sm-8
-                    .block-info
+                  .col-sm-8.col-xs-12
+                    .block-info.Upsellroom2
                       %h4.title Deluxe King Room
                         %span.status-tag Available
-                      .row
+                      .pt-10.pl-5.pb-20.not-desk-body
+                        %div
+                         %i.icon.icon-guest
+                         %i.icon.icon-guest
+                      %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".Upsellroom2", href:"#collapseroom2", aria-expanded:"true"} More about this room
+                      .row#collapseroom2.collapse.in
                         .col-sm-6
                           %h5.text-cormo DESCRIPTION
                           .expandable
@@ -171,7 +189,7 @@
           %button.btn.btn-info-bordered.btn-lg Skip
 
         %br/
-        %a{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
+        %a.policy{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
         .collapse.policy-collapse#collapsePolicy
           %h4.font-14 Room Policy:
           %ul
