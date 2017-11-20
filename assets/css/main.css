@@ -942,7 +942,9 @@ a {
   font-size: 13px; }
 
 .text-cormo {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cormorant Garamond", serif; }
+
+.title-p20 {
   padding: 20px; }
 
 h1.text-cormo, h2.text-cormo, h3.text-cormo, h4.text-cormo, h5.text-cormo {
@@ -1560,6 +1562,9 @@ footer {
     padding: 20px 5px 30px; }
   .room-item .title {
     margin-bottom: 30px; }
+    @media (max-width: 767px) {
+      .room-item .title {
+        margin-bottom: 0px; } }
   .room-item .status-tag {
     margin-left: 20px;
     padding: 5px 12px;
@@ -1635,7 +1640,7 @@ footer {
 
 @media (min-width: 768px) {
   .not-desk-body {
-    display: none; } }
+    display: none !important; } }
 
 .float-right {
   float: right; }
@@ -1643,11 +1648,21 @@ footer {
     .float-right {
       padding-left: 15px !important; } }
 
-.room-list .block-main .block {
-  padding-bottom: 0px !important; }
+@media (max-width: 767px) {
+  .room-list .block-main .block {
+    padding-bottom: 0px !important; } }
+
+.room-list .block-price .mb-60 {
+  margin-bottom: 30px !important; }
 
 .p20 {
   padding: 20px; }
+
+@media (max-width: 767px) {
+  .policy:after {
+    top: 5px !important;
+    left: inherit !important;
+    right: 10px; } }
 
 .pr0 {
   padding-right: 0px !important; }
@@ -1666,13 +1681,28 @@ footer {
       display: inline-block;
       padding-left: 0px;
       font-size: 14px;
-      color: #0095FF !important; }
+      color: #0095FF !important;
+      position: relative; }
+      .has-toggle a.not-desk-body.more-info:after {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        left: inherit;
+        background: url(../images/icon/chevron-right-blue.png) 0 0/100% 100% no-repeat;
+        display: block;
+        width: 8px;
+        height: 15px;
+        transform: rotate(0deg); }
   .has-toggle a:after {
     left: 20px;
     top: 22px;
     background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
   .has-toggle a.no_prefix:after {
     background: none; } }
+
+@media (max-width: 450px) {
+  .full-width-btn {
+    width: 100%; } }
 
 @media (max-width: 767px) {
   .bg-white {

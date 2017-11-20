@@ -35,8 +35,7 @@ $panelSpace: 20px;
 }
 .not-desk-body {
 	@media(min-width: 768px){
-		display: none;
-		
+		display: none !important;
 	}
 }
 
@@ -49,14 +48,30 @@ $panelSpace: 20px;
 .room-list {
 	.block-main {
 		.block {
-			padding-bottom: 0px !important; 
+			@media (max-width: 767px ){
+				padding-bottom: 0px !important; 
+				
+			}
+		}
+	}
+	.block-price {
+		.mb-60 {
+			margin-bottom: 30px !important;
 		}
 	}
 }
 .p20 {
 	padding:20px;
 }
-
+.policy {
+	&:after {
+		@media (max-width: 767px){
+			top: 5px !important;
+			left: inherit !important;
+			right: 10px;
+		}
+	}
+}
 .pr0 {
 	padding-right: 0px !important;
 }
@@ -78,6 +93,19 @@ $panelSpace: 20px;
 					padding-left:0px;
 					font-size: 14px;
 					color: #0095FF !important;
+					position: relative;
+					&:after {
+						position: absolute;
+						top: 0;
+						right: 15px;
+						left: inherit;
+						background: url(../images/icon/chevron-right-blue.png) 0 0/100% 100% no-repeat;
+						display: block;
+						width: 8px;
+						height: 15px;
+						transform: rotate(0deg);
+
+					}
 				}
 
 			}
@@ -94,6 +122,12 @@ $panelSpace: 20px;
 		}
 
 	}
+}
+.full-width-btn {
+	@media (max-width: 450px){
+		width: 100%;
+	}
+
 }
 .bg-white{
 	@media (max-width: 767px){

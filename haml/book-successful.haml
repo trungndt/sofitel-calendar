@@ -34,13 +34,13 @@
             .row
               .col-sm-4.right-divider.col-xs-12.has-mar-bot
                 %h5.fw-600 1. Step One
-                %button.btn.btn-info.btn-lg Click Here to Sign up
+                %button.btn.btn-info.btn-lg.full-width-btn Click Here to Sign up
               .col-sm-8
                 %h5.fw-600 2. Step Two
                 .form-inline
                   %label.mr-50 Key in your Membership No.
                   %input.form-control.mr-20.has-mar-bot{type:"text", name:""}
-                  %button.btn.btn-info.btn-lg Submit
+                  %button.btn.btn-info.btn-lg.full-width-btn Submit
         
         .row
           .col-sm-8.col-xs-12
@@ -78,8 +78,7 @@
               .panel-body
                 %h5.text-cormo YOUR STAY HERE INCLUDES:
                 %p Block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. The Kingsmen Hotel Singapore’s 440 guest rooms, which include 46 suites with private balconies, are an elegant reflection of Singapore’s unique cultures. Contemporary comforts meet with classic style in a soothing palette of neutral tones, graced with accents of gold and orange.
-            %br/
-            .policy-collapse
+            .policy-collapse.not-mb-body
               %h4.font-14 Room Policy:
               %ul
                 %li A full prepayment is required to secure this booking
@@ -158,6 +157,16 @@
                       %tr
                         %th Fax:
                         %td +65 6733 8388
+            .policy-collapse.not-desk-body
+              %h4.font-14 Room Policy:
+              %ul
+                %li A full prepayment is required to secure this booking
+                %li 100% will be charged upon cancellation or no-shows
+              %p.mb-30 A valid credit card is required and total room charge (including service charge and tax) will be charged upon booking.
+              %h4.font-14 Tax and Fees:
+              %ul
+                %li Service charge: 10%
+                %li Goods & Service tax: 7%
           
     %footer
       %div

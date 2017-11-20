@@ -58,7 +58,7 @@
     %section.bg-lightgray.has-toggle
       .container#hotelName
         %h3.mb-30 The Kingsmen Hotel
-        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
+        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
         .row#collapseThree.collapse.in
           .col-sm-7
             .hotel-info-wrap.has-border
@@ -77,7 +77,7 @@
     %section.pt-0.has-toggle
       .container#hotelIncludes
         %h5.not-mb-body YOUR STAY HERE INCLUDES:
-        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
+        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
         #collapsetwo.collapse.in
           .includesblock.has-border
             %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
@@ -111,7 +111,12 @@
                   .block-info.RoomInfo1
                     %h4.title Deluxe King Room
                       %span.status-tag Available
-                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo1", href:"#collapseroom1", aria-expanded:"true"} More about this room
+                    .pt-10.pl-5.pb-20.not-desk-body
+                      %div
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                    %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo1", href:"#collapseroom1", aria-expanded:"true"} More about this room
 
                     .row#collapseroom1.collapse.in
                       .col-sm-6
@@ -160,7 +165,12 @@
                   .block-info.RoomInfo2
                     %h4.title Deluxe King Room
                       %span.status-tag Available
-                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo2", href:"#collapseroom2", aria-expanded:"true"} More about this room
+                    .pt-10.pl-5.pb-20.not-desk-body
+                      %div
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                    %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo2", href:"#collapseroom2", aria-expanded:"true"} More about this room
 
                     .row#collapseroom2.collapse.in
                       .col-sm-6
@@ -208,8 +218,13 @@
                 .col-sm-8.col-xs-12
                   .block-info.RoomInfo3
                     %h4.title Deluxe King Room
-                      %span.status-tag Available
-                     %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo3", href:"#collapseroom3", aria-expanded:"true"} More about this room
+                      %span.status-tag Sold out
+                    .pt-10.pl-5.pb-20.not-desk-body
+                      %div
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                        %i.icon.icon-guest
+                    %a.not-desk-body.more-info.no_prefix{data-toggle:"collapse", data-parent:".RoomInfo3", href:"#collapseroom3", aria-expanded:"true"} More about this room
 
                     .row#collapseroom3.collapse.in
                       .col-sm-6
@@ -240,7 +255,7 @@
               %a.btn.btn-info.btn-block.btn-lg{href:"personal-info.html"} Select Room  
          
         %br/
-        %a{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
+        %a.policy{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
         .collapse.policy-collapse#collapsePolicy
           %h4.font-14 Room Policy:
           %ul

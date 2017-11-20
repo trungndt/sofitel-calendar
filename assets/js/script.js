@@ -43,7 +43,7 @@ $(function() {
       },
       beforeShowDay: function(t) {
         var _this = moment(t).format(_DATEFORMAT_2);
-        console.log(_this);
+        // console.log(_this);
         var soldoutDate = [
           '2017/10/10',
           '2017/10/27',
@@ -161,6 +161,7 @@ $(function() {
     if (expandText != undefined)
       $lbl.html(expandText);
   });
+  reloadpage_when_resize();
 });
 
 function initMap() {
@@ -173,3 +174,18 @@ function initMap() {
     center: centerPoint
   });
 }
+
+ function reloadpage_when_resize (){
+    var current_width  = $(window).width();
+    $(window).resize(function(){
+      var new_width = $(window).width();
+      var width_dif = Math.abs(new_width - current_width);
+      if(width_dif > 20 ){
+        location.reload();
+        
+      }
+    })
+    if(current_width < 768) {
+      $('.room-list .block-info .collapse').removeClass('in');
+    }
+ }
