@@ -1565,7 +1565,7 @@ footer {
     @media (max-width: 767px) {
       .room-item .title {
         margin-bottom: 0px; } }
-  .room-item .status-tag {
+  .room-item s .status-tag {
     margin-left: 20px;
     padding: 5px 12px;
     font-size: 12px;
