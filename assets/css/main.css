@@ -5,6 +5,15 @@
 /*============================================================================
   #Mixin
 ==============================================================================*/
+/* $smartphone: 480px; */
+/* $tabletPortrait: 767px; */
+/* $tabletLandscape: 1023px; */
+/* $xsDesktop: 1100px; */
+/* $smDesktop: 1200px; */
+/* $mdDesktop: 1280px; */
+/* // $desktop: 1174px; */
+/* $largeScreen: 1440px; */
+/* $hdScreen: 1799px; */
 /*
 $xlg-fonts: (
   null: 120px,
@@ -560,69 +569,6 @@ $content-fonts: (
 .pl-100 {
   padding-left: 100px !important; }
 
-.p-0 {
-  padding: 0px !important; }
-
-.p-5 {
-  padding: 5px !important; }
-
-.p-10 {
-  padding: 10px !important; }
-
-.p-15 {
-  padding: 15px !important; }
-
-.p-20 {
-  padding: 20px !important; }
-
-.p-25 {
-  padding: 25px !important; }
-
-.p-30 {
-  padding: 30px !important; }
-
-.p-35 {
-  padding: 35px !important; }
-
-.p-40 {
-  padding: 40px !important; }
-
-.p-45 {
-  padding: 45px !important; }
-
-.p-50 {
-  padding: 50px !important; }
-
-.p-55 {
-  padding: 55px !important; }
-
-.p-60 {
-  padding: 60px !important; }
-
-.p-65 {
-  padding: 65px !important; }
-
-.p-70 {
-  padding: 70px !important; }
-
-.p-75 {
-  padding: 75px !important; }
-
-.p-80 {
-  padding: 80px !important; }
-
-.p-85 {
-  padding: 85px !important; }
-
-.p-90 {
-  padding: 90px !important; }
-
-.p-95 {
-  padding: 95px !important; }
-
-.p-100 {
-  padding: 100px !important; }
-
 .font-10 {
   font-size: 10px; }
 
@@ -736,7 +682,7 @@ $content-fonts: (
   -o-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-.absolute-center, header .logo-wrapper .logo img {
+.absolute-center, header .logo img {
   display: block;
   width: auto;
   height: auto;
@@ -781,7 +727,7 @@ $content-fonts: (
     position: relative;
     padding-left: 50px;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 100;
     height: 30px;
     line-height: 30px; }
     .nice-check:checked + label:before, .nice-check:not(:checked) + label:before {
@@ -791,8 +737,9 @@ $content-fonts: (
       top: 0;
       width: 30px;
       height: 30px;
-      border: 1px solid #0095FF;
-      background: #fff; }
+      border: 1px solid #00AA41;
+      background: #fff;
+      border-radius: 50%; }
     .nice-check:checked + label:after, .nice-check:not(:checked) + label:after {
       content: '✔';
       position: absolute;
@@ -800,8 +747,11 @@ $content-fonts: (
       left: 9px;
       line-height: 30px;
       font-size: 14px;
-      color: #0095FF;
+      color: #fff;
       transition: all .1s; }
+
+.nice-check:checked + label:before {
+  background-color: #00AA41; }
 
 .nice-check:not(:checked) + label:after {
   opacity: 0;
@@ -826,34 +776,21 @@ $content-fonts: (
 .nice-check:disabled + label {
   color: #aaa; }
 
-.nice-check.rounded:checked + label:before,
-.nice-check.rounded:not(:checked) + label:before {
-  border-radius: 50%; }
-
-.nice-check.rounded:checked + label:after,
-.nice-check.rounded:not(:checked) + label:after {
-  content: '';
-  width: 11px;
-  height: 11px;
-  background-color: #0095FF;
-  border-radius: 50%;
-  top: 2px; }
-
 .nice-check.nice-check-sm:not(:checked) + label,
 .nice-check.nice-check-sm:checked + label {
   height: 30px;
-  line-height: 15px;
-  padding-left: 28px;
+  line-height: 18px;
+  padding-left: 23px;
   position: relative;
   top: 7px; }
   .nice-check.nice-check-sm:not(:checked) + label:before,
   .nice-check.nice-check-sm:checked + label:before {
-    width: 15px;
-    height: 15px; }
+    width: 18px;
+    height: 18px; }
   .nice-check.nice-check-sm:not(:checked) + label:after,
   .nice-check.nice-check-sm:checked + label:after {
-    line-height: 15px;
-    left: 2px; }
+    line-height: 18px;
+    left: 3px; }
 
 .nice-check.nice-check-sm:checked + label:after {
   opacity: 1;
@@ -868,7 +805,7 @@ $content-fonts: (
   .icon.icon-zoomin {
     width: 15px;
     height: 15px;
-    background: url("../images/icon/icon-search.png") 0 0/100% 100% no-repeat; }
+    background: url("../images/icon/icon-zoomin.png") 0 0/100% 100% no-repeat; }
   .icon.icon-guest {
     width: 11px;
     height: 10px;
@@ -880,6 +817,9 @@ $content-fonts: (
   -ms-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s; }
+
+button, button:focus, button:active, a, a:focus, a:active {
+  outline: none !important; }
 
 .btn-group-lg > .btn, .btn-lg {
   font-size: 15px;
@@ -1041,6 +981,10 @@ input.form-control {
 body {
   font-family: "Work Sans", sans-serif; }
 
+.calendar-open {
+  height: 100vh;
+  overflow: hidden; }
+
 .row.space-0 {
   margin-left: -0px;
   margin-right: -0px; }
@@ -1115,6 +1059,15 @@ section {
     [data-toggle="collapse"].no-arrow:after {
       content: none; }
 
+.hide-md {
+  display: none; }
+
+@media (max-width: 992px) {
+  .hide-md {
+    display: block; }
+  .hide-sm {
+    display: none; } }
+
 header {
   -webkit-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
   -moz-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
@@ -1123,19 +1076,17 @@ header {
   box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
   position: relative;
   z-index: 1; }
-  @media (max-width: 768px) {
-    header .logo-wrapper {
-      width: 100%; } }
-  header .logo-wrapper .logo {
+  header .logo {
     height: 100px;
     line-height: 100px;
     background-color: #fff;
     text-align: center;
-    display: block; }
+    display: block;
+    position: relative; }
     @media (max-width: 768px) {
-      header .logo-wrapper .logo {
+      header .logo {
         width: 50%; } }
-    header .logo-wrapper .logo img {
+    header .logo img {
       height: 50%; }
   header .btn-group {
     margin-top: 30px; }
@@ -1168,6 +1119,18 @@ header {
     background-color: #0095FF; }
   .btn-group.step-group .btn.active ~ .btn {
     background-color: transparent; }
+
+@media (max-width: 992px) {
+  header .logo {
+    height: 55px; }
+    header .logo img {
+      height: 25px;
+      left: 0;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); } }
 
 footer {
   padding: 20px;
@@ -1241,11 +1204,13 @@ footer {
     background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
   .filter-panel.row.space-0 {
     margin-right: -15px; }
+    .filter-panel.row.space-0 .row {
+      margin: 0; }
   .filter-panel .filter-item {
     height: 100px;
     padding: 20px 0 0 0; }
-    .filter-panel .filter-item + .filter-item {
-      border-left: 1px solid #777; }
+  .filter-panel .group-counter .filter-item {
+    border-left: 1px solid #777; }
   .filter-panel .label {
     display: block;
     text-align: left;
@@ -1353,13 +1318,28 @@ footer {
     text-align: center; }
     .filter-panel .controller .btn {
       width: 140px; }
+  .filter-panel .incrementor {
+    display: none; }
+
+.picker-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1c2035;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); }
 
 .date-picker-wrapper.hotel-calendar {
+  position: static;
   font-family: "Work Sans", sans-serif;
   top: 100% !important;
   left: 0px !important;
   padding: 0;
-  background-color: #1c2035;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
   border: none; }
   .date-picker-wrapper.hotel-calendar .prev, .date-picker-wrapper.hotel-calendar .next {
     color: #fff; }
@@ -1415,8 +1395,7 @@ footer {
           -o-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
           border-radius: 50%;
-          border: 2px solid #1198FD;
-          z-index: -1; }
+          border: 2px solid #1198FD; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .round-left, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.first-date-selected, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.start-of-month.hovering, .date-picker-wrapper.hotel-calendar .month-wrapper table .day.toMonth.start-of-month.checked, .date-picker-wrapper.hotel-calendar .month-wrapper table tr > td:first-child .day.toMonth {
         border-top-left-radius: 26px;
         border-bottom-left-radius: 26px; }
@@ -1443,13 +1422,15 @@ footer {
     transform: translateX(-50%); }
   .date-picker-wrapper.hotel-calendar .soldout-date {
     color: #555 !important; }
+  .date-picker-wrapper.hotel-calendar[style*="display: none"] + .calendar-footer-panel {
+    display: none; }
 
-.date-picker-wrapper .footer {
-  background-color: rgba(255, 255, 255, 0.05); }
+.calendar-footer-panel {
+  display: block; }
 
 .calendar-legend {
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 10px 5px;
-  width: 400px;
   max-width: 100%;
   margin: 0 auto; }
   .calendar-legend .legend-item {
@@ -1459,7 +1440,7 @@ footer {
     display: inline-block;
     width: 39px;
     height: 39px;
-    line-height: 39px;
+    line-height: 36.4px;
     position: relative;
     font-size: 14px;
     margin-bottom: 10px; }
@@ -1488,7 +1469,187 @@ footer {
     font-weight: 400;
     margin-bottom: 0;
     font-size: 11px;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    line-height: 1; }
+
+@media (max-width: 992px) {
+  .short-picker {
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    right: 10px;
+    background-color: #1c2035;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #aaa;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .4;
+    padding: 10px 30px 15px 10px;
+    line-height: 1;
+    text-transform: uppercase; }
+    .short-picker:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      background: url("../images/icon/icon-search.png") 0 0/100% 100% no-repeat; }
+    .short-picker > div {
+      display: inline-block; }
+    .short-picker .selected-rooms:before,
+    .short-picker .selected-guests:before {
+      content: '.';
+      font-size: 20px;
+      margin: 0 5px;
+      position: relative;
+      top: -2px; }
+    .short-picker .count {
+      margin-right: 4px; }
+  .filter-panel {
+    display: none;
+    position: fixed;
+    background-color: #1c2035;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    margin: 0 !important;
+    width: 100vw;
+    height: auto; }
+    .filter-panel .filter-item {
+      padding-top: 10px;
+      height: auto; }
+    .filter-panel .down-arrow:after, .filter-panel .date-container:after, .filter-panel .guest-display:after,
+    .filter-panel .date-container:after,
+    .filter-panel .guest-display:after {
+      content: none; }
+    .filter-panel .group-calendar .label {
+      display: none; }
+    .filter-panel .drop-panel, .filter-panel .date-container, .filter-panel .nice-select.select-transparent, .filter-panel .guest-display, .filter-panel .date-container, .filter-panel .nice-select.select-transparent, .filter-panel .guest-display {
+      height: auto;
+      line-height: 1.3;
+      padding: 0 10px; }
+    .filter-panel .date-container {
+      padding: 0; }
+    .filter-panel .picker-container {
+      position: relative; }
+    .filter-panel .date-range {
+      line-height: 2;
+      height: 34px;
+      padding: 0 10px 10px;
+      border-bottom: 1px solid #444; }
+    .filter-panel .selected-dates {
+      font-size: 11px;
+      letter-spacing: 0.4px; }
+      .filter-panel .selected-dates span {
+        font-size: 23px;
+        line-height: 1; }
+    .filter-panel .night-count {
+      top: 15px; }
+    .filter-panel .button-group {
+      padding: 0 10px 15px; }
+    .filter-panel .group-counter {
+      display: none;
+      padding-bottom: 30px; }
+      .filter-panel .group-counter .label {
+        width: 50%;
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px; }
+      .filter-panel .group-counter .filter-item {
+        border: none; }
+    .filter-panel .guest-counter .label, .filter-panel .guest-counter .guest-display {
+      display: none; }
+    .filter-panel .guest-dropdown {
+      display: block;
+      position: static;
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none; }
+      .filter-panel .guest-dropdown .guest-select {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px; }
+        .filter-panel .guest-dropdown .guest-select p {
+          display: inline-block;
+          width: 50%; }
+      .filter-panel .guest-dropdown .guest-select + .guest-select {
+        margin-left: 0; }
+      .filter-panel .guest-dropdown .children-group .guest-select {
+        padding-left: 30px; }
+      .filter-panel .guest-dropdown .children-group .nice-select {
+        display: inline-block; }
+      .filter-panel .guest-dropdown .children-group p {
+        margin: 0; }
+    .filter-panel .incrementor {
+      display: inline-block; }
+      .filter-panel .incrementor button {
+        width: 25px;
+        height: 25px;
+        line-height: 21px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        background-color: transparent;
+        font-size: 20px;
+        font-weight: 500;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        -o-transition: all 0.2s;
+        transition: all 0.2s; }
+        .filter-panel .incrementor button.btn-dec:before {
+          content: '-'; }
+        .filter-panel .incrementor button.btn-inc:before {
+          content: '+'; }
+        .filter-panel .incrementor button.disabled {
+          opacity: .25; }
+      .filter-panel .incrementor input {
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        width: 35px;
+        height: 25px;
+        font-size: 23px;
+        line-height: 1;
+        font-family: "Cormorant Garamond", serif;
+        text-align: center;
+        margin: 0 5px; }
+  .filter-heading {
+    padding: 10px; }
+    .filter-heading .btn-back,
+    .filter-heading .btn-reset {
+      text-decoration: underline;
+      font-size: 12px; }
+    .filter-heading .btn-back {
+      margin-right: 10px;
+      display: none; }
+    .filter-heading .btn-close {
+      width: 20px;
+      height: 20px;
+      float: right;
+      display: inline-block;
+      background: url("../images/icon/icon-close.png") center center/12px 12px no-repeat; }
+  .date-picker-wrapper.hotel-calendar .month-wrapper {
+    padding: 10px 0; }
+    .date-picker-wrapper.hotel-calendar .month-wrapper table .caption {
+      height: auto; }
+    .date-picker-wrapper.hotel-calendar .month-wrapper table td, .date-picker-wrapper.hotel-calendar .month-wrapper table th {
+      line-height: 1.6; }
+    .date-picker-wrapper.hotel-calendar .month-wrapper table .week-name th {
+      padding-bottom: 0; }
+  .calendar-legend {
+    padding: 7px 5px;
+    border-top: 1px solid #444; } }
 
 .home-banner {
   position: relative;

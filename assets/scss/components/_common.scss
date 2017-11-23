@@ -7,6 +7,10 @@
 body {
 	font-family: $font-worksans;
 }
+.calendar-open {
+	height: 100vh;
+	overflow: hidden;
+}
 .row {
   &.space-0 {
     @include setRowSpace(0);
@@ -63,5 +67,19 @@ section {
 		&:after {
 			content: none;
 		}
+	}
+}
+
+.hide-md {
+	display: none;
+}
+
+@include respondTo(tabletPortrait) {
+	.hide-md {
+		display: block;
+	}
+
+	.hide-sm {
+		display: none;
 	}
 }

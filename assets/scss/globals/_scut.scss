@@ -74,17 +74,25 @@ $headerText: 16px;
 }
 
 // Breakpoints for each query
-
-// Breakpoints for each query
 $smartphone: 480px;
-$tabletPortrait: 767px;
-$tabletLandscape: 1023px;
-$xsDesktop: 1100px;
-$smDesktop: 1200px;
-$mdDesktop: 1280px;
-// $desktop: 1174px;
-$largeScreen: 1440px;
-$hdScreen: 1799px;
+$tabletPortrait: 992px;
+$tabletLandscape: 1024px;
+$netbook: 1200px;
+$notebook: 1280px;
+$desktop: 1366px;
+$desktopLG: 1439px;
+$desktopHDP: 1599px;
+$desktopFHD: 1919px;
+
+/* $smartphone: 480px; */
+/* $tabletPortrait: 767px; */
+/* $tabletLandscape: 1023px; */
+/* $xsDesktop: 1100px; */
+/* $smDesktop: 1200px; */
+/* $mdDesktop: 1280px; */
+/* // $desktop: 1174px; */
+/* $largeScreen: 1440px; */
+/* $hdScreen: 1799px; */
 
 
 // $maxPhoneSize: 767px;
@@ -96,11 +104,15 @@ $hdScreen: 1799px;
 
 
 @mixin respondTo($media) {
-	@if $media == smallScreen {
-		@media (max-width: $xsDesktop) {
+	@if $media == notebook {
+		@media (max-width: $notebook) {
 			@content;
 		}
-	} @else if $media == tablet {
+	} @else if $media == netbook {
+		@media (max-width: $netbook) {
+			@content;
+		}
+	} @else if $media == tabletLandscape {
 		@media (max-width: $tabletLandscape) {
 			@content;
 		}
@@ -112,20 +124,16 @@ $hdScreen: 1799px;
 		@media (max-width: $smartphone) {
 			@content;
 		}
-	} @else if $media == smDesktop {
-		@media (max-width: $smDesktop) {
+	}@else if $media == desktopLG {
+		@media (min-width: $desktopLG) {
 			@content;
 		}
-	} @else if $media == desktop {
-		@media (max-width: $mdDesktop) {
-			@content;
-		}
-	} @else if $media == largeScreen {
-		@media (min-width: $largeScreen) {
+	} @else if $media == desktopHDP {
+		@media (min-width: $desktopHDP) {
 			@content;
 		}
 	} @else if $media == hd {
-		@media (min-width: $hdScreen) {
+		@media (min-width: $desktopFHD) {
 			@content;
 		}
 	}
@@ -310,12 +318,6 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 	}
 }
 
-@for $i from $minSpace through $maxSpace {
-	.p-#{$i*5} {
-		padding: $i * 5px !important;
-	}
-}
-
 // Font size help
 @for $i from 10 through 40 {
 	.font-#{$i} {
@@ -403,8 +405,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 
 /* Base for label styling */
 .nice-check {
-	$checkColor: #0095FF;
-	$smSize: 15px;
+	$checkColor: #00AA41;
 	&:checked,
 	&:not(:checked) {
 		position: absolute;
@@ -413,7 +414,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			position: relative;
 			padding-left: 50px;
 			cursor: pointer;
-			font-weight: 400;
+			font-weight: 100;
 			height: 30px;
 			line-height: 30px;
 			&:before {
@@ -425,6 +426,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 				height: 30px;
 				border: 1px solid $checkColor;
 				background: #fff;
+				border-radius: 50%;
 			}
 			&:after {
 				content: '✔';
@@ -433,13 +435,13 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 				left: 9px;
 				line-height: 30px;
 				font-size: 14px;
-				color: $checkColor;
+				color: #fff;
 				transition: all .1s;
 			}
 		}
 	}
 	&:checked + label:before {
-		// background-color: $checkColor;
+		background-color: $checkColor;
 	}
 	&:not(:checked) + label:after {
 		opacity: 0;
@@ -466,29 +468,13 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			color: #aaa;
 		}
 	}
-	&.rounded {
-		&:checked + label,
-		&:not(:checked) + label {
-			&:before {
-				border-radius: 50%;
-			}
-			&:after {
-				content: '';
-				width: $smSize - 4px;
-				height: $smSize - 4px;
-				background-color: $checkColor;
-				border-radius: 50%;
-    		top: 2px;
-			}
-		}
-	}
-	
+	$smSize: 18px;
 	&.nice-check-sm {
 		&:not(:checked) + label,
 		&:checked + label {
 			height: 30px;
 			line-height: $smSize;
-			padding-left: 28px;
+			padding-left: 23px;
 			position: relative;
 			top: 7px;
 			&:before {
@@ -497,7 +483,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			}
 			&:after {
 				line-height: $smSize;
-				left: 2px;
+				left: 3px;
 			}
 		}
 		&:checked + label:after {

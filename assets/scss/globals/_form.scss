@@ -10,7 +10,7 @@
   &.icon-zoomin {
     width: 15px;
     height: 15px;
-    @include bgImage('../images/icon/icon-search.png', 0 0, 100% 100%);
+    @include bgImage('../images/icon/icon-zoomin.png', 0 0, 100% 100%);
   }
   &.icon-guest {
     width: 11px;
@@ -22,6 +22,12 @@
 
 .btn {
   @include transition();
+}
+
+button, a {
+  &, &:focus, &:active {
+    outline: none !important;
+  }
 }
 
 .btn-group-lg>.btn, .btn-lg {
