@@ -4,13 +4,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
-	font-family: $font-worksans;
+  font-family: $font-worksans;
 }
+
 .calendar-open {
-	height: 100vh;
-	overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
+
+.has-filter {
+	padding-top: 100px;
+}
+
 .row {
   &.space-0 {
     @include setRowSpace(0);
@@ -18,71 +25,126 @@ body {
 }
 
 section {
-	padding: 30px 0;
+  padding: 30px 0;
 }
 
 .bg-lightgray {
-	background-color: #fafafa;
-	& + hr {
-		margin-top: 0;
-	}
+  background-color: #fafafa;
+  &+hr {
+    margin-top: 0;
+  }
 }
 
 .row {
-	.space-10 {
-		@include setRowSpace(10);
-	}
-	.space-20 {
-		@include setRowSpace(20);
-	}
+  .space-10 {
+    @include setRowSpace(10);
+  }
+  .space-20 {
+    @include setRowSpace(20);
+  }
 }
 
 .img-responsive {
-	width: 100%;
+  width: 100%;
 }
 
 .google-map-container {
-	@include ratioWrapper(3,2);
+  @include ratioWrapper(3, 2);
 }
 
 [data-toggle="collapse"] {
-	padding-right: 30px;
-	position: relative;
-	&:after {
-		content: '';
-		display: block;
-		width: 15px;
-		height: 8px;
-		position: absolute;
-		right: 0;
-		top: 40%;
-		@include transition();
-		@include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
-	}
-	&[aria-expanded="true"]:after {
-		@include prefix(transform, rotate(180deg));
-	}
-	&.no-arrow {
-		padding-right: 0;
-		&:after {
-			content: none;
-		}
-	}
+  padding-right: 30px;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    @include transition();
+    @include bgImage('../images/icon/chevron-down.png', 0 0, 100% 100%);
+  }
+  &[aria-expanded="true"]:after {
+    @include prefix(transform, rotate(180deg));
+  }
+  &.no-arrow {
+    padding-right: 0;
+    &:after {
+      content: none;
+    }
+  }
 }
 
 .hide-md {
-	display: none;
+  display: none;
 }
 
 @include respondTo(tabletPortrait) {
-	body {
-		font-size: 13px;
-	}
-	.hide-md {
-		display: block;
-	}
+  body {
+    font-size: 13px;
+  }
+  .hide-md {
+    display: block;
+  }
 
-	.hide-sm {
-		display: none;
+  .hide-sm {
+    display: none;
+  }
+
+  .container {
+  	padding-left: $mobileSpace;
+  	padding-right: $mobileSpace;
+  }
+
+  .row {
+  	@include setRowSpace(20);
+  }
+
+	.has-border {
+	  border: 1px solid #f0f0f0;
 	}
+  .has-toggle a {
+    &.not-desk-body {
+      font-size: 11px;
+      line-height: 1.1;
+      // text-transform: uppercase;
+      color: #000;
+      font-weight: 600;
+      display: block;
+      letter-spacing: 1.5px;
+      padding: 15px 15px 15px 50px;
+      &.more-info {
+        display: inline-block;
+        padding-left: 0px;
+        font-size: 13px;
+        font-weight: normal;
+        color: $color-info;
+        position: relative;
+        &:after {
+          left: inherit;
+          display: block;
+          width: 8px;
+          height: 15px;
+          transform: rotate(0deg);
+          @include bgImage('../images/icon/chevron-right-blue.png', 0 0, 100% 100%);
+        }
+      }
+    }
+    &:after {
+      left: 20px;
+      top: 15px;
+      @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
+    }
+    &.no_prefix {
+      &:after {
+        background: none;
+      }
+    }
+  }
+
+  .nice-select {
+  	font-size: 12px;
+  }
 }

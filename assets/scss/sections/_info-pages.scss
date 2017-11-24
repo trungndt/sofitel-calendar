@@ -1,321 +1,289 @@
 $panelSpace: 20px;
 // Accordion
 .panel-group .panel-info {
-	margin-bottom: $panelSpace;
-	
-	.panel-title {
-		font-size: 18px;
-	}
-	.panel-title > a {
-		display: block;
-		padding: 15px;
-		&:hover {
-			color: #000;
-		}
-		&[data-toggle="collapse"] {
-			padding-left: 56px;
-			&:after {
-				right: auto;
-				left: 20px;
-				@include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
-			}
-		}
-	}
+  margin-bottom: $panelSpace;
 
-	.panel-body {
-		padding: 30px 20px;
-		border: 1px solid #e0e0e0;
-		border-top: 0;
-	}
+  .panel-title {
+    font-size: 18px;
+  }
+  .panel-title>a {
+    display: block;
+    padding: 15px;
+    &:hover {
+      color: #000;
+    }
+    &[data-toggle="collapse"] {
+      padding-left: 56px;
+      &:after {
+        right: auto;
+        left: 20px;
+        @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
+      }
+    }
+  }
+
+  .panel-body {
+    padding: 30px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+  }
 }
+
 .not-desk {
-	@media(min-width: 769px){
-		display: none;
-	}
+  @media(min-width: 769px) {
+    display: none;
+  }
 }
+
 .not-desk-body {
-	@media(min-width: 768px){
-		display: none !important;
-	}
+  @media(min-width: 768px) {
+    display: none !important;
+  }
 }
 
 .float-right {
-	float: right;
-	@media (max-width: 768px){
-		padding-left: 15px !important; 
-	}
+  float: right;
+  @media (max-width: 768px) {
+    padding-left: 15px !important;
+  }
 }
+
 .room-list {
-	.block-main {
-		.block {
-			@media (max-width: 767px ){
-				padding-bottom: 0px !important; 
-				
-			}
-		}
-	}
-	.block-price {
-		.mb-60 {
-			margin-bottom: 30px !important;
-		}
-	}
+  .block-main {
+    .block {
+      @media (max-width: 767px) {
+        padding-bottom: 0px !important;
+      }
+    }
+  }
+  .block-price {
+    .mb-60 {
+      margin-bottom: 30px !important;
+    }
+  }
 }
+
 .p20 {
-	padding:20px;
+  padding: 20px;
 }
+
 .policy {
-	&:after {
-		@media (max-width: 767px){
-			top: 5px !important;
-			left: inherit !important;
-			right: 10px;
-		}
-	}
+  &:after {
+    @media (max-width: 767px) {
+      top: 5px !important;
+      left: inherit !important;
+      right: 10px;
+    }
+  }
 }
+
 .pr0 {
-	padding-right: 0px !important;
+  padding-right: 0px !important;
 }
-.has-toggle {
-	@media (max-width: 767px){
-		a{
-			
-			&.not-desk-body {
-				padding-left: 56px;
-				font-size: 18px;
-				line-height: 1.1;
-				text-transform: uppercase;
-				color: #000 !important;
-				font-weight: 600;
-				display: block;
-				letter-spacing: 1.5px;
-				&.more-info {
-					display: inline-block;
-					padding-left:0px;
-					font-size: 14px;
-					color: #0095FF !important;
-					position: relative;
-					&:after {
-						position: absolute;
-						top: 0;
-						right: 15px;
-						left: inherit;
-						background: url(../images/icon/chevron-right-blue.png) 0 0/100% 100% no-repeat;
-						display: block;
-						width: 8px;
-						height: 15px;
-						transform: rotate(0deg);
 
-					}
-				}
-
-			}
-			&:after {
-				left: 20px;
-				top: 22px;
-				@include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
-			}
-			&.no_prefix{
-				&:after{
-					background: none;
-				}
-			}
-		}
-
-	}
-}
 .full-width-btn {
-	@media (max-width: 450px){
-		width: 100%;
-	}
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+}
 
+.bg-white {
+  @media (max-width: 767px) {
+    background-color: #fff;
+    display: block;
+  }
 }
-.bg-white{
-	@media (max-width: 767px){
-			background-color: #fff;
-			display: block;
-	}
+
+.information-right {
+  padding: 20px;
 }
-.has-border {
-	@media (max-width:767px){
-		border : 1px solid #e0d8d8;
-	}
-}
-.information-right  {
-	padding: 20px;
-}
+
 .not-float {
-	.information-center {
-		padding:0 20px 20px;
-	}
+  .information-center {
+    padding: 0 20px 20px;
+  }
 }
 
 .float-left {
-	float: left;
+  float: left;
 }
-.not-mb {
-	@media (max-width: 768px){
-		display: none !important;
-	}
-}
-.not-mb-body {
-	@media (max-width: 767px){
-		display: none !important;
 
-	}
+.not-mb {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
 }
+
+.not-mb-body {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
 .font-ws {
-	font-family: "$font-worksans";
+  font-family: "$font-worksans";
 }
+
 .has-mar-bot {
-	@media (max-width: 768px){
-		margin-bottom: 10px;
-	}
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+  }
 }
+
 .right-divider {
-	border-right: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
 }
 
 .panel {
-	border-radius: 0;
-	.panel-body {
-		padding: 20px;
-	}
+  border-radius: 0;
+  .panel-body {
+    padding: 20px;
+  }
 }
+
 .panel-info {
-	
-	border: none;
-	& > .panel-heading {
-		color: #000;
-		background-color: #E6F1FF;
-		border: 0;
-		border-bottom: 4px solid $color-info;
-		padding: 0;
-		border-radius: 0;
-	}
+
+  border: none;
+  &>.panel-heading {
+    color: #000;
+    background-color: #E6F1FF;
+    border: 0;
+    border-bottom: 4px solid $color-info;
+    padding: 0;
+    border-radius: 0;
+  }
 }
+
 .panel-default.panel-rect {
-	border-color: #e0e0e0;
-	border-radius: 0;
-	margin-bottom: $panelSpace;
-	.panel-body {
-		padding: 20px;
-	}
+  border-color: #e0e0e0;
+  border-radius: 0;
+  margin-bottom: $panelSpace;
+  .panel-body {
+    padding: 20px;
+  }
 }
 
 .nice-check-inline {
-	.nice-check-item {
-		display: inline-block;
-	}
-	.nice-check-item + .nice-check-item {
-		margin-left: 50px;
-	}
+  .nice-check-item {
+    display: inline-block;
+  }
+  .nice-check-item+.nice-check-item {
+    margin-left: 50px;
+  }
 }
 
 .panel-rsv-brief {
-	@include prefix(box-shadow, 1px 2px 4px rgba(#555, .5));
-	background-color: #fff;
-	margin-bottom: $panelSpace;
-	h5 {
-		margin-top: 0;
-		margin-bottom: 0px;
-	}
-	
-	.img-responsive {
-		width: 100%;
-	}
-	hr {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-	.tbl-info{
-		@media (max-width:768px){
-			margin-top : 20px;
-		}
-	}
+  @include prefix(box-shadow, 1px 2px 4px rgba(#555, .5));
+  background-color: #fff;
+  margin-bottom: $panelSpace;
+  h5 {
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+
+  .img-responsive {
+    width: 100%;
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .tbl-info {
+    @media (max-width: 768px) {
+      margin-top: 20px;
+    }
+  }
 }
+
 .hide-nha {
-	display: none !important;
+  display: none !important;
 }
+
 .tbl-info {
-	// width: 100%;
-	td:first-child {
-		padding-right: 50px;
-	}
-	.split-sm td {
-		padding-bottom: 3px;
-	}
-	.split td {
-		padding-bottom: 20px;
-	}
+  // width: 100%;
+  td:first-child {
+    padding-right: 50px;
+  }
+  .split-sm td {
+    padding-bottom: 3px;
+  }
+  .split td {
+    padding-bottom: 20px;
+  }
 }
 
 .center-slash {
-	display: inline-block;
+  display: inline-block;
   width: auto;
   line-height: 30px;
 }
 
 .icon-visa,
 .icon-cvv {
-	height: 30px;
+  height: 30px;
 }
+
 // .icon-cvv {
 // 	position: relative;
 // 	top: 5px;
 // }
-
 // Page 06: Confirm Details
 .tbl-price {
-	width: 100%;
-	margin-bottom: 15px;
-	td, th {
-		width: 50%;
-		&:last-child {
-			text-align: right;
-		}
-	}
-	&.tbl-sub {
-		font-size: 12px;
-	}
+  width: 100%;
+  margin-bottom: 15px;
+  td,
+  th {
+    width: 50%;
+    &:last-child {
+      text-align: right;
+    }
+  }
+  &.tbl-sub {
+    font-size: 12px;
+  }
 }
 
 .panel.panel-transparent {
-	border: none;
-	border-radius: 0;
-	background-color: transparent;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .tbl-addr {
-	line-height: 2;
-	th, td {
-		&:first-child {
-			padding-right: 30px;
-		}
-		a {
-			word-break:break-all;
-		}
-	}
+  line-height: 2;
+  th,
+  td {
+    &:first-child {
+      padding-right: 30px;
+    }
+    a {
+      word-break: break-all;
+    }
+  }
 }
+
 .cancel-date {
-	padding: 20px 0;
-	table {
-		tbody {
-			th {
-				padding-right: 40px;
-			}
-		}
-	}
+  padding: 20px 0;
+  table {
+    tbody {
+      th {
+        padding-right: 40px;
+      }
+    }
+  }
 }
+
 .no-list-style {
-	padding-left: 0px;
-	li {
-		list-style-type: none;
-	}
+  padding-left: 0px;
+  li {
+    list-style-type: none;
+  }
 }
-.hotel-info-wrap,.includesblock  {
-	padding: 0;
-	@media (max-width: 767px){
-		padding: 20px;
-	}
-	
+
+.hotel-info-wrap,
+.includesblock {
+  padding: 0;
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
 }

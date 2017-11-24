@@ -985,6 +985,9 @@ body {
   height: 100vh;
   overflow: hidden; }
 
+.has-filter {
+  padding-top: 100px; }
+
 .row.space-0 {
   margin-left: -0px;
   margin-right: -0px; }
@@ -1068,7 +1071,48 @@ section {
   .hide-md {
     display: block; }
   .hide-sm {
-    display: none; } }
+    display: none; }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .row {
+    margin-left: -10px;
+    margin-right: -10px; }
+    .row > [class*="col"] {
+      padding-left: 10px;
+      padding-right: 10px; }
+  .has-border {
+    border: 1px solid #f0f0f0; }
+  .has-toggle a.not-desk-body {
+    font-size: 11px;
+    line-height: 1.1;
+    color: #000;
+    font-weight: 600;
+    display: block;
+    letter-spacing: 1.5px;
+    padding: 15px 15px 15px 50px; }
+    .has-toggle a.not-desk-body.more-info {
+      display: inline-block;
+      padding-left: 0px;
+      font-size: 13px;
+      font-weight: normal;
+      color: #0095FF;
+      position: relative; }
+      .has-toggle a.not-desk-body.more-info:after {
+        left: inherit;
+        display: block;
+        width: 8px;
+        height: 15px;
+        transform: rotate(0deg);
+        background: url("../images/icon/chevron-right-blue.png") 0 0/100% 100% no-repeat; }
+  .has-toggle a:after {
+    left: 20px;
+    top: 15px;
+    background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
+  .has-toggle a.no_prefix:after {
+    background: none; }
+  .nice-select {
+    font-size: 12px; } }
 
 header {
   -webkit-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
@@ -1076,8 +1120,12 @@ header {
   -ms-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
   -o-box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
   box-shadow: 0 2px 5px rgba(85, 85, 85, 0.5);
-  position: relative;
-  z-index: 1; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #fff; }
   header .logo {
     height: 100px;
     line-height: 100px;
@@ -1689,7 +1737,7 @@ footer {
 
 @media (max-width: 992px) {
   .home .home-banner .bg-image {
-    height: 76vh; }
+    height: 86vh; }
   .home .home-banner .caption {
     max-width: 86vw;
     padding: 5px 10px;
@@ -1700,6 +1748,9 @@ footer {
     margin: 0 0 15px; }
   .home .section-contact p {
     margin-bottom: 15px; } }
+
+.page-rooms .section-contact {
+  border-bottom: 1px solid #eee; }
 
 .room-item {
   border: 1px solid #e0e0e0;
@@ -1714,9 +1765,6 @@ footer {
   .room-item .block-main {
     width: 75%;
     padding: 0 15px; }
-    @media (max-width: 767px) {
-      .room-item .block-main {
-        width: 100%; } }
   .room-item .padding-0 {
     padding: 0; }
   .room-item .img-container {
@@ -1807,6 +1855,35 @@ footer {
   margin-top: 30px;
   line-height: 30px; }
 
+@media (max-width: 992px) {
+  .page-rooms .section-contact {
+    border-bottom: none;
+    padding-bottom: 15px; }
+    .page-rooms .section-contact.bg-lightgray {
+      background-color: transparent; }
+  .page-rooms .section-rooms {
+    padding-top: 0; }
+    .page-rooms .section-rooms hr {
+      margin-left: -10px;
+      margin-right: -10px; }
+    .page-rooms .section-rooms .form-group:after {
+      content: '';
+      display: table;
+      clear: both; }
+    .page-rooms .section-rooms .form-group label {
+      padding-top: 5px; }
+    .page-rooms .section-rooms .form-group .nice-select {
+      float: right;
+      min-width: 0; }
+  .room-item .block-main {
+    width: 100%;
+    padding: 0 10px; }
+  .room-item .block-info {
+    padding-left: 0;
+    padding-right: 0; }
+  .room-item .price {
+    font-size: 25px; } }
+
 .panel-group .panel-info {
   margin-bottom: 20px; }
   .panel-group .panel-info .panel-title {
@@ -1860,39 +1937,6 @@ footer {
 .pr0 {
   padding-right: 0px !important; }
 
-@media (max-width: 767px) {
-  .has-toggle a.not-desk-body {
-    padding-left: 56px;
-    font-size: 18px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #000 !important;
-    font-weight: 600;
-    display: block;
-    letter-spacing: 1.5px; }
-    .has-toggle a.not-desk-body.more-info {
-      display: inline-block;
-      padding-left: 0px;
-      font-size: 14px;
-      color: #0095FF !important;
-      position: relative; }
-      .has-toggle a.not-desk-body.more-info:after {
-        position: absolute;
-        top: 0;
-        right: 15px;
-        left: inherit;
-        background: url(../images/icon/chevron-right-blue.png) 0 0/100% 100% no-repeat;
-        display: block;
-        width: 8px;
-        height: 15px;
-        transform: rotate(0deg); }
-  .has-toggle a:after {
-    left: 20px;
-    top: 22px;
-    background: url("../images/icon/chevron-down-blue.png") 0 0/100% 100% no-repeat; }
-  .has-toggle a.no_prefix:after {
-    background: none; } }
-
 @media (max-width: 450px) {
   .full-width-btn {
     width: 100%; } }
@@ -1901,10 +1945,6 @@ footer {
   .bg-white {
     background-color: #fff;
     display: block; } }
-
-@media (max-width: 767px) {
-  .has-border {
-    border: 1px solid #e0d8d8; } }
 
 .information-right {
   padding: 20px; }
@@ -2005,9 +2045,11 @@ footer {
 .tbl-price {
   width: 100%;
   margin-bottom: 15px; }
-  .tbl-price td, .tbl-price th {
+  .tbl-price td,
+  .tbl-price th {
     width: 50%; }
-    .tbl-price td:last-child, .tbl-price th:last-child {
+    .tbl-price td:last-child,
+    .tbl-price th:last-child {
       text-align: right; }
   .tbl-price.tbl-sub {
     font-size: 12px; }
@@ -2019,9 +2061,11 @@ footer {
 
 .tbl-addr {
   line-height: 2; }
-  .tbl-addr th:first-child, .tbl-addr td:first-child {
+  .tbl-addr th:first-child,
+  .tbl-addr td:first-child {
     padding-right: 30px; }
-  .tbl-addr th a, .tbl-addr td a {
+  .tbl-addr th a,
+  .tbl-addr td a {
     word-break: break-all; }
 
 .cancel-date {
@@ -2034,8 +2078,10 @@ footer {
   .no-list-style li {
     list-style-type: none; }
 
-.hotel-info-wrap, .includesblock {
+.hotel-info-wrap,
+.includesblock {
   padding: 0; }
   @media (max-width: 767px) {
-    .hotel-info-wrap, .includesblock {
+    .hotel-info-wrap,
+    .includesblock {
       padding: 20px; } }

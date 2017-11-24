@@ -1,3 +1,8 @@
+.page-rooms {
+	.section-contact {
+		border-bottom: 1px solid #eee;
+	}
+}
 .room-item {
 	border: 1px solid #e0e0e0;
 	border-bottom: 4px solid $color-info;
@@ -14,9 +19,6 @@
 	.block-main {
 		width: 75%;
 		padding: 0 15px;
-		@media (max-width: 767px ){
-			width: 100%;
-		}
 	}
 	.padding-0 {
 		padding: 0;
@@ -126,4 +128,54 @@
 .policy-collapse {
 	margin-top: 30px;
 	line-height: 30px;
+}
+
+@include respondTo(tabletPortrait) {
+	.page-rooms {
+		.section-contact {
+			border-bottom: none;
+			padding-bottom: 15px;
+			&.bg-lightgray {
+				background-color: transparent;
+			}
+		}
+
+		.section-rooms {
+			padding-top: 0;
+
+			hr {
+				margin-left: -$mobileSpace;
+				margin-right: -$mobileSpace;
+			}
+
+			.form-group {
+				&:after {
+					content: '';
+					display: table;
+					clear: both;
+				}
+				label {
+					padding-top: 5px;
+				}
+				.nice-select {
+					float: right;
+					min-width: 0;
+				}
+			}
+		}
+	}
+
+	.room-item {
+		.block-main {
+			width: 100%;
+			padding: 0 10px;
+		}
+		.block-info {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.price {
+			font-size: 25px;
+		}
+	}
 }

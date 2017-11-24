@@ -3,8 +3,12 @@
 
 header {
   @include prefix(box-shadow, 0 2px 5px rgba(#555, .5));
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
+  background-color: #fff;
    
   .logo {
     height: $height;
