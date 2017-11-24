@@ -75,6 +75,9 @@ section {
 }
 
 @include respondTo(tabletPortrait) {
+	body {
+		font-size: 13px;
+	}
 	.hide-md {
 		display: block;
 	}

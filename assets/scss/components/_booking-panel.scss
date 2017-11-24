@@ -241,6 +241,19 @@ $tlbWidth: 320px;
 			td {
 				// padding: 9px 0;
 			}
+			.caption {
+				.next, .prev {
+					background-color: transparent;
+					text-indent: -99999px;
+					display: block;
+				}
+				.prev {
+					@include bgImage($url: '../images/icon/chevron-left-blue.png', $size: auto 100%);
+				}
+				.next {
+					@include bgImage($url: '../images/icon/chevron-right-blue.png', $size: auto 100%);
+				}
+			}
 			.month-name {
 				font-size: 12px;
 				font-weight: 500;

@@ -9,7 +9,7 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
+  %body.home
     %header.container-fluid
       .row.space-0
         .col-sm-3
@@ -83,20 +83,19 @@
           %span.count 0
           %span ADULTS
     %section.home-banner
+      .bg-image{style:"background-image:url('assets/images/bg-1.png')"}
       .caption
         %h5 TECH EXPO: 2018
         %p Book your hotel room at special rates, exclusive to this event.
-      %img.img-responsive{src:"assets/images/bg-1.png"}
 
-    %section.bg-lightgray
+    %section.section-contact.bg-lightgray
       .container
-        %h3.mb-30 The Kingsmen Hotel
+        %h3 The Kingsmen Hotel
         .row
           .col-sm-7
             %p Each room draws inspiration from local culture and tradition while celebrating innovation to create a luxurious hotel experience. From design details to exhibitions and events, discover what makes our hotel so unique.
-            %br/
             .font-13
-            %p.text-info.mb-30
+            %p.text-info
               The Kingsmen Hotel
               %br/
               2 Kingsmen Road
@@ -106,7 +105,7 @@
               %strong Phone: 
                +65 6733 8388
           .col-sm-5
-            .google-map-container
+            .google-map-container.hide-sm
               #map
 
     %footer
@@ -115,6 +114,7 @@
         %a{href:"#"} Get Tickets for Event
       %div
         Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
+        %br.hide-md
         %a{href:"#"} Privacy Policy
         %span.dot-divider
         %a{href:"#"} Terms & Conditions.

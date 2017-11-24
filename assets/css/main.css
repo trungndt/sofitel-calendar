@@ -1063,6 +1063,8 @@ section {
   display: none; }
 
 @media (max-width: 992px) {
+  body {
+    font-size: 13px; }
   .hide-md {
     display: block; }
   .hide-sm {
@@ -1142,14 +1144,6 @@ footer {
   -ms-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   -o-box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5);
   box-shadow: 0 -1px 5px rgba(85, 85, 85, 0.5); }
-  @media (max-width: 768px) {
-    footer {
-      background-color: #fafafa;
-      -webkit-box-shadow: 0 -1px 5px transparent;
-      -moz-box-shadow: 0 -1px 5px transparent;
-      -ms-box-shadow: 0 -1px 5px transparent;
-      -o-box-shadow: 0 -1px 5px transparent;
-      box-shadow: 0 -1px 5px transparent; } }
   footer .dot-divider {
     margin: 0 10px; }
     footer .dot-divider:after {
@@ -1161,6 +1155,12 @@ footer {
       display: inline-block;
       position: relative;
       top: -2px; }
+
+@media (max-width: 992px) {
+  footer {
+    font-size: 11px; }
+    footer .dot-divider:after {
+      top: -1px; } }
 
 .filter-panel {
   background-color: #1c2035;
@@ -1352,6 +1352,14 @@ footer {
       width: 320px !important; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table th, .date-picker-wrapper.hotel-calendar .month-wrapper table td {
         width: 14.2%; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .caption .next, .date-picker-wrapper.hotel-calendar .month-wrapper table .caption .prev {
+        background-color: transparent;
+        text-indent: -99999px;
+        display: block; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .caption .prev {
+        background: url("../images/icon/chevron-left-blue.png") center/auto 100% no-repeat; }
+      .date-picker-wrapper.hotel-calendar .month-wrapper table .caption .next {
+        background: url("../images/icon/chevron-right-blue.png") center/auto 100% no-repeat; }
       .date-picker-wrapper.hotel-calendar .month-wrapper table .month-name {
         font-size: 12px;
         font-weight: 500;
@@ -1651,10 +1659,14 @@ footer {
     padding: 7px 5px;
     border-top: 1px solid #444; } }
 
-.home-banner {
+.home .home-banner {
   position: relative;
   padding: 0; }
-  .home-banner .caption {
+  .home .home-banner .bg-image {
+    height: 100vh;
+    background-size: cover;
+    background-position: center; }
+  .home .home-banner .caption {
     width: 380px;
     background-color: #1c2035;
     color: #fff;
@@ -1663,11 +1675,31 @@ footer {
     top: 52%;
     left: 0;
     font-size: 18px; }
-  .home-banner h5 {
+  .home .home-banner h5 {
     font-weight: 600;
     font-size: 16px; }
-  .home-banner img {
+  .home .home-banner img {
     width: 100%; }
+
+.home .section-contact h3 {
+  margin-bottom: 30px; }
+
+.home .section-contact p {
+  margin-bottom: 30px; }
+
+@media (max-width: 992px) {
+  .home .home-banner .bg-image {
+    height: 76vh; }
+  .home .home-banner .caption {
+    max-width: 86vw;
+    padding: 5px 10px;
+    font-size: 15px; }
+  .home .home-banner h5 {
+    font-size: 13px; }
+  .home .section-contact h3 {
+    margin: 0 0 15px; }
+  .home .section-contact p {
+    margin-bottom: 15px; } }
 
 .room-item {
   border: 1px solid #e0e0e0;
