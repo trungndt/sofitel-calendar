@@ -9,18 +9,15 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
+  %body.page-info
     %header.container-fluid
       .row.space-0
-        .col-sm-3.logo-wrapper
-          .logo.col-sm-12.col-xs-6
+        .col-sm-3.col-xs-6
+          %a.logo{href:"/"}
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-          .start-over.col-xs-6.not-desk
-            .btn-group
-              %a.btn.black-color Start over
-        .col-sm-9.not-mb
-          .row.space-0.filter-panel
-            .col-sm-8.col-sm-offset-2
+        .col-sm-9.col-xs-6
+          .row.space-0.filter-panel.steps-panel
+            .col-sm-8.col-sm-offset-2.hide-sm
               .btn-group.step-group
                 %a.btn{href:"#"} Select Room
                 %a.btn{href:"personal-info.html"} Personal Info
@@ -31,8 +28,7 @@
                 %a.btn Start over
     %section.bg-lightgray
       .container
-        %h3.mb-30 Travel Information
-        %br/
+        %h3.title Travel Information
         .row
           .col-sm-4.pl-40.col-xs-12.float-right.has-toggle
             .panel-rsv-brief.panel-group#reservation-customer

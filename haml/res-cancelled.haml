@@ -9,20 +9,20 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
+  %body.page-info
     %header.container-fluid
       .row.space-0
-        .col-sm-3
+        .col-sm-3.col-xs-6
           .logo
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-        .col-sm-9
-          .row.space-0.filter-panel.blank
+        .col-sm-9.col-xs-6
+          .row.space-0.filter-panel.steps-panel.blank
             .col-sm-2.col-sm-offset-8
               .btn-group
                 %a.btn{href:"/"} New Reservation
     %section.bg-lightgray
       .container
-        %h3.mb-30 Reservation Confirmed
+        %h3.title Reservation Cancelled
         %p.font-13 A copy of your reservation details has been sent to &nbsp;
           %strong email@domain.com.
         %p.font-13 If you have entered your credit card details during the booking, you will not be charged.

@@ -9,56 +9,84 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
-    %header.container-fluid.hide-nha
+  %body.page-rooms.has-filter
+    %header.container-fluid
       .row.space-0
         .col-sm-3
-          .logo
+          %a.logo{href:"/"}
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
         .col-sm-9
-          .row.space-0.filter-panel
-            .col-sm-4.filter-item
-              .label DATES
-              .night-count 0 night
-              .date-container
-                #dateRange.date-range CHECK-IN - CHECK-OUT
-            .col-sm-2.filter-item
-              .label ROOMS
-              %select.nice-select.select-transparent
-                %option 01
-            .col-sm-2.filter-item
-              .label GUESTS
-              .guest-panel
-                .guest-display 01
-                .guest-dropdown-backdrop
-                .guest-dropdown
-                  %h5 ROOM 1
-                  %div.guest-select-group
-                    .guest-select
-                      %p ADULTS
-                      %select.nice-select.select-white{data-select:"adults"}
-                        %option{value:1} 1
-                        %option{value:2} 2
-                        %option{value:3} 3
-                        %option{value:4} 4
-                    .guest-select
-                      %p CHILDREN
-                      %select.nice-select.select-white{data-select:"children"}
-                        %option{value:0} 0
-                        %option{value:1} 1
-                        %option{value:2} 2
-                        %option{value:3} 3
+          .row.space-0.filter-panel.booking-panel
+            .filter-heading.hide-md
+              %a.btn-back{href:"#", data-action:"filter-prev"} < Back to Calendar
+              %a.btn-reset{href:"#", data-action:"filter-reset"} Reset
+              %a.btn-close{href:"#", data-action:"filter-close"}
+            .col-sm-4.filter-group.group-calendar
+              .filter-item
+                .label SELECT DATES
+                .night-count 0 night
+                .date-container
+                    #dateRange.date-range CHECK-IN - CHECK-OUT
+                    .picker-container
+            .col-sm-8.filter-group.group-counter
+              .row
+                .col-sm-3.filter-item.room-counter
+                  .label ROOMS
+                  %select.nice-select.select-transparent.hide-sm{data-select:"rooms"}
+                    %option 01
+                  .incrementor#incrementorRooms
+                    %button.btn-dec{type:"button"}
+                    %input{type:"text", readonly:"readonly", value:"1", data-min:"1", data-max:"1"}
+                    %button.btn-inc{type:"button"}
+                .col-sm-3.filter-item.guest-counter
+                  .label GUESTS
+                  .guest-panel
+                    .guest-display 01
+                    .guest-dropdown-backdrop
+                    .guest-dropdown
+                      %h5 ROOM 1
+                      %div.guest-select-group.parents-group
+                        .guest-select
+                          %p ADULTS
+                          %select.nice-select.select-white.hide-sm{data-select:"adults"}
+                            %option{value:1} 1
+                            %option{value:2} 2
+                            %option{value:3} 3
+                            %option{value:4} 4
+                          .incrementor#incrementorAdults
+                            %button.btn-dec{type:"button"}
+                            %input{type:"text", readonly:"readonly", value:"1", data-min:"1", data-max:"4"}
+                            %button.btn-inc{type:"button"}
+                        .guest-select
+                          %p CHILDREN
+                          %select.nice-select.select-white.hide-sm{data-select:"children"}
+                            %option{value:0} 0
+                            %option{value:1} 1
+                            %option{value:2} 2
+                            %option{value:3} 3
+                          .incrementor#incrementorChildren
+                            %button.btn-dec{type:"button"}
+                            %input{type:"text", readonly:"readonly", value:"0", data-min:"0", data-max:"3"}
+                            %button.btn-inc{type:"button"}
 
-                  %div.guest-select-group#guestGroupChildren
+                      %div.guest-select-group.children-group#guestGroupChildren
 
-            .col-sm-4
-              .controller
-                %button.btn.btn-info.btn-lg Search
-    
-    %section.bg-lightgray.has-toggle
+                .col-sm-6
+                  .controller
+                    %a.btn.btn-info.btn-lg{href:"select-hotel.html"} Search
+      .short-picker.hide-md{data-action:"filter-open"}
+        .selected-dates SELECT DATES
+        .selected-rooms
+          %span.count 0
+          %span ROOM
+        .selected-guests
+          %span.count 0
+          %span ADULTS
+          
+    %section.section-contact.bg-lightgray.has-toggle
       .container#hotelName
         %h3.mb-30.not-mb-body The Kingsmen Hotel
-        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelName", href:"#collapseThree", aria-expanded:"true"} The Kingsmen Hotel
         .row#collapseThree.collapse.in
           .col-sm-7
             .hotel-info-wrap.has-border
@@ -73,11 +101,10 @@
           .col-sm-5.not-mb-body
             .google-map-container
               #map
-    %hr/
-    %section.pt-0.has-toggle
+    %section.section-rooms.has-toggle
       .container#hotelIncludes
         %h5.not-mb-body YOUR STAY HERE INCLUDES:
-        %a.text-cormo.not-desk-body.bg-white.has-border.title-p20{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
+        %a.text-cormo.not-desk-body.bg-white.has-border{data-toggle:"collapse", data-parent:"#hotelIncludes", href:"#collapsetwo", aria-expanded:"true"} YOUR STAY HERE INCLUDES:
         #collapsetwo.collapse.in
           .includesblock.has-border
             %p Room block inclusions here. SHOW ALL TEXT WITHOUT TRUNCATION. Recent Singapore's 440 guest rooms, which include 46 suites with private balconies, are an you stay...
@@ -93,18 +120,42 @@
         .room-list
           %p.msg-empty There are no rooms available. Try changing your search dates, selected room, or number of guests.
         %br/
-        %a.not-mb-body{href:"#"} View Room Policies
-          %i.icon.icon-arrow-down.ml-15
+        %a.policy{href:"#collapsePolicy", data-toggle:"collapse", aria-expanded:"false"} View Room Policies
+        .collapse.policy-collapse#collapsePolicy
+          %h4.font-14 Room Policy:
+          %ul
+            %li A full prepayment is required to secure this booking
+            %li 100% will be charged upon cancellation or no-shows
+          %p.mb-30 A valid credit card is required and total room charge (including service charge and tax) will be charged upon booking.
+          %h4.font-14 Tax and Fees:
+          %ul
+            %li Service charge: 10%
+            %li Goods & Service tax: 7%
     %footer
       %div
         %strong Tech Expo: 2018.&nbsp;
         %a{href:"#"} Get Tickets for Event
       %div
         Copyright 2017 Idem Labs, All Rights Reserved.&nbsp;
-        %a{href:"#"} Privacy Policy
+        %a.not-mb-body{href:"#"} Privacy Policy
         %span.dot-divider
         %a{href:"#"} Terms & Conditions.
-
+    
+    %template#tmpLegend
+      .calendar-footer-panel
+        .button-group.hide-md
+          %button.btn.btn-info.btn-block.btn-lg.btn-next{type:"button", data-action:"filter-next"} Continue to Rooms & Guests
+        .calendar-legend
+          .row.space-0
+            .col-xs-4.legend-item
+              .item.item-event 31
+              %label Event
+            .col-xs-4.legend-item
+              .item.item-unavailable 31
+              %label Unavailable
+            .col-xs-4.legend-item
+              .item.item-selected 31
+              %label Selected
 
 %script{src:"assets/js/jquery-1.9.1.js", type:"text/javascript"}
 %script{src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", type:"text/javascript"}

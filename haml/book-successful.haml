@@ -9,33 +9,33 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
+  %body.page-info
     %header.container-fluid
       .row.space-0
-        .col-sm-3
+        .col-sm-3.col-xs-6
           .logo
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-        .col-sm-9
-          .row.space-0.filter-panel.blank
+        .col-sm-9.col-xs-6
+          .row.space-0.filter-panel.steps-panel.blank
             .col-sm-2.col-sm-offset-8
               .btn-group
                 %a.btn{href:"/"} New Reservation
     %section.bg-lightgray
       .container
-        %h3.mb-30 Reservation Request Received
+        %h3.title Reservation Request Received
         %p.font-13 A copy of your reservation details has been sent to &nbsp;
           %strong email@domain.com.
         %p.font-13 For further enquiries or changes to your booking, please contact The Kingsmen Hotel Singapore.
         %br/
-        .panel.panel-info
-          .panel-heading.p-20
+        .panel.panel-info.panel-signup
+          .panel-heading
             .font-18.mb-15 Loyalty Club Sign Up
             %p You indicated interest in signing up as a Le Club AccorHotels member. Please sign up and key in your new membership number below:
             .row
               .col-sm-4.right-divider.col-xs-12.has-mar-bot
                 %h5.fw-600 1. Step One
                 %button.btn.btn-info.btn-lg.full-width-btn Click Here to Sign up
-              .col-sm-8
+              .col-sm-8.col-xs-12
                 %h5.fw-600 2. Step Two
                 .form-inline
                   %label.mr-50 Key in your Membership No.

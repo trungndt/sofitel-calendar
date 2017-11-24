@@ -229,3 +229,10 @@ table {
 input.form-control {
   height: 30px;
 }
+
+@include respondTo(tabletPortrait) {
+  .form-horizontal .form-group {
+    margin-left: -$mobileSpace;
+    margin-right: -$mobileSpace;
+  }
+}

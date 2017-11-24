@@ -9,30 +9,26 @@
     %link{href:"assets/plugins/nice-select/css/nice-select.css", rel:"stylesheet", type:"text/css"}
     %link{href:"assets/css/main.css", rel:"stylesheet", type:"text/css"}
 
-  %body
+  %body.page-info
     %header.container-fluid
       .row.space-0
-        .col-sm-3.logo-wrapper
-          .logo.col-sm-12.col-xs-6
+        .col-sm-3.col-xs-6
+          %a.logo{href:"/"}
             %img.img-responsive{src:"assets/images/logo-kingsmen.png"}
-          .start-over.col-xs-6.not-desk
-            .btn-group
-                %a.btn.black-color Start over
-        .col-sm-9.not-mb 
-          .row.space-0.filter-panel
-            .col-sm-8.col-sm-offset-2
+        .col-sm-9.col-xs-6
+          .row.space-0.filter-panel.steps-panel
+            .col-sm-8.col-sm-offset-2.hide-sm
               .btn-group.step-group
-                %a.btn{href:"select-hotel.html"} Select Room
-                %a.btn.active{href:"#"} Personal Info
-                %a.btn{href:"#"} Travel Info
-                %a.btn{href:"#"} Confirm Details
+                %a.btn{href:"#"} Select Room
+                %a.btn{href:"#"} Personal Info
+                %a.btn{href:"travel-info.html"} Travel Info
+                %a.btn.active{href:"#"} Confirm Details
             .col-sm-2
               .btn-group
                 %a.btn Start over
     %section.bg-lightgray
       .container
-        %h3.mb-30 Confirm Details
-        %br/
+        %h3.title Confirm Details
         .panel-rsv-brief.not-float
           %h5.text-cormo.title-p20 YOUR RESERVATION
           .information-center
@@ -66,8 +62,8 @@
           .panel.panel-info
             .panel-heading#headingOne
               %h4.panel-title
-                %a.not-mb Guest 1 (Primary Guest)
-                %a.not-desk-body{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseThree", aria-expanded:"true"} Guest 1 (Primary Guest)
+                %a.hide-sm Guest 1 (Primary Guest)
+                %a.hide-md{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseThree", aria-expanded:"true"} Guest 1 (Primary Guest)
             .panel-collapse.collapse.in#collapseThree
               .panel-body
                 .row
@@ -107,7 +103,7 @@
                       %tr
                         %td Country
                         %td Singapore
-                    
+                    %br.hide-md
                   .col-sm-6
                     %h4.font-14.mt-0.mb-20 Travel Information
                     %table.tbl-info
@@ -145,8 +141,8 @@
           .panel.panel-info
             .panel-heading#headingTwo
               %h4.panel-title
-                %a.not-mb Guest 2
-                %a.not-desk-body{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseTwo", aria-expanded:"true"}
+                %a.hide-sm Guest 2
+                %a.hide-md{data-toggle:"collapse", data-parent:"#accordionPersonalInfo", href:"#collapseTwo", aria-expanded:"true"}
                       Guest 2
             .panel-collapse.collapse.in#collapseTwo
               .panel-body
@@ -223,7 +219,7 @@
                         %td \-
         
         .row
-          .col-sm-4.col-xs-12.float-right
+          .col-sm-4.col-xs-12.panel-right
             .panel-rsv-brief.p20 
               %h4 Price Summary
               %table.tbl-price
@@ -275,7 +271,7 @@
               %a.no-arrow#headingNights{href:"#collapseNights", data-toggle:"collapse", aria-expanded:"false", data-expandtext:"Hide nightly breakdown", data-collapsetext:"Show nightly breakdown"}
                 Show nightly breakdown
               
-            .panel.panel-transparent
+            .panel.panel-transparent.hide-sm
               .panel-body
                 %h4 The Kingsmen Hotel Singapore
                 .font-13

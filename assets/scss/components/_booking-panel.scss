@@ -480,6 +480,12 @@ $tlbWidth: 320px;
 	}
 
 	.filter-panel {
+		height: auto;
+		&.steps-panel {
+			background-color: transparent;
+		}
+	}
+	.filter-panel.booking-panel {
 		display: none;
 		position: fixed;
 		background-color: $color-primary;
@@ -490,7 +496,7 @@ $tlbWidth: 320px;
 		z-index: 1050;
 		margin: 0 !important;
 		width: 100vw;
-		height: auto;
+		
 		// height: 100vh;
 
 		.filter-item {

@@ -7,6 +7,7 @@
 
 body {
   font-family: $font-worksans;
+  padding-top: 100px;
 }
 
 .calendar-open {
@@ -84,6 +85,7 @@ section {
 @include respondTo(tabletPortrait) {
   body {
     font-size: 13px;
+    padding-top: 56px;
   }
   .hide-md {
     display: block;
@@ -134,7 +136,7 @@ section {
     }
     &:after {
       left: 20px;
-      top: 15px;
+      // top: 15px;
       @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%);
     }
     &.no_prefix {
@@ -147,4 +149,5 @@ section {
   .nice-select {
   	font-size: 12px;
   }
+
 }

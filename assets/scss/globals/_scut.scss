@@ -405,7 +405,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 
 /* Base for label styling */
 .nice-check {
-	$checkColor: #00AA41;
+	$checkColor: $color-info;
 	&:checked,
 	&:not(:checked) {
 		position: absolute;
@@ -415,7 +415,7 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			padding-left: 50px;
 			cursor: pointer;
 			font-weight: 100;
-			height: 30px;
+			min-height: 30px;
 			line-height: 30px;
 			&:before {
 				content: '';
@@ -435,13 +435,15 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 				left: 9px;
 				line-height: 30px;
 				font-size: 14px;
-				color: #fff;
+				// color: #fff;
+				color: $checkColor;
 				transition: all .1s;
+				font-weight: 600;
 			}
 		}
 	}
 	&:checked + label:before {
-		background-color: $checkColor;
+		// background-color: $checkColor;
 	}
 	&:not(:checked) + label:after {
 		opacity: 0;
@@ -468,11 +470,11 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			color: #aaa;
 		}
 	}
-	$smSize: 18px;
+	$smSize: 15px;
 	&.nice-check-sm {
 		&:not(:checked) + label,
 		&:checked + label {
-			height: 30px;
+			// height: 30px;
 			line-height: $smSize;
 			padding-left: 23px;
 			position: relative;
@@ -483,12 +485,19 @@ $directions: ('t':'top', 'r':'right', 'b':'bottom', 'l':'left');
 			}
 			&:after {
 				line-height: $smSize;
-				left: 3px;
+				left: 1px;
 			}
 		}
 		&:checked + label:after {
 			opacity: 1;
 			transform: scale(.8);
+		}
+	}
+
+	&:checked,
+	&:not(:checked) {
+		&[type="checkbox"] + label:before {
+			border-radius: 0;
 		}
 	}
 }

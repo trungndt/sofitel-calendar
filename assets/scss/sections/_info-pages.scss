@@ -1,4 +1,20 @@
 $panelSpace: 20px;
+.page-info {
+  .title {
+    margin-bottom: 40px;
+  }
+  .panel-right {
+    float: right;
+    padding-left: 40px;
+  }
+}
+
+.panel-info.panel-signup {
+  & > .panel-heading {
+    padding: 20px;
+  }
+}
+
 // Accordion
 .panel-group .panel-info {
   margin-bottom: $panelSpace;
@@ -6,9 +22,12 @@ $panelSpace: 20px;
   .panel-title {
     font-size: 18px;
   }
-  .panel-title>a {
+  .panel-title > a {
     display: block;
     padding: 15px;
+    &.hide-md {
+      display: none;
+    }
     &:hover {
       color: #000;
     }
@@ -142,7 +161,6 @@ $panelSpace: 20px;
 }
 
 .panel-info {
-
   border: none;
   &>.panel-heading {
     color: #000;
@@ -285,5 +303,46 @@ $panelSpace: 20px;
   padding: 0;
   @media (max-width: 767px) {
     padding: 20px;
+  }
+}
+
+@include respondTo(tabletPortrait) {
+  .page-info {
+    .title {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+    .panel-right {
+      float: right;
+      padding-left: $mobileSpace;
+    }
+  }
+
+  .panel-info.panel-signup {
+    & > .panel-heading {
+      padding: 15px;
+    }
+  }
+
+  .panel-group .panel-info {
+    .panel-body {
+      padding: 15px 15px;
+    }
+    .panel-title {
+      font-size: 16px;
+    }
+    .panel-title > a {
+      &.hide-md {
+        display: block;
+      }
+      &.hide-sm {
+        display: none;
+      }
+    }
+  }
+
+  .right-divider {
+    border: none;
   }
 }
