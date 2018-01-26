@@ -1,0 +1,66 @@
+/// <reference path="../globals/_scut.scss" />
+/// <reference path="../globals/_variables.scss" />
+.home
+  .home-banner
+    position: relative
+    padding: 0
+    .bg-image
+      height: 100vh
+      background:
+        size: cover
+        position: center
+      
+    
+    .caption
+      width: 380px
+      background-color: $color-primary
+      color: #fff
+      padding: 20px 42px
+      position: absolute
+      top: 52%
+      left: 0
+      font-size: 18px
+    
+    h5
+      font-weight: 600
+      font-size: 16px
+    
+    img
+      width: 100%
+    
+  
+
+  .section-contact
+    h3
+      margin-bottom: 30px
+    
+    p
+      margin-bottom: 30px
+    
+  
+
+  @include respondTo(tabletPortrait)
+    .home-banner
+      .bg-image
+        height: 86vh
+      
+      .caption
+        max-width: 86vw
+        padding: 5px 10px
+        font-size: 15px
+      
+      h5
+        font-size: 13px
+      
+    
+
+    .section-contact
+      h3
+        margin: 0 0 15px
+      
+      p
+        margin-bottom: 15px
+      
+    
+
+  

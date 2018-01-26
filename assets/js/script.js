@@ -97,9 +97,9 @@ KINGSMEN.Calendar = function() {
             '2017/10/22',
           ];
           var eventDate = [
-            '2017/11/05',
-            '2017/11/06',
-            '2017/11/07',
+            '2018/01/05',
+            '2018/01/06',
+            '2018/01/07'
           ];
           var valid = soldoutDate.indexOf(_this) < 0;
 
@@ -202,7 +202,7 @@ KINGSMEN.Calendar = function() {
     /*
      * method: [MOBILE] Open filter panel
      */
-    $(document).on('click', '[data-action="filter-open"]', function() {
+    $('[data-action="filter-open"]').on('click', function() {
       $('.filter-panel').fadeIn().addClass('open');
       $('body').addClass('calendar-open');
     });
@@ -294,6 +294,31 @@ KINGSMEN.Calendar = function() {
   });
 }();
 
+KINGSMEN.Info = function() {
+  $(function() {
+    var setupStripe = function() {
+      if (!$('body').hasClass('confirm-details'))
+        return;
+      var stripe = Stripe('pk_test_reB5ZKzkgXv58KSZFYO279bG');
+      var elements = stripe.elements();
+      // Create an instance of the card Element
+      // var card = elements.create('card');
+      // card.mount('#card-element');
+      var cardNumber = elements.create('cardNumber', {
+        placeholder: '0000 0000 0000 0000'
+      });
+      cardNumber.mount('#card-number-element');
+
+      var cardDate = elements.create('cardExpiry');
+      cardDate.mount('#card-date-element');
+
+      var cardCvv = elements.create('cardCvc', {
+        placeholder: 'Security Code'
+      });
+      cardCvv.mount('#card-cvv-element');
+    }();
+  });
+}();
 
 function initMap() {
   var mapElem = document.getElementById('map');

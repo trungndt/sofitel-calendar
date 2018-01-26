@@ -1,0 +1,351 @@
+$panelSpace: 20px
+.page-info
+  .title
+    margin-bottom: 40px
+  
+  .panel-right
+    float: right
+    padding-left: 40px
+  
+
+
+.panel-info.panel-signup
+  &>.panel-heading
+    padding: 20px
+  
+
+
+// Accordion
+.panel-group .panel-info
+  margin-bottom: $panelSpace
+
+  .panel-title
+    font-size: 18px
+  
+  .panel-title>a
+    display: block
+    padding: 15px
+    &.hide-md
+      display: none
+    
+    &:hover
+      color: #000
+    
+    &[data-toggle="collapse"]
+      padding-left: 56px
+      &:after
+        right: auto
+        left: 20px
+        @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%)
+      
+    
+  
+
+  .panel-body
+    padding: 30px 20px
+    border: 1px solid #e0e0e0
+    border-top: 0
+  
+
+
+.not-desk
+  @media(min-width: 769px)
+    display: none
+  
+
+
+.not-desk-body
+  @media(min-width: 768px)
+    display: none !important
+  
+
+
+.float-right
+  float: right
+  @media (max-width: 768px)
+    padding-left: 15px !important
+  
+
+
+.room-list
+  .block-main
+    .block
+      @media (max-width: 767px)
+        padding-bottom: 0px !important
+      
+    
+  
+  .block-price
+    .mb-60
+      margin-bottom: 30px !important
+    
+  
+
+
+.p20
+  padding: 20px
+
+
+.policy
+  &:after
+    @media (max-width: 767px)
+      top: 5px !important
+      left: inherit !important
+      right: 10px
+    
+  
+
+
+.pr0
+  padding-right: 0px !important
+
+
+.full-width-btn
+  @media (max-width: 450px)
+    width: 100%
+  
+
+
+.bg-white
+  @media (max-width: 767px)
+    background-color: #fff
+    display: block
+  
+
+
+.information-right
+  padding: 20px
+
+
+.not-float
+  .information-center
+    padding: 0 20px 20px
+  
+
+
+.float-left
+  float: left
+
+
+.not-mb
+  @media (max-width: 768px)
+    display: none !important
+  
+
+
+.not-mb-body
+  @media (max-width: 767px)
+    display: none !important
+  
+
+
+.font-ws
+  font-family: "$font-worksans"
+
+
+.has-mar-bot
+  @media (max-width: 768px)
+    margin-bottom: 10px
+  
+
+
+.right-divider
+  border-right: 1px solid #e0e0e0
+
+
+.panel
+  border-radius: 0
+  .panel-body
+    padding: 20px
+  
+
+
+.panel-info
+  border: none
+  &>.panel-heading
+    color: #000
+    background-color: #E6F1FF
+    border: 0
+    border-bottom: 4px solid $color-info
+    padding: 0
+    border-radius: 0
+  
+
+
+.panel-default.panel-rect
+  border-color: #e0e0e0
+  border-radius: 0
+  margin-bottom: $panelSpace
+  .panel-body
+    padding: 20px
+  
+
+
+.nice-check-inline
+  .nice-check-item
+    display: inline-block
+  
+  .nice-check-item+.nice-check-item
+    margin-left: 50px
+  
+
+
+.panel-rsv-brief
+  @include prefix(box-shadow, 1px 2px 4px rgba(#555, .5))
+  background-color: #fff
+  margin-bottom: $panelSpace
+  h5
+    margin-top: 0
+    margin-bottom: 0px
+  
+
+  .img-responsive
+    width: 100%
+  
+  hr
+    margin-top: 10px
+    margin-bottom: 10px
+  
+  .tbl-info
+    @media (max-width: 768px)
+      margin-top: 20px
+    
+  
+
+
+.hide-nha
+  display: none !important
+
+
+.tbl-info
+  // width: 100%
+  td:first-child
+    padding-right: 50px
+  
+  .split-sm td
+    padding-bottom: 3px
+  
+  .split td
+    padding-bottom: 20px
+  
+
+
+.center-slash
+  display: inline-block
+  width: auto
+  line-height: 30px
+
+
+.icon-visa,
+.icon-cvv
+  height: 30px
+
+
+// .icon-cvv
+//  position: relative
+//  top: 5px
+// 
+// Page 06: Confirm Details
+.tbl-price
+  width: 100%
+  margin-bottom: 15px
+  td,
+  th
+    width: 50%
+    &:last-child
+      text-align: right
+    
+  
+  &.tbl-sub
+    font-size: 12px
+  
+
+
+.panel.panel-transparent
+  border: none
+  border-radius: 0
+  background-color: transparent
+
+
+.tbl-addr
+  line-height: 2
+  th,
+  td
+    &:first-child
+      padding-right: 30px
+    
+    a
+      word-break: break-all
+    
+  
+
+
+.cancel-date
+  padding: 20px 0
+  table
+    tbody
+      th
+        padding-right: 40px
+      
+    
+  
+
+
+.no-list-style
+  padding-left: 0px
+  li
+    list-style-type: none
+  
+
+
+.hotel-info-wrap,
+.includesblock
+  padding: 0
+  @media (max-width: 767px)
+    padding: 20px
+  
+
+
+@include respondTo(tabletPortrait)
+  .page-info
+    .title
+      margin-top: 0
+      margin-bottom: 20px
+      font-size: 20px
+    
+    .panel-right
+      float: right
+      padding-left: $mobileSpace
+    
+  
+
+  .panel-info.panel-signup
+    &>.panel-heading
+      padding: 15px
+    
+  
+
+  .panel-group .panel-info
+    .panel-body
+      padding: 15px 15px
+    
+    .panel-title
+      font-size: 16px
+    
+    .panel-title>a
+      &.hide-md
+        display: block
+      
+      &.hide-sm
+        display: none
+      
+    
+  
+
+  .panel .panel-body
+    padding: 15px 15px
+  
+
+  .right-divider
+    border: none
+  

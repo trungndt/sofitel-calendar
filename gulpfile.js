@@ -5,7 +5,7 @@ var lite = require('lite-server');
 var exec = require('gulp-exec');
 
 gulp.task('sass', function() {
-  return gulp.src(['assets/scss/**/*.scss'])
+  return gulp.src(['assets/sass/**/*.sass'])
     .pipe(sass())
     .on('error', onError)
     .pipe(gulp.dest('assets/css'))
@@ -22,11 +22,12 @@ gulp.task('haml-one', function() {
 gulp.task('haml', function() {
   return gulp.src('haml/**/*.haml')
     .pipe(haml())
+    .on('error', onError)
     .pipe(gulp.dest('.'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('assets/scss/**/*.scss', ['sass']);
+  gulp.watch('assets/sass/**/*.sass', ['sass']);
   // Other watchers
   gulp.watch('haml/**/*.haml', ['haml']);
 });

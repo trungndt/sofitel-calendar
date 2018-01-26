@@ -1,70 +1,62 @@
 @charset "UTF-8";
-/*============================================================================
-  #General Variables
-==============================================================================*/
-/*============================================================================
-  #Mixin
-==============================================================================*/
-/* $smartphone: 480px; */
-/* $tabletPortrait: 767px; */
-/* $tabletLandscape: 1023px; */
-/* $xsDesktop: 1100px; */
-/* $smDesktop: 1200px; */
-/* $mdDesktop: 1280px; */
-/* // $desktop: 1174px; */
-/* $largeScreen: 1440px; */
-/* $hdScreen: 1799px; */
+/* $smartphone: 480px */
+/* $tabletPortrait: 767px */
+/* $tabletLandscape: 1023px */
+/* $xsDesktop: 1100px */
+/* $smDesktop: 1200px */
+/* $mdDesktop: 1280px */
+/* // $desktop: 1174px */
+/* $largeScreen: 1440px */
+/* $hdScreen: 1799px */
 /*
-$xlg-fonts: (
-  null: 120px,
-  $mdDesktop: 100px,
-  $smDesktop: 90px,
-  $xsDesktop: 80px,
-  $largeScreen: 160px
-);
-
-$lg-fonts: (
-  null: 51px,
-  $mdDesktop: 45px,
-  $xsDesktop: 40px,
-  $largeScreen: 72px
-);
-
-$md-fonts: (
-  null: 40px,
-  $mdDesktop: 35px,
-  $xsDesktop: 28px,
-  $largeScreen: 60px
-);
-
-$sm-fonts: (
-  null: 26px,
-  $mdDesktop: 22px,
-  $xsDesktop: 19px,
-  $largeScreen: 40px
-);
-
-$xs-fonts: (
-  null: 17px,
-  $mdDesktop: 15px,
-  $xsDesktop: 14px,
-  $largeScreen: 24px
-);
-
-$content-fonts: (
-  null: 14px,
-  $mdDesktop: 13px,
-  $xsDesktop: 11px,
-  $largeScreen: 16px
-);
-*/
+ * @include triangle within a pseudo element and add positioning properties (ie. top, left)
+ * $direction: up, down, left, right
+ */
 /*
-* @include triangle within a pseudo element and add positioning properties (ie. top, left)
-* $direction: up, down, left, right
-*/
-/*============================================================================
-  #Render Helping classes
-==============================================================================*/
+	$xlg-fonts: (
+		null: 120px,
+		$mdDesktop: 100px,
+		$smDesktop: 90px,
+		$xsDesktop: 80px,
+		$largeScreen: 160px
+	)
+
+	$lg-fonts: (
+		null: 51px,
+		$mdDesktop: 45px,
+		$xsDesktop: 40px,
+		$largeScreen: 72px
+	)
+
+	$md-fonts: (
+		null: 40px,
+		$mdDesktop: 35px,
+		$xsDesktop: 28px,
+		$largeScreen: 60px
+	)
+
+	$sm-fonts: (
+		null: 26px,
+		$mdDesktop: 22px,
+		$xsDesktop: 19px,
+		$largeScreen: 40px
+	)
+
+	$xs-fonts: (
+		null: 17px,
+		$mdDesktop: 15px,
+		$xsDesktop: 14px,
+		$largeScreen: 24px
+	)
+
+	$content-fonts: (
+		null: 14px,
+		$mdDesktop: 13px,
+		$xsDesktop: 11px,
+		$largeScreen: 16px
+	)
+ */
+/* Render Helping classes */
 .mt-0 {
   margin-top: 0px !important; }
 
@@ -737,7 +729,7 @@ $content-fonts: (
       top: 0;
       width: 30px;
       height: 30px;
-      border: 1px solid #0095FF;
+      border: 1px solid #fff;
       background: #fff;
       border-radius: 50%; }
     .nice-check:checked + label:after, .nice-check:not(:checked) + label:after {
@@ -747,7 +739,7 @@ $content-fonts: (
       left: 9px;
       line-height: 30px;
       font-size: 14px;
-      color: #0095FF;
+      color: #fff;
       transition: all .1s;
       font-weight: 600; }
 
@@ -776,10 +768,10 @@ $content-fonts: (
 
 .nice-check.nice-check-sm:not(:checked) + label,
 .nice-check.nice-check-sm:checked + label {
+  min-height: 15px;
   line-height: 15px;
   padding-left: 23px;
-  position: relative;
-  top: 7px; }
+  position: relative; }
   .nice-check.nice-check-sm:not(:checked) + label:before,
   .nice-check.nice-check-sm:checked + label:before {
     width: 15px;
@@ -960,6 +952,8 @@ table {
     color: #777; }
   .form-horizontal.form-left .form-control {
     padding: 6px 7px; }
+    .form-horizontal.form-left .form-control.stripe-element {
+      padding-top: 8px; }
 
 .form-control {
   border-radius: 5px;
@@ -2126,5 +2120,7 @@ footer {
     display: block; }
   .panel-group .panel-info .panel-title > a.hide-sm {
     display: none; }
+  .panel .panel-body {
+    padding: 15px 15px; }
   .right-divider {
     border: none; } }

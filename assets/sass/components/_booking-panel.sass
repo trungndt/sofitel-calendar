@@ -1,0 +1,702 @@
+$formSpace: 20px
+.filter-panel
+  background-color: $color-primary
+  color: #fff
+  height: $height
+  &.blank
+    background-color: #fff
+    color: #000
+    .btn
+      color: #000
+    
+  
+
+  // Helper
+  .drop-panel
+    height: $height - 35px
+    line-height: $height - 35px
+    padding: 0 $formSpace
+  
+  .lbl-cormo
+    font:
+      family: $font-cormorant
+      size: 30px
+    
+  
+  .down-arrow
+    &:after
+      content: ''
+      border-bottom: 2px solid #257eee
+      border-right: 2px solid #257eee
+      width: 16px
+      height: 10px
+      top: 40%
+      right: 20px
+      display: block
+      margin-top: -4px
+      pointer-events: none
+      position: absolute
+      border: none
+      @include prefix(transform-origin, 0)
+      @include prefix(transform, none)
+      @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%)
+    
+  
+
+  &.row.space-0
+    margin-right: -15px
+    .row
+      margin: 0
+    
+  
+  .filter-item
+    height: $height
+    padding: $formSpace 0 0 0
+  
+  .group-counter .filter-item
+    border-left: 1px solid #777
+  
+  .label
+    display: block
+    text-align: left 
+    padding: 0 $formSpace
+    font-family: $font-cormorant
+    font-size: 12px
+    font-weight: 600
+    letter-spacing: 2px
+  
+
+  .night-count
+    position: absolute
+    top: 20px
+    right: 20px
+    line-height: 1
+    color: $gray
+  
+
+  .date-container
+    position: relative
+    @extend .drop-panel
+    @extend .down-arrow
+  
+  .date-range
+    font-size: 12px
+    cursor: pointer
+    color: $gray
+    
+  
+  .selected-dates
+    color: #fff
+    text-transform: uppercase
+    span
+      font-family: $font-cormorant
+      color: #fff
+      font-size: 30px
+    
+  
+
+  // For Room select
+  select.nice-select
+    display: none
+  
+  .nice-select.select-transparent
+    float: none
+    background-color: transparent
+    border: none
+    @extend .drop-panel
+    @extend .lbl-cormo
+    &:after
+      border-color: #257eee
+      width: 16px
+      height: 10px
+      top: 40%
+      right: 15px
+      border: none
+      @include prefix(transform-origin, 0)
+      @include prefix(transform, none)
+      @include bgImage('../images/icon/chevron-down-blue.png', 0 0, 100% 100%)
+    
+    &.open:after
+      @include prefix(transform, rotate(45deg))
+    
+    .list
+      margin: 0
+      border-radius: 0
+      width: 100%
+      background-color: $color-primary
+      @include prefix(transform, scale(1))
+    
+    .option
+      &:hover,
+      &.focus,
+      &.selected.focus
+        background-color: darken($color-primary, 5%)
+      
+    
+  
+
+  // For Guest Select 
+  .guest-panel
+  
+  .guest-display
+    position: relative
+    @extend .drop-panel
+    @extend .lbl-cormo
+    @extend .down-arrow
+    cursor: pointer
+  
+  .guest-dropdown-backdrop
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 9
+    display: none
+  
+  .guest-dropdown
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 10
+    width: 400px
+    color: #fff
+    background-color: $color-primary
+    padding: 20px
+    font-size: 12px
+    box-shadow: 3px 3px 10px rgba(0,0,0,.5)
+    display: none
+    h5
+      font-family: $font-cormorant
+      font-size: 12px
+    
+    .guest-select-group
+      margin-bottom: 15px
+    
+    .guest-select
+      display: inline-block
+      width: 25%
+    
+    .guest-select + .guest-select
+      margin-left: 20px
+    
+  
+
+  .controller
+    padding: 28px 15px
+    text-align: center
+    .btn
+      width: 140px
+    
+  
+
+  .incrementor
+    display: none
+  
+
+
+$color-valid: #1198FD
+$color-selected: green
+$color-invalid: #555
+$color-event: #e74515
+$circleSize: 26px
+$tlbWidth: 320px
+.picker-container
+  position: absolute
+  top: 100%
+  left: 0
+  background-color: $color-primary
+  box-shadow: 3px 3px 10px rgba(0,0,0,.5)
+
+
+.date-picker-wrapper.hotel-calendar
+  // width: 100%
+  // width: 327px
+  position: static
+  font-family: $font-worksans
+  top: 100% !important
+  left: 0px !important
+  padding: 0
+  // background-color: $color-primary
+  @include prefix(box-shadow, none)
+  background-color: transparent
+  border: none
+  .prev, .next
+    // display: none
+    color: #fff
+  
+  .month-wrapper
+    
+    background-color: transparent
+    border: none
+    padding-top: 20px
+    padding-bottom: 20px
+
+    table
+      // width: 100%
+      width: $tlbWidth !important
+      th, td
+        width: 14.2%
+      
+      td
+        // padding: 9px 0
+      
+      .caption
+        .next, .prev
+          background-color: transparent
+          text-indent: -99999px
+          display: block
+        
+        .prev
+          @include bgImage($url: '../images/icon/chevron-left-blue.png', $size: auto 100%)
+        
+        .next
+          @include bgImage($url: '../images/icon/chevron-right-blue.png', $size: auto 100%)
+        
+      
+      .month-name
+        font-size: 12px
+        font-weight: 500
+        color: #fff
+        letter-spacing: 0.5px
+      
+      .week-name th
+        font-size: 11px
+        font-weight: 400
+        color: #fff
+        padding-top: 10px
+        padding-bottom: 10px
+        letter-spacing: 0.5px
+      
+      .day
+        font-size: 14px
+        // margin-bottom: 5px
+        // border-bottom: 2px solid transparent
+        // margin-bottom: 0
+        padding: 15px 0 16px
+        position: relative
+        @include transition()
+      
+      .day.real-today
+        background-color: transparent
+      
+      .day.toMonth.invalid
+        color: $color-invalid
+      
+      .day.toMonth.valid 
+        color: #fff
+        // background-color: $color-valid
+      
+      .date-circle
+        position: relative
+        background-color: rgba($color-valid, .2) !important
+        
+        &:before
+          content: ''
+          // width: $circleSize
+          // height: $circleSize
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 50%
+          left: 50%
+          @include prefix(transform, translate(-50%, -50%))
+          border-radius: 50%
+          // background-color: $color-valid
+          border: 2px solid $color-valid
+          // z-index: -1
+        
+
+      
+      .round-left
+        border-top-left-radius: $circleSize
+        border-bottom-left-radius: $circleSize
+      
+      .round-right
+        border-top-right-radius: $circleSize
+        border-bottom-right-radius: $circleSize
+      
+
+      .day.toMonth
+        &.first-date-selected
+          @extend .round-left
+          @extend .date-circle
+        
+        &.last-date-selected
+          @extend .round-right
+          @extend .date-circle
+        
+        &.hovering
+          background-color: rgba($color-valid, .2)
+          &:hover
+            @extend .round-right
+            @extend .date-circle
+          
+        
+        &.start-of-month.hovering,
+        &.start-of-month.checked
+          @extend .round-left
+        
+        &.end-of-month.hovering,
+        &.end-of-month.checked
+          @extend .round-right
+        
+        &.checked
+          background-color: rgba($color-valid, .2)
+        
+      
+
+      tr > td
+        &:first-child .day.toMonth
+          @extend .round-left
+        
+        &:last-child .day.toMonth
+          @extend .round-right
+        
+      
+      
+    
+  
+  
+  .event-date:after
+    // border-bottom: 2px solid red
+    content: ''
+    width: 5px
+    height: 5px
+    border-radius: 50%
+    background-color: $color-event
+    position: absolute
+    bottom: 6px
+    left: 50%
+    @include prefix(transform, translateX(-50%))
+  
+  .soldout-date
+    // color: #fff !important
+    color: $color-invalid !important
+  
+
+  &[style*="display: none"] + .calendar-footer-panel
+    display: none
+    // color: red !important
+  
+
+.calendar-footer-panel
+  display: block
+
+.calendar-legend
+  background-color: rgba(#fff, .05)
+  padding: 10px 5px
+  // width: 400px
+  max-width: 100%
+  margin: 0 auto
+  .legend-item
+    text-align: center
+    color: #fff
+  
+  .item
+    
+    display: inline-block
+    width: $circleSize * 1.5
+    height: $circleSize * 1.5
+    line-height: $circleSize * 1.4
+    position: relative
+    font-size: 14px
+    margin-bottom: 10px
+  
+  
+  .item-event:after
+    // border-bottom: 2px solid red
+    content: ''
+    width: 5px
+    height: 5px
+    border-radius: 50%
+    background-color: $color-event
+    position: absolute
+    bottom: 0px
+    left: 50%
+    @include prefix(transform, translateX(-50%))
+  
+  .item-selected
+    // background-color: $color-valid
+    border: 2px solid $color-valid
+    border-radius: 50%
+    font-weight: bold
+  
+  .item-unavailable
+    color: $color-invalid
+  
+  label
+    display: block
+    font-weight: 400
+    margin-bottom: 0
+    font-size: 11px
+    letter-spacing: 0.5px
+    line-height: 1
+  
+
+
+@include respondTo(tabletPortrait)
+  .short-picker
+    position: absolute
+    top: 65px
+    left: 10px
+    right: 10px
+    background-color: $color-primary
+    border: 1px solid #444
+    border-radius: 5px
+    color: $gray
+    font-size: 11px
+    font-weight: 600
+    letter-spacing: .4
+    padding: 10px 30px 15px 10px
+    line-height: 1
+    text-transform: uppercase
+    &:after
+      content: ''
+      position: absolute
+      top: 15px
+      right: 10px
+      width: 18px
+      height: 18px
+      @include bgImage('../images/icon/icon-search.png', 0 0, 100% 100%)
+    
+    & > div
+      display: inline-block
+    
+    .selected-rooms,
+    .selected-guests
+      &:before
+        content: '.'
+        font-size: 20px
+        margin: 0 5px
+        position: relative
+        top: -2px
+      
+    
+
+    .count
+      margin-right: 4px
+    
+  
+
+  .filter-panel
+    height: auto
+    &.steps-panel
+      background-color: transparent
+    
+  
+  .filter-panel.booking-panel
+    display: none
+    position: fixed
+    background-color: $color-primary
+    top: 0
+    // bottom: 0
+    left: 0
+    right: 0
+    z-index: 1050
+    margin: 0 !important
+    width: 100vw
+    
+    // height: 100vh
+
+    .filter-item
+      padding-top: 10px
+      height: auto
+    
+
+    .down-arrow:after, 
+    .date-container:after, 
+    .guest-display:after
+      content: none
+    
+
+    .group-calendar .label
+      display: none
+    
+
+    .drop-panel, .date-container, .nice-select.select-transparent, .guest-display
+      $height: 45px
+      height: auto
+      line-height: 1.3
+      padding: 0 10px
+    
+
+    .date-container
+      padding: 0
+      
+    
+    .picker-container
+      position: relative
+    
+
+    .date-range
+      line-height: 2
+      height: 34px
+      padding: 0 10px 10px
+      border-bottom: 1px solid #444
+    
+
+    .selected-dates
+      font-size: 11px
+      letter-spacing: 0.4px
+      span
+        font-size: 23px
+        line-height: 1
+      
+    
+
+    .night-count
+      top: 15px
+    
+
+    .button-group
+      padding: 0 10px 15px
+    
+
+    // Counter: Rooms & Guests
+    $labelSize: 50%
+    .group-calendar
+    
+    .group-counter
+      display: none
+      padding-bottom: 30px
+      .label
+        width: $labelSize
+        display: inline-block
+        padding-left: 10px
+        padding-right: 10px
+      
+      .filter-item
+        border: none
+      
+    
+    .room-counter .nice-select
+      // display: none
+    
+
+    .guest-counter
+      .label, .guest-display
+        display: none
+      
+    
+
+    .guest-dropdown
+      display: block
+      position: static
+      width: 100%
+      padding-left: 10px
+      padding-right: 10px
+      @include prefix(box-shadow, none)
+      .guest-select
+        display: block
+        width: 100%
+        margin-bottom: 10px
+        p
+          display: inline-block
+          width: $labelSize
+        
+      
+      .guest-select + .guest-select
+        margin-left: 0
+      
+
+      .children-group
+        .guest-select
+          padding-left: 30px
+        
+        .nice-select
+          display: inline-block
+        
+        p
+          margin: 0
+        
+      
+    
+
+    // Incrementor
+    .incrementor
+      $btnSize: 25px
+      display: inline-block
+
+      button
+        width: $btnSize
+        height: $btnSize
+        line-height: $btnSize - 4px
+        border: 2px solid #fff
+        border-radius: 50%
+        padding: 0
+        text-align: center
+        color: #fff
+        background-color: transparent
+        font-size: 20px
+        font-weight: 500
+        @include transition()
+        &.btn-dec:before
+          content: '-'
+        
+        &.btn-inc:before
+          content: '+'
+        
+        &.disabled
+          opacity: .25
+        
+      
+      input
+        background-color: transparent
+        color: #fff
+        border: none
+        width: 35px
+        height: $btnSize
+        font-size: 23px
+        line-height: 1
+        font-family: $font-cormorant
+        text-align: center
+        margin: 0 5px
+      
+    
+  
+
+  .filter-heading
+    padding: 10px
+    .btn-back,
+    .btn-reset
+      text-decoration: underline
+      font-size: 12px
+    
+    .btn-back
+      margin-right: 10px
+      display: none
+    
+    .btn-close
+      width: 20px
+      height: 20px
+      float: right
+      display: inline-block
+      @include bgImage('../images/icon/icon-close.png', center center, 12px 12px)
+    
+  
+
+  .date-picker-wrapper.hotel-calendar
+    // position: static
+    
+  
+
+  .date-picker-wrapper.hotel-calendar .month-wrapper
+    padding: 10px 0
+    table
+      .caption
+        height: auto
+      
+      td, th
+        line-height: 1.6
+      
+      .week-name th
+        padding-bottom: 0
+      
+    
+  
+
+  .calendar-legend
+    padding: 7px 5px
+    border-top: 1px solid #444
+  
